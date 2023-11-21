@@ -1,0 +1,35 @@
+name: Android Build and APK Generation
+on:
+  push:
+    branches: ["dev"]
+  pull_request:
+    branches: ["prof"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          sdk-platform: 'android-30'
+          ndk-version: '21.4.7075529'
+
+      - name: Build and Generate APK
+        run: |
+          ./gradlew assembleDebug
+
+      - name: Publish APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
