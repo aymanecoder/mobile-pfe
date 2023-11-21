@@ -24,7 +24,7 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
         with:
-          sdk-platform: 'android-30'
+          sdk-platform: 'android-33'
           ndk-version: '21.4.7075529'
 
       - name: Build and Generate APK
