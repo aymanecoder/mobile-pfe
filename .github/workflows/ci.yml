@@ -18,6 +18,8 @@ jobs:
         with:
             java-version: '11'
             distribution: 'adopt'
+      - name: Make Gradlew Executable
+        run: chmod +x ./gradlew
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
