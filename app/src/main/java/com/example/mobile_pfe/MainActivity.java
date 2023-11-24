@@ -1,95 +1,99 @@
 package com.example.mobile_pfe;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.mobile_pfe.Network.GetEquipeDataService;
-import com.example.mobile_pfe.Network.RetrofitInstance;
-import com.example.mobile_pfe.model.EquipeList;
+import com.example.mobile_pfe.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
-import retrofit2.Call;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class MainActivity extends AppCompatActivity {
-
-    private final String url = "http://192.168.0.102:8081/api/v1/equipes";
-    private ArrayList<String> items = new ArrayList<>();
-
-
-
-
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private TextView equipeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        equipeTextView = findViewById(R.id.equipeTextView);
 
+        // Create a single-thread executor
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
 
+        // Execute the fetchEquipeData method using the executor
+        Future<String> futureResult = executorService.submit(this::fetchEquipeData);
 
+        // Handle the result when it becomes available
+        try {
+            String result = futureResult.get();
+            updateEquipeTextView(result);
+        } catch (Exception e) {
+            Log.e(TAG, "Error fetching Equipe: " + e.getMessage());
+        }
 
-
+        // Shutdown the executor after the task is completed
+        executorService.shutdown();
     }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-        ListView mylistview = findViewById(R.id.simpleListView);
+    private String fetchEquipeData() {
+        String result = null;
+        HttpURLConnection urlConnection = null;
+        try {
+            // Replace "your-server-url" with the actual URL of your Spring Boot server
+            URL url = new URL("http://localshost/api/v1/equipes");
+            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
 
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                response -> {
-                    try {
-                        JSONObject jsonResponse = new JSONObject(response);
-                        JSONObject embedded = jsonResponse.getJSONObject("_embedded");
-                        JSONArray produitsArray = embedded.getJSONArray("equipes");
-                        for (int i = 0; i < produitsArray.length(); i++) {
-                            JSONObject equipe = produitsArray.getJSONObject(i);
-                            String equipeName = equipe.getString("payload");
-
-                            System.out.println("equipe Name: " + equipeName);
-                            items.add(equipeName);
-                        }
-
-                        ArrayAdapter adapter = new ArrayAdapter<>(MainActivity.this, R.layout.simplelistv, items);
-                        mylistview.setAdapter(adapter);
-
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
-                    }
-
-
-
-                }, error -> {
-                    items.add("That didn't work!");
-                    ArrayAdapter adapter = new ArrayAdapter<>(MainActivity.this, R.layout.simplelistv, items);
-                    mylistview.setAdapter(adapter);
-
-                });
-
-        queue.add(stringRequest);
-
-        String[] stringArray = items.toArray(new String[0]);
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.simplelistv,stringArray);
-        mylistview.setAdapter(adapter);
+            // Read the response
+            InputStream inputStream = urlConnection.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+            result = stringBuilder.toString();
+        } catch (IOException e) {
+            Log.e(TAG, "Error fetching Equipe: " + e.getMessage());
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
+        return result;
     }
 
+    private void updateEquipeTextView(String result) {
+        // Update the TextView with the response
+        if (result != null) {
+            try {
+                JSONArray jsonArray = new JSONArray(result);
+                if (jsonArray.length() > 0) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+                    String payload = jsonObject.optString("payload");
+                    String body = jsonObject.optString("body");
+                    equipeTextView.setText("Payload: " + payload + "\nBody: " + body);
+                }
+            } catch (JSONException e) {
+                Log.e(TAG, "Error parsing JSON: " + e.getMessage());
+            }
+        }
+    }
 }
