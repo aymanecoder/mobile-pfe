@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle the result when it becomes available
         try {
             String result = futureResult.get();
+            System.out.println("result :"+ result);
             updateEquipeTextView(result);
         } catch (Exception e) {
             Log.e(TAG, "Error fetching Equipe: " + e.getMessage());
@@ -55,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
     private String fetchEquipeData() {
         String result = null;
         HttpURLConnection urlConnection = null;
+
         try {
             // Replace "your-server-url" with the actual URL of your Spring Boot server
-            URL url = new URL("http://localshost/api/v1/equipes");
+            URL url = new URL("http:/192.168.0.101:8080/api/v1/equipes");
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
 
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 stringBuilder.append(line);
             }
             result = stringBuilder.toString();
+
         } catch (IOException e) {
             Log.e(TAG, "Error fetching Equipe: " + e.getMessage());
         } finally {
