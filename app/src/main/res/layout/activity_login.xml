@@ -1,0 +1,110 @@
+<!-- res/layout/activity_login.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Logo centered and a little under the top -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo_description" />
+
+    <!-- Login text centered -->
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:text="@string/login_text" />
+
+    <!-- SignUp text to the left of the login text -->
+    <TextView
+        android:id="@+id/signUpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_toRightOf="@id/loginTextView"
+        android:layout_marginTop="20dp"
+        android:textColor="#5DB075"
+        android:layout_marginLeft="100dp"
+        android:textSize="15dp"
+        android:text="@string/sign_up_text" />
+
+    <!-- Email and password text fields -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_below="@id/loginTextView"
+        android:hint="@string/email_hint"
+        android:textColorHint="#A9A9A9"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/border"
+    android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/emailEditText"
+        android:hint="@string/password_hint"
+        android:textColorHint="#A9A9A9"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/border"
+    android:inputType="textPassword" />
+
+    <!-- Checkbox for newsletter -->
+    <CheckBox
+        android:id="@+id/newsletterCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEditText"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/newsletter_text"
+        android:textColor="#A9A9A9" /> <!-- Set your desired gray color here -->
+
+
+    <!-- Login button with specified color -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newsletterCheckBox"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#FFFFFF"
+        android:text="@string/login_button_text" />
+
+    <TextView
+        android:id="@+id/forgotPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginButton"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#5DB075"
+        android:textStyle="bold"
+        android:textSize="13dp"
+        android:text="@string/forgot_password_text" />
+
+
+</RelativeLayout>
