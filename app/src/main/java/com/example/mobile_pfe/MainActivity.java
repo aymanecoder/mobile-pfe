@@ -1,6 +1,10 @@
 package com.example.mobile_pfe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
@@ -20,6 +24,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -31,27 +36,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        equipeTextView = findViewById(R.id.equipeTextView);
+        setContentView(R.layout.activity_startpage); // Use the correct layout resource ID
 
-        // Create a single-thread executor
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-        // Execute the fetchEquipeData method using the executor
-        Future<String> futureResult = executorService.submit(this::fetchEquipeData);
-
-        // Handle the result when it becomes available
-        try {
-            String result = futureResult.get();
-            System.out.println("result :"+ result);
-            updateEquipeTextView(result);
-        } catch (Exception e) {
-            Log.e(TAG, "Error fetching Equipe: " + e.getMessage());
-        }
-
-        // Shutdown the executor after the task is completed
-        executorService.shutdown();
-    }
+}
 
     private String fetchEquipeData() {
         String result = null;
@@ -99,4 +86,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 }
