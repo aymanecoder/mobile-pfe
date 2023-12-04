@@ -68,17 +68,31 @@
         android:background="@drawable/border"
     android:inputType="textPassword" />
 
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        android:text="Invalid credentials. Please try again." />
+
+
+
     <!-- Checkbox for newsletter -->
     <CheckBox
         android:id="@+id/newsletterCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordEditText"
+        android:layout_below="@id/errorTextView"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:text="@string/newsletter_text"
         android:textColor="#A9A9A9" /> <!-- Set your desired gray color here -->
+
 
 
     <!-- Login button with specified color -->
@@ -105,6 +119,5 @@
         android:textStyle="bold"
         android:textSize="13dp"
         android:text="@string/forgot_password_text" />
-
 
 </RelativeLayout>
