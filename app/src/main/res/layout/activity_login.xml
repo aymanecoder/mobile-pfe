@@ -24,7 +24,9 @@
         android:textStyle="bold"
         android:textSize="18dp"
         android:textColor="#000000"
-        android:text="@string/login_text" />
+        android:text="@string/login_text"
+        android:fontFamily="serif"
+        />
 
     <!-- SignUp text to the left of the login text -->
     <TextView
@@ -37,7 +39,9 @@
         android:textColor="#5DB075"
         android:layout_marginLeft="100dp"
         android:textSize="15dp"
-        android:text="@string/sign_up_text" />
+        android:text="@string/sign_up_text"
+        android:fontFamily="serif"
+        />
 
     <!-- Email and password text fields -->
     <EditText
@@ -52,7 +56,9 @@
         android:layout_marginRight="20dp"
         android:paddingLeft="10dp"
         android:background="@drawable/border"
-    android:inputType="textEmailAddress" />
+    android:inputType="textEmailAddress"
+        android:fontFamily="serif"
+        />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -90,11 +96,18 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+<<<<<<< HEAD
         android:text="@string/showPassword"
         android:textColor="#A9A9A9" /> <!-- Set your desired gray color here -->
 
 
 
+=======
+        android:text="@string/newsletter_text"
+        android:textColor="#A9A9A9"
+        android:fontFamily="serif"
+        />
+>>>>>>> feature/CreationLayoutRegister_1.3
     <!-- Login button with specified color -->
     <Button
         android:id="@+id/loginButton"
@@ -106,7 +119,9 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/rounded_button"
         android:textColor="#FFFFFF"
-        android:text="@string/login_button_text" />
+        android:text="@string/login_button_text"
+        android:fontFamily="serif"
+        />
 
     <TextView
         android:id="@+id/forgotPasswordTextView"
@@ -118,6 +133,8 @@
         android:textColor="#5DB075"
         android:textStyle="bold"
         android:textSize="13dp"
-        android:text="@string/forgot_password_text" />
+        android:text="@string/forgot_password_text"
+        android:fontFamily="serif"
+        />
 
 </RelativeLayout>
