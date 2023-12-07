@@ -96,19 +96,11 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-<<<<<<< HEAD
-        android:text="@string/showPassword"
-        android:textColor="#A9A9A9" /> <!-- Set your desired gray color here -->
-
-
-
-=======
-        android:text="@string/newsletter_text"
-        android:textColor="#A9A9A9"
         android:fontFamily="serif"
-        />
->>>>>>> feature/CreationLayoutRegister_1.3
-    <!-- Login button with specified color -->
+        android:text="@string/showPassword"
+        android:textColor="#A9A9A9" />
+
+
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
