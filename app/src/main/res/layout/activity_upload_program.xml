@@ -1,0 +1,156 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/page_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="#E0E0E0">
+
+        <!-- Back button -->
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="22dp"
+            android:text="@string/back"
+            android:textAppearance="@style/back" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/content"
+            android:textAppearance="@style/content" />
+
+        <!-- Filter -->
+        <TextView
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="22dp"
+            android:text="@string/filter"
+            android:textAppearance="@style/filter" />
+
+    </RelativeLayout>
+
+    <!-- Segment buttons -->
+    <LinearLayout
+        android:id="@+id/segmented_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/page_header"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@drawable/rounded_background">
+
+        <!-- Entrainement button -->
+        <TextView
+            android:id="@+id/entrainement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="onEntrainementClicked"
+            android:text="@string/entrainement"
+            android:textAppearance="@style/entrainement" />
+
+        <!-- Nutrition button -->
+        <TextView
+            android:id="@+id/nutrition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="onNutritionClicked"
+            android:text="@string/nutritionne"
+            android:textAppearance="@style/nutritionne"
+            />
+
+    </LinearLayout>
+
+
+    <!-- Title Input -->
+    <TextView
+        android:id="@+id/title_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/segmented_c"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="60dp"
+        android:text="Title"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_label"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="20dp"
+        android:background="#F0F0F0"
+        android:padding="8dp"
+        android:hint="Enter Title" />
+
+    <!-- Description Input -->
+    <TextView
+        android:id="@+id/description_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_input"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="22dp"
+        android:text="Description"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/description_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description_label"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="20dp"
+        android:background="#F0F0F0"
+        android:padding="8dp"
+        android:hint="Enter Description" />
+
+    <!-- File Input -->
+    <Button
+        android:id="@+id/choose_file_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description_input"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="22dp"
+        android:background="@color/teal_200"
+        android:textSize="20sp"
+        android:text="Choose File"
+        android:textColor="#FFFFFF" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choose_file_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:background="@color/teal_200"
+        android:textSize="20sp"
+        android:text="Submit" />
+</RelativeLayout>
