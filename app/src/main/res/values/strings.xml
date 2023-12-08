@@ -17,21 +17,10 @@
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
     <string name="filter">Filter</string>
-    <string name="content">
-        Content
-        </string>
-    <string name="competition">
-        Competition
-        </string>
-    <!-- strings.xml -->
-    <string name="back">
-        Back
-        </string>
-
-    <string name="nutritionne">
-Nutritionnel
-</string>
-    <string name="entrainement">
-Entrainement
-</string>
+    <string name="content">Content</string>
+    <string name="competition">Competition</string>
+    <string name="equipes">Equipes</string>
+    <string name="back">Back</string>
+    <string name="nutritionne">Nutritionnel</string>
+    <string name="entrainement">Entrainement</string>
 </resources>

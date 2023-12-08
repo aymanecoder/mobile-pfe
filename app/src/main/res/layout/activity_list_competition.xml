@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/competition"
+            android:text="@string/equipes"
             android:textAppearance="@style/content" />
 
         <!-- Filter -->
@@ -63,20 +63,60 @@
         android:layout_below="@id/search_view">
 
         <!-- Container for posts -->
-        <LinearLayout
-            android:id="@+id/post_container"
+        <!-- Container for posts -->
+        <GridLayout
+            android:id="@+id/post_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_below="@id/search_view"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:padding="8dp"
+            android:orientation="horizontal">
 
-            <!-- Multiple instances of fragment_post -->
-            <include layout="@layout/fragment_post" />
-            <include layout="@layout/fragment_post" />
-            <include layout="@layout/fragment_post" />
+            <!-- First fragment in first row -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
 
-            <!-- Add more instances of fragment_post here for multiple posts -->
+                <include layout="@layout/fragment_post" />
+            </FrameLayout>
 
-        </LinearLayout>
+            <!-- Second fragment in first row -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
+
+                <include layout="@layout/fragment_post" />
+            </FrameLayout>
+
+            <!-- First fragment in second row -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
+
+                <include layout="@layout/fragment_post" />
+            </FrameLayout>
+
+            <!-- Second fragment in second row -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
+
+                <include layout="@layout/fragment_post" />
+            </FrameLayout>
+
+            <!-- Add more instances of FrameLayout with fragment_post include for multiple rows -->
+
+        </GridLayout>
     </ScrollView>
 
 </RelativeLayout>
