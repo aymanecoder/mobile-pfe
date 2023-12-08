@@ -16,4 +16,8 @@
     <string name="CouchChoice">Coach</string>
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
+    <string name="edit_accoun">
+        Edit Account
+    </string>
+    <string name="save">Save</string>
 </resources>

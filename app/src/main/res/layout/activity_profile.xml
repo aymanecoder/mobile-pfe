@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/edit_accoun"
+        android:layout_width="149dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="121dp"
+        android:layout_marginTop="92dp"
+        android:gravity="top"
+        android:lineSpacingExtra="1sp"
+        android:text="@string/edit_accoun"
+        android:textAppearance="@style/edit_accoun"
+        android:translationY="-0.48sp" />
+    <View
+        android:id="@+id/image_21"
+        android:layout_width="140dp"
+        android:layout_height="134dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="114dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/image_21"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="323dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="335dp">
+
+        <!-- Text label -->
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="New Name"
+            android:textColor="#020202"
+            android:textSize="16sp" />
+
+        <!-- Input field -->
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="315dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/label"
+            android:background="@drawable/rounded_border"
+            android:padding="10dp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newsletterCheckBox"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="89dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="serif"
+        android:text="@string/save"
+        android:textColor="#FFFFFF"
+        tools:ignore="NotSibling" />
+
+
+</RelativeLayout>
