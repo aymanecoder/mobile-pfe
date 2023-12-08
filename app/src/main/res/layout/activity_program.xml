@@ -1,115 +1,47 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_post_detail.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Header -->
-    <RelativeLayout
-        android:id="@+id/page_header"
+    <!-- Image View for Post Image -->
+    <ImageView
+        android:id="@+id/post_image"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentTop="true"
-        android:background="#E0E0E0">
+        android:layout_height="200dp"
+        android:src="@drawable/notFound"
+        />
 
-        <!-- Back button -->
-        <TextView
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:text="@string/back"
-            android:textAppearance="@style/back" />
-
-        <!-- Title -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/content"
-            android:textAppearance="@style/content" />
-
-        <!-- Filter -->
-        <TextView
-            android:id="@+id/filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="16dp"
-            android:text="@string/filter"
-            android:textAppearance="@style/filter" />
-
-    </RelativeLayout>
-
-    <!-- Segment buttons -->
-    <LinearLayout
-        android:id="@+id/segmented_c"
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/post_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/page_header"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:background="@drawable/rounded_background">
+        android:layout_below="@id/post_image"
+        android:textSize="18sp"
+        android:text="Post Title"/>
 
-        <!-- Entrainement button -->
-        <TextView
-            android:id="@+id/entrainement"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="onEntrainementClicked"
-            android:text="@string/entrainement"
-            android:textAppearance="@style/entrainement" />
-
-        <!-- Nutrition button -->
-        <TextView
-            android:id="@+id/nutrition"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="onNutritionClicked"
-            android:text="@string/nutritionne"
-            android:textAppearance="@style/nutritionne"
-            />
-
-    </LinearLayout>
-
-    <!-- SearchView -->
-    <SearchView
-        android:id="@+id/search_view"
+    <!-- Author TextView -->
+    <TextView
+        android:id="@+id/post_author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/segmented_c"
-        android:layout_margin="16dp"
-        android:background="@drawable/rounded_background" />
+        android:layout_below="@id/post_title"
+        android:text="Post author"/>
 
-    <!-- Your other views above the posts -->
-    <!-- ScrollView to hold multiple posts -->
-    <ScrollView
+    <!-- Description TextView -->
+    <TextView
+        android:id="@+id/post_description"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/search_view">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_author"
+        android:text="Post Descriptionjhjd bjnk fjhked bhjc "/>
 
-        <!-- Container for posts -->
-        <LinearLayout
-            android:id="@+id/post_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Multiple instances of fragment_post -->
-            <include layout="@layout/fragment_post" />
-            <include layout="@layout/fragment_post" />
-            <include layout="@layout/fragment_post" />
-
-            <!-- Add more instances of fragment_post here for multiple posts -->
-
-        </LinearLayout>
-    </ScrollView>
+    <!-- Date TextView -->
+    <TextView
+        android:id="@+id/post_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_description"
+        android:text="Post Date"/>
 
 </RelativeLayout>
