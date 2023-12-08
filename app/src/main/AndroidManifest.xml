@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".programActivity.programActivity"
+            android:exported="false" />
+        <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
         <activity
