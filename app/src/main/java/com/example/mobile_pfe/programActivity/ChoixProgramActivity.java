@@ -14,14 +14,14 @@ public class ChoixProgramActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_choix_program);
 
         Button viewProgramsButton = findViewById(R.id.view_programs_button);
         viewProgramsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Handle click, start ProgramActivity
-                Intent intent = new Intent(ChoixProgramActivity.this, ProgramActivity.class);
+                Intent intent = new Intent(ChoixProgramActivity.this, ListProgramActivity.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class ChoixProgramActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Handle click, start CompetitionActivity
-                Intent intent = new Intent(ChoixProgramActivity.this, CompetitionActivity.class);
+                Intent intent = new Intent(ChoixProgramActivity.this, ListCompetitionActivity.class);
                 startActivity(intent);
             }
         });
