@@ -2,6 +2,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/page_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/white">
+
+        <!-- Back button -->
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:text="@string/back"
+            android:textAppearance="@style/back" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/content"
+            android:textAppearance="@style/content" />
+
+    </RelativeLayout>
 
     <!-- Image View for Post Image -->
     <ImageView
@@ -9,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/notFound"
+        android:layout_below="@id/page_header"
         />
 
     <!-- Title TextView -->

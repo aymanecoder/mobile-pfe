@@ -20,13 +20,13 @@
             android:name=".programActivity.ChoixProgramActivity"
             android:exported="false" />
         <activity
-            android:name=".programActivity.uploadProgramActivity"
+            android:name=".programActivity.UploadProgramActivity"
             android:exported="false" />
         <activity
-            android:name=".programActivity.programActivity"
+            android:name=".programActivity.ProgramActivity"
             android:exported="false" />
         <activity
-            android:name=".programActivity.listProgramActivity"
+            android:name=".programActivity.ListProgramActivity"
             android:exported="false" />
         <activity
             android:name=".registerActivities.register1_choosePorfile"

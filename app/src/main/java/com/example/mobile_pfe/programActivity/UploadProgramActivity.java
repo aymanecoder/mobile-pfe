@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.mobile_pfe.R;
 
-public class uploadProgramActivity extends AppCompatActivity {
+public class UploadProgramActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.example.mobile_pfe.R;
 
-public class listProgramActivity extends AppCompatActivity {
+public class ListProgramActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

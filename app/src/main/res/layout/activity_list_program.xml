@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentTop="true"
-        android:background="#E0E0E0">
+        android:background="@color/white">
 
         <!-- Back button -->
         <TextView
@@ -48,7 +48,7 @@
     <LinearLayout
         android:id="@+id/segmented_c"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_below="@id/page_header"
         android:orientation="horizontal"
         android:padding="8dp"
