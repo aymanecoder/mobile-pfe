@@ -63,20 +63,11 @@
         android:layout_below="@id/search_view">
 
         <!-- Container for posts -->
-        <LinearLayout
-            android:id="@+id/post_container"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_posts"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Multiple instances of fragment_post -->
-            <include layout="@layout/fragment_post" />
-            <include layout="@layout/fragment_post" />
-            <include layout="@layout/fragment_post" />
-
-            <!-- Add more instances of fragment_post here for multiple posts -->
-
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_view" />
     </ScrollView>
 
 </RelativeLayout>
