@@ -57,6 +57,7 @@
 
     </RelativeLayout>
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,15 +80,10 @@
             android:layout_marginEnd="294dp"
             android:layout_marginBottom="824dp"
             android:src="@drawable/back"
-            app:tint="@android:color/darker_gray" /> <!-- Replace with your back icon resource -->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:layout_marginStart="16dp"/>-->
+            app:tint="@android:color/darker_gray" />
 
 
     </RelativeLayout>
-
 
     <View
         android:id="@+id/body"

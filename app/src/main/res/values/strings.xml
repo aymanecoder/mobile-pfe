@@ -39,6 +39,27 @@
     <b>Password</b>\n*************
 
     </string>
+    <string name="fullName">
+        Full Name
+    </string>
+    <string name="friends_10_">
+        Friends (10)
+    </string>
+    <string name="groups_5_">
+        Groups (5)
+    </string>
+    <string name="my_teams_2_">
+        My Teams (2)
+    </string>
+    <string name="matches_10">
+        Matches\n10
+    </string>
+    <string name="loses_3">
+            Loses\n3
+    </string>
+    <string name="wins_7">
+            Wins      7
+    </string>
 
 
 </resources>

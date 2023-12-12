@@ -95,7 +95,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="43dp"
-        android:layout_marginTop="329dp"
+        android:layout_marginTop="511dp"
         android:foreground="@drawable/icon_person"
         android:src="@drawable/icon_person" />
 
@@ -105,8 +105,8 @@
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="489dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="672dp"
         android:foreground="@drawable/icon_key"
         android:src="@drawable/icon_key" />
 
@@ -116,8 +116,8 @@
         android:layout_height="30dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="415dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="600dp"
         android:foreground="@drawable/icon_email"
         android:src="@drawable/icon_email" />
 
@@ -202,9 +202,9 @@
         android:layout_height="63dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="633dp"
-        android:background="@drawable/rounded_button_back" >
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="789dp"
+        android:background="@drawable/rounded_button_back">
 
         <TextView
             android:id="@+id/log_out"

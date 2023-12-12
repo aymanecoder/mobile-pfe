@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/full_name"
+        android:layout_width="205dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="101dp"
+        android:layout_marginTop="260dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/full_name"
+        android:textAppearance="@style/full_name" />
+
+    <View
+        android:id="@+id/rectangle_"
+        android:layout_width="145dp"
+        android:layout_height="137dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="208dp"
+        android:layout_marginTop="506dp"
+        android:background="@drawable/Rectangle_6" />
+
+    <View
+        android:id="@+id/ellipse_4"
+        android:layout_width="56dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="465dp"
+        android:background="@drawable/profile_picf" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="300dp"
+        android:layout_height="163dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp">
+
+        <!-- Rectangle -->
+        <View
+            android:id="@+id/rectangle_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#5DB075"
+            android:elevation="4dp" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="158dp"
+        android:layout_height="158dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="670dp"
+        android:src="@drawable/Ellipse_17" />
+
+    <View
+        android:id="@+id/icon_gear_"
+        android:layout_width="41.57dp"
+        android:layout_height="41.31dp"
+        android:layout_marginLeft="345dp"
+        android:layout_marginTop="30dp"
+        android:foreground="@drawable/settings_icon"
+        android:src="@drawable/settings_icon" />
+
+
+
+    <TextView
+        android:id="@+id/full_name2"
+        android:layout_width="109dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="42dp"
+        android:gravity="center_horizontal|top"
+        android:text="Back"
+        android:textAppearance="@style/full_name"
+        android:textColor="#FFFFFF" /> <!-- Set the text color to white -->
+
+    <!--
+    Font family: Poppins
+    Line height: 21sp
+    -->
+
+    <!-- styles.xml -->
+
+
+    <!-- strings.xml -->
+
+
+    <TextView
+        android:id="@+id/friends_10_"
+        android:layout_width="104.3dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="320dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/friends_10_"
+        android:textAppearance="@style/friends_10_" />
+
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="102.03dp"
+        android:layout_height="4dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="357dp"
+        android:background="#5DB075" />
+
+    <TextView
+        android:id="@+id/groups_5_"
+        android:layout_width="87.3dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="158dp"
+        android:layout_marginTop="321dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/groups_5_"
+        android:textAppearance="@style/groups_5_" />
+
+    <TextView
+        android:id="@+id/my_teams_2_"
+        android:layout_width="113dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="271dp"
+        android:layout_marginTop="319dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/my_teams_2_"
+        android:textAppearance="@style/my_teams_2_" />
+    <!--
+    Font family: Poppins
+    Line height: 21sp
+    -->
+
+    <!-- styles.xml -->
+
+    <View
+        android:id="@+id/ellipse_3"
+        android:layout_width="56dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="333dp"
+        android:layout_marginBottom="462dp"
+        android:background="@drawable/profile_picf" />
+
+    <View
+        android:id="@+id/ellipse_5"
+        android:layout_width="56dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-13dp"
+        android:layout_marginBottom="465dp"
+        android:background="@drawable/profile_picf" />
+
+    <View
+        android:id="@+id/ellipse_"
+        android:layout_width="56dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="248dp"
+        android:layout_marginBottom="462dp"
+        android:background="@drawable/profile_picf" />
+
+    <View
+        android:id="@+id/ellipse_2"
+        android:layout_width="56dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="154dp"
+        android:layout_marginBottom="462dp"
+        android:background="@drawable/profile_picf" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="482dp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/vertical_line" />
+
+    <!--
+    Font family: Inter
+    Line height: 25sp
+    translationY compensates for the line height adjustment of text
+    -->
+
+    <!-- styles.xml -->
+
+
+    <!-- strings.xml -->
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Rectangle 6 -->
+        <View
+            android:id="@+id/rectangle_6"
+            android:layout_width="145dp"
+            android:layout_height="137dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="505dp"
+            android:background="@drawable/Rectangle_6" />
+
+        <!-- Image 17 overlay on Rectangle 6 -->
+        <ImageView
+            android:id="@+id/image_17"
+            android:layout_width="wrap_content"
+            android:layout_height="113dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="495dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/image_17" />
+
+        <TextView
+            android:id="@+id/matches_10"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="590dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="1sp"
+            android:text="@string/matches_10"
+            android:textAppearance="@style/matches_10"
+            android:translationY="-0.4sp" />
+
+        <View
+            android:id="@+id/image_18"
+            android:layout_width="95dp"
+            android:layout_height="72dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="223dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="515dp"
+            android:background="@drawable/image_18"
+            />
+
+        <TextView
+            android:id="@+id/loses_3"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="212dp"
+            android:layout_marginTop="590dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="1sp"
+            android:text="@string/loses_3"
+            android:textAppearance="@style/loses_3"
+            android:translationY="-0.4sp" />
+
+        <View
+            android:id="@+id/rectangle_80"
+            android:layout_width="308dp"
+            android:layout_height="169dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="700dp"
+            android:background="@drawable/Rectangle_241" />
+
+        <View
+            android:id="@+id/image_13"
+            android:layout_width="109dp"
+            android:layout_height="113dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="720dp"
+            android:background="@drawable/image_113" />
+        <TextView
+            android:id="@+id/wins_7"
+            android:layout_width="354dp"
+            android:layout_height="47dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="54dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="760dp"
+            android:text="@string/wins_7"
+            android:textAppearance="@style/wins_7"
+            android:lineSpacingExtra="1sp"
+            android:translationY="-0.48sp"
+            android:gravity="center_horizontal|top"
+            />
+
+
+
+
+    </FrameLayout>
+
+
+</RelativeLayout>
