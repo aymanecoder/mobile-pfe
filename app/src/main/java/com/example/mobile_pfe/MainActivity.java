@@ -7,9 +7,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
@@ -39,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_startpage); // Use the correct layout resource ID
 
 }
+    public void onRegisterButtonClick(View view) {
+        // Handle the button click
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
 
     private String fetchEquipeData() {
         String result = null;

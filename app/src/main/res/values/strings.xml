@@ -21,4 +21,5 @@
     <string name="forgot_your_pass">Forgot your password?</string>
     <string name="or_login_with">Or Login With</string>
     <string name="facebook_logo">facebook_logo</string>
+    <string name="http_localhost_8080_signup">http://localhost:8080/signup</string>
 </resources>
