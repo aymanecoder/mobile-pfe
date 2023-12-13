@@ -2,14 +2,14 @@ package com.example.mobile_pfe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
-import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Globals.AppGlobals;
+import com.example.mobile_pfe.loginActivities.login;
+import com.example.mobile_pfe.registerActivities.RegisterActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,9 +21,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -32,18 +29,64 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_startpage); // Use the correct layout resource ID
 
-        equipeTextView = findViewById(R.id.equipeTextView);
+}
+    public void onRegisterButtonClick(View view) {
+        // Handle the button click
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+    public void onLoginButtonClick(View view) {
+        // Handle the button click
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
+    }
 
-        // Get the access token from your global variable or wherever you store it
-        String accessToken = AppGlobals.getAccessToken();
+    private String fetchEquipeData() {
+        String result = null;
+        HttpURLConnection urlConnection = null;
 
-        // Check if the token is not null or empty before setting it to the TextView
-        if (accessToken != null && !accessToken.isEmpty()) {
-            equipeTextView.setText("Token: " + accessToken);
-        } else {
-            equipeTextView.setText("Token not available");
+        try {
+            // Replace "your-server-url" with the actual URL of your Spring Boot server
+            URL url = new URL("http:/192.168.0.101:8080/api/v1/equipes");
+            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
+
+            // Read the response
+            InputStream inputStream = urlConnection.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+            result = stringBuilder.toString();
+
+        } catch (IOException e) {
+            Log.e(TAG, "Error fetching Equipe: " + e.getMessage());
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
+        return result;
+    }
+
+    private void updateEquipeTextView(String result) {
+        // Update the TextView with the response
+        if (result != null) {
+            try {
+                JSONArray jsonArray = new JSONArray(result);
+                if (jsonArray.length() > 0) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+                    String payload = jsonObject.optString("payload");
+                    String body = jsonObject.optString("body");
+                    equipeTextView.setText("Payload: " + payload + "\nBody: " + body);
+                }
+            } catch (JSONException e) {
+                Log.e(TAG, "Error parsing JSON: " + e.getMessage());
+            }
         }
     }
 }
