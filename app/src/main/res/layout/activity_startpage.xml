@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5DAF75">
+    android:background="#5DAF75"
+    android:onClick="onRegisterButtonClick">
     <!-- White Rectangle -->
 
     <View
@@ -60,6 +61,7 @@
         android:layout_marginBottom="303dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/inter_medium"
+        android:onClick="onRegisterButtonClick"
         android:text="@string/signup_login"
         android:textColor="@color/colorTextPrimary"
         app:layout_constraintBottom_toBottomOf="parent"

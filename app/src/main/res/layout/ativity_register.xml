@@ -167,7 +167,7 @@
         app:layout_constraintTop_toBottomOf="@+id/signupText" />
 
     <ImageView
-        android:id="@+id/canselOutButton"
+        android:id="@+id/cancelOutButton"
         android:layout_width="26dp"
         android:layout_height="25dp"
         android:layout_marginStart="32dp"
@@ -177,7 +177,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
-        app:tint="#BCBCBC" />
+        app:tint="#BCBCBC"
+        android:clickable="true"
+        android:focusable="true"/>
+
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -192,7 +195,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_repassword" />
 
     <Button
-        android:id="@+id/loginbutton"
+        android:id="@+id/signupButton"
         android:layout_width="310dp"
         android:layout_height="43dp"
         android:layout_marginStart="48dp"
