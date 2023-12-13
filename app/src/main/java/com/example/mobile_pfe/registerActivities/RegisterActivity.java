@@ -1,4 +1,4 @@
-package com.example.mobile_pfe;
+package com.example.mobile_pfe.registerActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.mobile_pfe.MainActivity;
+import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.loginActivities.login;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,6 +55,11 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
         // Optionally, you can finish the current activity if you don't want to go back to it
         // finish();
+    }
+    public void onLoginButtonClick(View view) {
+        // Handle the button click
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
     }
     private void makeSignUpRequest() {
         String url = getString(R.string.http_localhost_8080_signup); // Replace with your backend API endpoint

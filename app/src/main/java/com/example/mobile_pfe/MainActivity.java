@@ -1,20 +1,15 @@
 package com.example.mobile_pfe;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.loginActivities.login;
+import com.example.mobile_pfe.registerActivities.RegisterActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,10 +21,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -44,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     public void onRegisterButtonClick(View view) {
         // Handle the button click
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+    public void onLoginButtonClick(View view) {
+        // Handle the button click
+        Intent intent = new Intent(this, login.class);
         startActivity(intent);
     }
 
@@ -93,5 +89,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 }

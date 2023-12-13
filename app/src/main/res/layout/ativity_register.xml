@@ -29,6 +29,7 @@
         android:layout_marginTop="180dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/inter_medium"
+        android:onClick="onLoginButtonClick"
         android:text="@string/login"
         android:textColor="@color/colorTextPrimary"
         app:layout_constraintEnd_toEndOf="@+id/et_name"
@@ -166,21 +167,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupText" />
 
+
     <ImageView
         android:id="@+id/cancelOutButton"
         android:layout_width="26dp"
         android:layout_height="25dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="196dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toStartOf="@+id/signupText"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
-        app:tint="#BCBCBC"
-        android:clickable="true"
-        android:focusable="true"/>
-
+        app:tint="#BCBCBC" />
 
     <CheckBox
         android:id="@+id/checkBox"
