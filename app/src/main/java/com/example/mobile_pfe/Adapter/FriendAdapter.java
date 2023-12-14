@@ -30,7 +30,10 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull FriendHolder holder, int position) {
+        User user = friendsList.get(position);
 
+        holder.name.setText(user.getName());
+        holder.image.setImageResource(user.getImage());
 
     }
 
