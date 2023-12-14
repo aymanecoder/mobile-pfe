@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="208dp"
         android:layout_marginTop="506dp"
-        android:background="@drawable/Rectangle_6" />
+        android:background="@drawable/rectangle_6" />
 
     <View
         android:id="@+id/ellipse_4"
@@ -65,7 +65,7 @@
         android:layout_marginStart="128dp"
         android:layout_marginEnd="125dp"
         android:layout_marginBottom="670dp"
-        android:src="@drawable/Ellipse_17" />
+        android:src="@drawable/ellipse_17" />
 
     <View
         android:id="@+id/icon_gear_"
@@ -225,7 +225,7 @@
             android:layout_height="137dp"
             android:layout_marginLeft="37dp"
             android:layout_marginTop="505dp"
-            android:background="@drawable/Rectangle_6" />
+            android:background="@drawable/rectangle_6" />
 
         <!-- Image 17 overlay on Rectangle 6 -->
         <ImageView
@@ -282,7 +282,7 @@
             android:layout_height="169dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="700dp"
-            android:background="@drawable/Rectangle_241" />
+            android:background="@drawable/rectangle_241" />
 
         <View
             android:id="@+id/image_13"
