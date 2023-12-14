@@ -118,7 +118,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
@@ -129,6 +129,99 @@
     </LinearLayout>
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:id="@+id/friends"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="30dp">
+
+                <ImageButton
+                    android:id="@+id/button_image"
+                    android:layout_width="220dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/group_b"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@null"
+                   />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/button_image"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:text="Friends"
+                    android:textColor="@color/green"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/teamsLayout"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="30dp"
+                android:elevation="8dp">
+
+                <ImageButton
+                    android:id="@+id/button_image2"
+                    android:layout_width="220dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/team_b"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@null"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/button_image2"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:text="Teams"
+                    android:textColor="@color/green"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

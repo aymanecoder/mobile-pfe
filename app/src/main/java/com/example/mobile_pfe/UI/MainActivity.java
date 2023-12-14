@@ -1,6 +1,9 @@
 package com.example.mobile_pfe.UI;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.View;
 
@@ -85,6 +88,15 @@ public class MainActivity extends AppCompatActivity {
                         .addToBackStack("name")
                         .commit();
 
+            }
+        });
+
+        RelativeLayout myRelativeLayout = findViewById(R.id.friends);
+        myRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FindFriends.class);
+                startActivity(intent);
             }
         });
 
