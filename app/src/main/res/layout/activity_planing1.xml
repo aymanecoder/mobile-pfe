@@ -124,12 +124,15 @@
         android:layout_height="51dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="216dp"
         android:layout_marginTop="209dp"
+        android:layout_marginEnd="61dp"
         android:layout_marginBottom="471dp"
         android:background="@drawable/button_disa"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="216dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/click_me"
@@ -153,33 +156,55 @@
         android:id="@+id/imageView3"
         android:layout_width="191dp"
         android:layout_height="202dp"
-        app:srcCompat="@mipmap/logo_video"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="299dp" />
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="299dp"
+        android:layout_marginBottom="230dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_video" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="224dp"
         android:layout_height="184dp"
-        app:srcCompat="@mipmap/logo_food_foreground"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="310dp" />
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="237dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_food_foreground" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="195dp"
         android:layout_height="198dp"
-        app:srcCompat="@mipmap/logo_training_foreground"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="303dp" />
+        android:layout_marginTop="303dp"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="230dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_training_foreground" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="175dp"
         android:layout_height="156dp"
-        app:srcCompat="@mipmap/logo_profile_foreground"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="98dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="477dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_profile_foreground" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
