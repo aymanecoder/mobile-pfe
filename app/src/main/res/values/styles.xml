@@ -1,5 +1,5 @@
 <!-- res/values/styles.xml -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Style for the Gray Button -->
     <style name="GrayButtonStyle">
         <item name="android:layout_width">match_parent</item>
@@ -11,4 +11,9 @@
         <item name="android:background">?attr/colorPrimaryVariant</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+    <style name="MyButtonStyle">
+        <item name="android:padding">10dp</item>
+    </style>
+
+
 </resources>
