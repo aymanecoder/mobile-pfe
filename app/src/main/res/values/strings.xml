@@ -38,4 +38,9 @@
     <string name="CouchChoice">Coach</string>
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
+    <string name="your_planning">Your Planning</string>
+    <string name="back">Back</string>
+    <string name="search">Search</string>
+    <string name="click_me">Message</string>
+
 </resources>
