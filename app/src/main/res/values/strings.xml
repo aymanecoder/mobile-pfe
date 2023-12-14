@@ -38,4 +38,7 @@
     <string name="CouchChoice">Coach</string>
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
+    <string name="Match">Matches</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="completed">Completed</string>
 </resources>
