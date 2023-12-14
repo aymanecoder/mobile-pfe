@@ -12,24 +12,24 @@ import com.example.mobile_pfe.Model.User;
 
 import java.util.List;
 
-public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
+public class UserAdapter extends RecyclerView.Adapter<UserHolder> {
 
     private List<User> friendsList;
 
-    public FriendAdapter(List<User> friendsList) {
+    public UserAdapter(List<User> friendsList) {
         this.friendsList = friendsList;
     }
 
     @NonNull
     @Override
-    public FriendHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
-        return new FriendHolder(view);
+        return new UserHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FriendHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserHolder holder, int position) {
         User user = friendsList.get(position);
 
         holder.name.setText(user.getName());

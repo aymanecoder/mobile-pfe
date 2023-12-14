@@ -63,6 +63,7 @@
 
 
             <TextView
+                android:id="@+id/my_friends"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -72,6 +73,7 @@
                 android:textSize="16dp" />
 
             <TextView
+                android:id="@+id/myCoaches"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -81,6 +83,7 @@
                 android:textSize="16dp" />
 
             <TextView
+                android:id="@+id/myTeams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -90,6 +93,7 @@
                 android:textSize="16dp" />
 
             <TextView
+                android:id="@+id/myGroups"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -99,11 +103,12 @@
                 android:textSize="16dp" />
 
             <TextView
+                android:id="@+id/myMatches"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="2dp"
-                android:text="My matchs"
+                android:text="My matches"
                 android:textColor="@color/green"
                 android:textSize="16dp" />
 
@@ -117,7 +122,7 @@
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView4"
+            android:id="@+id/fragmentContainerView"
             android:name="com.example.mobile_pfe.UI.FriendsFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

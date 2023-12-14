@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.Adapter.FriendAdapter;
+import com.example.mobile_pfe.Adapter.UserAdapter;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.Model.User;
 
@@ -48,7 +48,7 @@ public class FriendsFragment extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
-        FriendAdapter adapter = new FriendAdapter(friendsList);
+        UserAdapter adapter = new UserAdapter(friendsList);
         recyclerView.setAdapter(adapter);
 
         return rootView;

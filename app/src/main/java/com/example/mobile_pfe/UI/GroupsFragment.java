@@ -3,64 +3,58 @@ package com.example.mobile_pfe.UI;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobile_pfe.Adapter.UserAdapter;
+import com.example.mobile_pfe.Model.User;
 import com.example.mobile_pfe.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GroupsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class GroupsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private ArrayList<User> groupsList = new ArrayList<>();
+
+    private RecyclerView recyclerView;
 
     public GroupsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GroupsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static GroupsFragment newInstance(String param1, String param2) {
-        GroupsFragment fragment = new GroupsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    private void fillGroupsList(){
+        groupsList.add(new User("Group A", R.drawable.group_b));
+        groupsList.add(new User("Group A", R.drawable.group_b));
+        groupsList.add(new User("Group A", R.drawable.group_b));
+        groupsList.add(new User("Group A", R.drawable.group_b));
+        groupsList.add(new User("Group A", R.drawable.group_b));
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        fillGroupsList();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_groups, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_friends, container, false);
+
+        recyclerView = rootView.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+        UserAdapter adapter = new UserAdapter(groupsList);
+        recyclerView.setAdapter(adapter);
+
+        return rootView;
     }
 }

@@ -10,11 +10,11 @@ import com.example.mobile_pfe.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class FriendHolder extends RecyclerView.ViewHolder{
+public class UserHolder extends RecyclerView.ViewHolder{
         TextView name;
         CircleImageView image;
 
-    public FriendHolder(@NonNull View itemView) {
+    public UserHolder(@NonNull View itemView) {
         super(itemView);
         name = itemView.findViewById(R.id.user_name);
         image = itemView.findViewById(R.id.user_image);
