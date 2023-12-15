@@ -1,7 +1,9 @@
-<!-- activity_post_detail.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!-- Header -->
     <RelativeLayout
         android:id="@+id/page_header"
         android:layout_width="match_parent"
@@ -31,46 +33,70 @@
 
     </RelativeLayout>
 
-    <!-- Image View for Post Image -->
-    <ImageView
-        android:id="@+id/post_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/notFound"
-        android:layout_below="@id/page_header"
-        />
-
-    <!-- Title TextView -->
-    <TextView
-        android:id="@+id/post_title"
+    <!-- Centered Content -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/post_image"
-        android:textSize="18sp"
-        android:text="Post Title"/>
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
 
-    <!-- Author TextView -->
-    <TextView
-        android:id="@+id/post_author"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/post_title"
-        android:text="Post author"/>
+        <!-- Image View for Post Image -->
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/notFound"/>
 
-    <!-- Description TextView -->
-    <TextView
-        android:id="@+id/post_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/post_author"
-        android:text="Post Descriptionjhjd bjnk fjhked bhjc "/>
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Post Title"/>
 
-    <!-- Date TextView -->
-    <TextView
-        android:id="@+id/post_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/post_description"
-        android:text="Post Date"/>
+        <!-- Author TextView -->
+        <TextView
+            android:id="@+id/post_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post author"/>
 
+        <!-- Description TextView -->
+        <TextView
+            android:id="@+id/post_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post Description"/>
+
+        <!-- Date TextView -->
+        <TextView
+            android:id="@+id/post_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post Date"/>
+
+        <!-- Like and Save Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Like Button -->
+            <ImageButton
+                android:id="@+id/like_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_like"/>
+
+            <!-- Save Button -->
+            <ImageButton
+                android:id="@+id/save_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_save"
+                android:background="@color/teal_200"/>
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
