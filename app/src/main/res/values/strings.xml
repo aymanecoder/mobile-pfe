@@ -42,5 +42,8 @@
     <string name="back">Back</string>
     <string name="search">Search</string>
     <string name="click_me">Message</string>
+    <string name="filter">Filter</string>
+    <string name="message_her">Message here...</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis.\n</string>
 
 </resources>
