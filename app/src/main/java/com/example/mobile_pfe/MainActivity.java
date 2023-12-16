@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_41); // Use the correct layout resource ID
+        setContentView(R.layout.activity_starred_messages); // Use the correct layout resource ID
 
 }
     public void onRegisterButtonClick(View view) {
