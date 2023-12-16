@@ -45,5 +45,11 @@
     <string name="filter">Filter</string>
     <string name="message_her">Message here...</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis.\n</string>
+    <string name="groupe_name">Groupe name</string>
+    <string name="media">Media</string>
+    <string name="starred_messages">Starred Messages</string>
+    <string name="mute_notification">Mute Notification</string>
+    <string name="Members">Members</string>
+    <string name="membre_name_1">Joseph Martinez</string>
 
 </resources>
