@@ -23,12 +23,14 @@ public class FindFriends extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_friends);
 
+        fillFriendsList();
+
         recyclerView = findViewById(R.id.UsersList_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         UserAdapterTwo adapter = new UserAdapterTwo(usersList);
         recyclerView.setAdapter(adapter);
 
-        fillFriendsList();
+
     }
 
     private void fillFriendsList(){

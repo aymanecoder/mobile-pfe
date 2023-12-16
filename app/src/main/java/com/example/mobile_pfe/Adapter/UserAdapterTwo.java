@@ -16,7 +16,7 @@ public class UserAdapterTwo extends RecyclerView.Adapter<UserHolder> {
 
     private List<User> usersList;
 
-    public UserAdapterTwo(List<User> friendsList) {
+    public UserAdapterTwo(List<User> usersList) {
         this.usersList = usersList;
     }
     @NonNull
