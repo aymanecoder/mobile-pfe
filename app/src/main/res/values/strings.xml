@@ -51,5 +51,8 @@
     <string name="mute_notification">Mute Notification</string>
     <string name="Members">Members</string>
     <string name="membre_name_1">Joseph Martinez</string>
+    <string name="link">Link</string>
+    <string name="docs">Docs</string>
+    <string name="all_result">All Result</string>
 
 </resources>
