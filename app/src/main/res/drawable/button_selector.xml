@@ -13,7 +13,7 @@
                 </shape>
             </item>
             <!-- Underline with the desired color and height -->
-            <item android:top="37dp" android:bottom="3dp">
+            <item android:top="40dp" android:bottom="3dp">
                 <shape>
                     <solid android:color="#5DB075" />
                     <corners android:radius="200dp"/>

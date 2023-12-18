@@ -3,6 +3,5 @@
     <!-- Default state -->
     <item android:color="#A9A9A9" />
 
-    <!-- Checked state -->
-    <item android:state_checked="true" android:color="#5DB075" />
+
 </selector>
