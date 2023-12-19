@@ -1,6 +1,28 @@
 <resources>
     <string name="app_name">mobile-pfe</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="swipe_left_for_register">Swipe Left for Register</string>
+    <string name="login">Login</string>
     <string name="hello">Hello</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="tag">register</string>
+    <string name="logo">Healthy</string>
+    <string name="forgotpass">Forgot your password?</string>
+    <string name="swipe_right_for_login">Swipe Right for Login</string>
+    <string name="register">Register</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="your_name">Full Name</string>
+    <string name="checkBoxNewsLetter">I would like to receive your newsletter and other promotional information.</string>
+    <string name="signup_login">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="show">Show</string>
+    <string name="forgot_your_pass">Forgot your password?</string>
+    <string name="or_login_with">Or Login With</string>
+    <string name="facebook_logo">facebook_logo</string>
+    <string name="http_localhost_8080_signup">http://localhost:8080/signup</string>
     <string name="logo_description">Application Logo</string>
     <string name="login_text">Login</string>
     <string name="sign_up_text">Sign Up</string>

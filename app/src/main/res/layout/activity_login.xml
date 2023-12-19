@@ -28,20 +28,21 @@
         android:fontFamily="serif"
         />
 
+
     <!-- SignUp text to the left of the login text -->
     <TextView
         android:id="@+id/signUpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/logoImageView"
-        android:layout_toRightOf="@id/loginTextView"
-        android:layout_marginTop="20dp"
-        android:textColor="#5DB075"
         android:layout_marginLeft="100dp"
-        android:textSize="15dp"
-        android:text="@string/sign_up_text"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/loginTextView"
         android:fontFamily="serif"
-        />
+        android:onClick="onRegisterButtonClickOfLogin"
+        android:text="@string/sign_up_text"
+        android:textColor="#5DB075"
+        android:textSize="15dp" />
 
     <!-- Email and password text fields -->
     <EditText
