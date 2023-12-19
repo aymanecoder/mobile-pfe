@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.example.mobile_pfe.adapter.ProgramAdapter;
 import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.model.Program.ProgramList;
 import com.example.mobile_pfe.sevices.ProgramService;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -52,7 +54,19 @@ public class ListProgramActivity extends AppCompatActivity {
                 Toast.makeText(ListProgramActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navigate to UploadActivity when fabAdd is clicked
+                Intent intent = new Intent(ListProgramActivity.this, UploadProgramActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
     private void generateEmployeeList(ArrayList<Program> programDataList) {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);

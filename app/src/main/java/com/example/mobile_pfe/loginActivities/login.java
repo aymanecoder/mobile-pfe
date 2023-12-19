@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.mobile_pfe.MainActivity;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.programActivity.ChoixProgramActivity;
 import com.example.mobile_pfe.registerActivities.RegisterActivity;
 import com.example.mobile_pfe.sevices.LoginTask;
 import com.example.mobile_pfe.model.Globals.AppGlobals;
@@ -44,7 +45,7 @@ public class login extends AppCompatActivity {
                     public void onSuccess() {
                         // Handle success, navigate to MainActivity
                         System.out.println("Access Token: " + AppGlobals.getAccessToken());
-                        Intent intent = new Intent(login.this, MainActivity.class);
+                        Intent intent = new Intent(login.this, ChoixProgramActivity.class);
                          startActivity(intent);
                          finish();
                     }

@@ -1,19 +1,19 @@
 package com.example.mobile_pfe.adapter;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.Program.Program;
 
 import java.util.ArrayList;
 
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramViewHolder> {
-
 
     private ArrayList<Program> dataList;
 
@@ -32,6 +32,11 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
     public void onBindViewHolder(ProgramViewHolder holder, int position) {
         holder.txtPostTitle.setText(dataList.get(position).getTitle());
         holder.txtPostDescreption.setText(dataList.get(position).getDescreption());
+        Glide.with(holder.itemView.getContext())
+                .load(dataList.get(position).getPicturePath())
+                .placeholder(R.drawable.notFound) // Placeholder image while loading
+                .error(R.drawable.notFound) // Error image if it fails to load
+                .into(holder.postImage);
     }
 
     @Override
@@ -39,15 +44,15 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
         return dataList.size();
     }
 
-    class ProgramViewHolder extends RecyclerView.ViewHolder {
-
+    static class ProgramViewHolder extends RecyclerView.ViewHolder {
         TextView txtPostTitle, txtPostDescreption;
+        ImageView postImage;
 
         ProgramViewHolder(View itemView) {
             super(itemView);
-            txtPostTitle = (TextView) itemView.findViewById(R.id.post_title);
-            txtPostDescreption = (TextView) itemView.findViewById(R.id.post_description);
+            txtPostTitle = itemView.findViewById(R.id.post_title);
+            txtPostDescreption = itemView.findViewById(R.id.post_description);
+            postImage = itemView.findViewById(R.id.post_image);
         }
     }
 }
-
