@@ -17,13 +17,33 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".notificationActivities.notification"
+            android:label="notification"
+            android:exported="true"/>
+        <activity
+            android:name=".TeamActivity.Teamprofilactivity"
+            android:label=""
+            android:exported="true"/>
+        <activity
+            android:name=".TeamActivity.listteamactivity"
+            android:label=""
+            android:exported="true"/>
+        <activity
+            android:name=".loginActivities.login"
+            android:label="GroupActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".TeamActivity.ItemActivity"
+            android:label="TeamActivity"
+            android:exported="true"/>
+        <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".loginActivities.login"
+            android:name=".TeamActivity.TeamActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

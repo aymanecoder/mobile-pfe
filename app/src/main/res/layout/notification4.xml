@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#d1fae5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="650dp"
+        android:text="Join"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/button_style"
+        />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="650dp"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/button_style"
+        />
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/Back"
+        android:layout_width="200dp"
+        android:layout_height="200sp"
+        android:text="Back"
+        android:textSize="90px"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="80dp"
+        />
+
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:id="@+id/profileImageView3"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:shapeAppearanceOverlay="@style/circular"
+        app:srcCompat="@drawable/download"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="340dp"
+        />
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:id="@+id/profileImageView4"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:shapeAppearanceOverlay="@style/circular"
+        app:srcCompat="@drawable/images"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="440dp"
+        />
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:id="@+id/profileImageView5"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:shapeAppearanceOverlay="@style/circular"
+        app:srcCompat="@drawable/football"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="160dp"
+        />
+
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="250dp"
+        android:text="Team B"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="280dp"
+        android:text="20 members"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="370dp"
+        android:text="Ayman Biti"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="470dp"
+        android:text="Yassine OUssi"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

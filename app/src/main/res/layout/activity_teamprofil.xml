@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Logo centered and a little under the top -->
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="89dp"
+        android:layout_height="102dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/background" />
+
+    <TextView
+        android:id="@+id/full_name3"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="250dp"
+        android:text="@string/fullname3"
+        android:textAppearance="@style/fullname3"
+
+        />
+
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:hint="Team F"
+        android:textColorHint="#A9A9A9"
+        android:layout_width="327dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/border"
+        android:inputType="textEmailAddress"
+        android:fontFamily="serif"
+
+
+        />
+
+
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        android:text="Invalid credentials. Please try again." />
+
+
+    <Button
+        android:id="@+id/Save"
+        android:layout_width="327dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#FFFFFF"
+        android:text="Save"
+        android:fontFamily="serif"
+        />
+    <Button
+        android:id="@+id/Save2"
+        android:layout_width="327dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="540dp"
+        android:layout_below="@id/textview"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#FFFFFF"
+        android:text="Cancel"
+        android:fontFamily="serif"
+        />
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+
+
+
+
+
+</RelativeLayout>
+
+
+

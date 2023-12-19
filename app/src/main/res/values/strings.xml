@@ -9,12 +9,47 @@
     <string name="newsletter_text">I would like to receive your newsletter and other promotional information.</string>
     <string name="login_button_text">Login</string>
     <string name="forgot_password_text">Forgot your password</string>
-<<<<<<< HEAD
+
     <string name="showPassword">Show Password</string>
-=======
     <string name="chooseYourProfile">choose Your Profile</string>
     <string name="CouchChoice">Coach</string>
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
->>>>>>> feature/CreationLayoutRegister_1.3
+    <string name="fullname">
+        Group Name
+    </string>
+    <string name="fullname2">
+       Group Members
+    </string>
+    <string name="fullname3">
+      Team name
+    </string>
+    <string name="select_grou">
+Select Group  members
+</string>
+    <string name="joseph_mart">
+      3 Selected
+   </string>
+    <string name="tongkun_lee">
+      Tongkun Lee
+   </string>
+    <string name="back">
+      Back
+   </string>
+    <string name="select_team">
+     Select Team members
+   </string>
+    <string name="select_group">
+     Select group members
+   </string>
+    <string name="Teams">
+     Teams
+   </string>
+    <string name="team_a">
+    Team A
+   </string>
+    <string name="members">
+     20 members
+    </string>
+
 </resources>
