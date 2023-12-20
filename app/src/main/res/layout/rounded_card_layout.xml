@@ -19,7 +19,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            android:src="@drawable/notFound" />
+            android:src="@drawable/notfound" />
 
         <!-- Button below the image -->
         <Button

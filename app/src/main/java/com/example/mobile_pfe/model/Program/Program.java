@@ -2,6 +2,8 @@ package com.example.mobile_pfe.model.Program;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.File;
+
 public class Program {
     @SerializedName("title")
     private String title;
@@ -10,6 +12,7 @@ public class Program {
 
     @SerializedName("PicturePath")
     private String PicturePath;
+
 
     public Program(String title, String descreption, String picturePath) {
         this.title = title;

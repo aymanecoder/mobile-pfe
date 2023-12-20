@@ -34,8 +34,8 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
         holder.txtPostDescreption.setText(dataList.get(position).getDescreption());
         Glide.with(holder.itemView.getContext())
                 .load(dataList.get(position).getPicturePath())
-                .placeholder(R.drawable.notFound) // Placeholder image while loading
-                .error(R.drawable.notFound) // Error image if it fails to load
+                .placeholder(R.drawable.notfound) // Placeholder image while loading
+                .error(R.drawable.notfound) // Error image if it fails to load
                 .into(holder.postImage);
     }
 

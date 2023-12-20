@@ -7,7 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface EquipeService {
-    @GET("/api/v1/equipes")
+    @GET("/equipes")
     Call<EquipeList> getAll();
 
 }
