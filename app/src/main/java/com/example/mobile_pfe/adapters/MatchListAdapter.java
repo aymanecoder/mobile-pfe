@@ -19,9 +19,20 @@ public class MatchListAdapter extends BaseAdapter {
     private Context context;
     private List<MatchItem> matchList;
 
+    // Define an interface for the click listener
+    public interface OnMoreButtonClickListener {
+        void onMoreButtonClick(MatchItem matchItem);
+    }
+
+    private OnMoreButtonClickListener onMoreButtonClickListener;
+
     public MatchListAdapter(Context context, List<MatchItem> matchList) {
         this.context = context;
         this.matchList = matchList;
+    }
+
+    public void setOnMoreButtonClickListener(OnMoreButtonClickListener listener) {
+        this.onMoreButtonClickListener = listener;
     }
 
     @Override
@@ -40,12 +51,12 @@ public class MatchListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_item_match, parent, false);
         }
 
-        MatchItem match = matchList.get(position);
+        final MatchItem match = matchList.get(position);
 
         ImageView team1Logo = convertView.findViewById(R.id.team1Logo);
         TextView team1Name = convertView.findViewById(R.id.team1Name);
@@ -58,7 +69,16 @@ public class MatchListAdapter extends BaseAdapter {
         team2Logo.setImageResource(match.getTeam2Logo());
         team2Name.setText(match.getTeam2Name());
 
-        // Implement the click listener for the "More" button here
+        // Set a click listener for the "More" button
+        moreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onMoreButtonClickListener != null) {
+                    // Notify the listener when the "More" button is clicked
+                    onMoreButtonClickListener.onMoreButtonClick(match);
+                }
+            }
+        });
 
         return convertView;
     }

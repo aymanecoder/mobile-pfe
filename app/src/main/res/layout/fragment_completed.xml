@@ -6,10 +6,15 @@
     tools:context=".matchActivities.CompletedFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/listViewCompleted"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="170dp"
-        android:text="Completed" />
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:scrollbars="none"
+        android:background="@android:color/transparent"
+
+        />
 
 </FrameLayout>

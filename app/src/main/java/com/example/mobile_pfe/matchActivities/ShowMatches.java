@@ -9,11 +9,14 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
 import com.google.android.material.tabs.TabLayout;
@@ -24,6 +27,9 @@ public class ShowMatches extends AppCompatActivity implements GestureDetector.On
     private float x1,x2;
     private static int MIN_DISTANCE =150;
     private GestureDetector gestureDetector;
+
+    private ColorStateList originalTextColor;
+
 
 
 
@@ -62,6 +68,35 @@ public class ShowMatches extends AppCompatActivity implements GestureDetector.On
             public void onClick(View v) {
                 replaceFragment(new CompletedFragment());
                 setButtonStyles(completedButton, upcomingButton);
+            }
+        });
+
+        // Move the backButton code here
+        TextView backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        originalTextColor = backButton.getTextColors();
+        backButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Pressed state: Set text color to white
+                        backButton.setTextColor(Color.WHITE);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // Released or canceled state: Restore the original text color
+                        backButton.setTextColor(originalTextColor);
+                        break;
+                }
+                return false;
             }
         });
     }
@@ -143,4 +178,21 @@ public class ShowMatches extends AppCompatActivity implements GestureDetector.On
     public boolean onFling(@Nullable MotionEvent motionEvent, @NonNull MotionEvent motionEvent1, float v, float v1) {
         return false;
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        // Get the current fragment
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+
+        // Check the current fragment and set button styles accordingly
+        if (currentFragment instanceof UpcomingFragment) {
+            setButtonStyles(upcomingButton, completedButton);
+        } else if (currentFragment instanceof CompletedFragment) {
+            setButtonStyles(completedButton, upcomingButton);
+        }
+    }
+
+
+
 }
