@@ -7,8 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.adapters.MatchCompletedAdapter;
+import com.example.mobile_pfe.adapters.MatchListAdapter;
+import com.example.mobile_pfe.model.MatchItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +68,29 @@ public class CompletedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_completed, container, false);
+        View view = inflater.inflate(R.layout.fragment_completed, container, false);
+
+        ListView listView = view.findViewById(R.id.listViewCompleted);
+        listView.setDivider(null);
+
+        // Create a list of matches
+        List<MatchItem> matchList = new ArrayList<>();
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",5, R.drawable.team2_logo, "Team 2",0));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",3, R.drawable.team2_logo, "Team 2",4));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",4, R.drawable.team2_logo, "Team 2",3));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",6, R.drawable.team2_logo, "Team 2",0));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",2, R.drawable.team2_logo, "Team 2",2));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",1, R.drawable.team2_logo, "Team 2",0));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",3, R.drawable.team2_logo, "Team 2",1));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",7, R.drawable.team2_logo, "Team 2",9));
+        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",1, R.drawable.team2_logo, "Team 2",0));
+
+        // Add more matches as needed...
+
+        // Create and set the adapter
+        MatchCompletedAdapter adapter = new MatchCompletedAdapter(requireContext(), matchList);
+        listView.setAdapter(adapter);
+
+        return view;
     }
 }

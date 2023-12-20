@@ -48,7 +48,21 @@
                     android:fontFamily="@font/halant_regular"
                     android:textColor="@color/white" />
             </LinearLayout>
-
+            <!--  team1Score -->
+            <TextView
+                android:id="@+id/team1Score"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="9dp"
+                android:paddingLeft="31dp"
+                android:text="0"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/halant_regular"
+                android:textColor="@color/white"
+                />
             <!-- VS -->
             <TextView
                 android:layout_width="40dp"
@@ -56,13 +70,29 @@
                 android:textSize="18sp"
                 android:layout_marginTop="10dp"
                 android:paddingTop="9dp"
-                android:paddingLeft="9dp"
-                android:text="VS"
+                android:paddingLeft="17dp"
+                android:text="-"
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:fontFamily="@font/halant_regular"
                 android:textColor="@color/white"
-                android:background="@drawable/rounded_button_gris" />
+                 />
+
+            <!-- team2Score -->
+            <TextView
+                android:id="@+id/team2Score"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="9dp"
+                android:paddingLeft="2dp"
+                android:text="0"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/halant_regular"
+                android:textColor="@color/white"
+                />
 
             <!-- Team 2 -->
             <LinearLayout

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
 
@@ -16,6 +17,9 @@ import com.example.mobile_pfe.R;
  * create an instance of this fragment.
  */
 public class ItemFragment extends Fragment {
+
+    private TextView team1NameTextView;
+    private TextView team2NameTextView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +65,22 @@ public class ItemFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item, container, false);
+        View view = inflater.inflate(R.layout.fragment_item, container, false);
+        team1NameTextView = view.findViewById(R.id.team1Name);
+        team2NameTextView = view.findViewById(R.id.team2Name);
+
+        // Retrieve arguments
+        Bundle args = getArguments();
+        if (args != null) {
+            // Get team names from arguments
+            String team1Name = args.getString("team1Name", "");
+            String team2Name = args.getString("team2Name", "");
+
+            // Display team names in TextViews
+            team1NameTextView.setText(team1Name);
+            team2NameTextView.setText(team2Name);
+        }
+
+        return view;
     }
 }
