@@ -1,0 +1,7 @@
+<!-- res/color/text_color_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Default state -->
+    <item android:color="#A9A9A9" />
+
+
+</selector>
