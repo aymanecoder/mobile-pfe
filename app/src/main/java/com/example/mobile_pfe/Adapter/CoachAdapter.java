@@ -39,6 +39,7 @@ public class CoachAdapter extends RecyclerView.Adapter<CoachHolder>{
         holder.image.setImageResource(coach.getImage());
     }
 
+
     @Override
     public int getItemCount() {
         return coachesList.size();
