@@ -35,7 +35,9 @@
 
         <activity
             android:name=".UI.FindFriends"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Mobilepfe"
+            />
 
         <activity
             android:name=".UI.FindCoaches"
