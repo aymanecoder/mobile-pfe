@@ -44,4 +44,7 @@
     <string name="back">Back</string>
     <string name="team1_logo_description">LOGO TEAM A</string>
     <string name="team2_logo_description">LOGO TEAM B</string>
+    <string name="FieldLocal">Field Localization</string>
+    <string name="Players">Number Of Players</string>
+    <string name="date">Date</string>
 </resources>
