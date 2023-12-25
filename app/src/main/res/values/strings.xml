@@ -54,5 +54,6 @@
     <string name="link">Link</string>
     <string name="docs">Docs</string>
     <string name="all_result">All Result</string>
+    <string name="send">Send</string>
 
 </resources>
