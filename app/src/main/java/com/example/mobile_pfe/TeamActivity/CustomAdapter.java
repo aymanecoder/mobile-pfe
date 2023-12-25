@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.TeamActivity.Team;
+import com.example.mobile_pfe.TeamActivity.TeamResponse;
 import com.example.mobile_pfe.TeamActivity.CustomAdapter.OnItemClickListener;
 
 import java.util.ArrayList;

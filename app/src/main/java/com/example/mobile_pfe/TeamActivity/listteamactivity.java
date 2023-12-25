@@ -1,6 +1,7 @@
 package com.example.mobile_pfe.TeamActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 
@@ -35,13 +36,31 @@ public class listteamactivity extends AppCompatActivity{
         Binding.lisvieww.setAdapter(listAdapter);
         Binding.lisvieww.setClickable(true);
         Button saveButton = findViewById(R.id.Save);
+        /*
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            /*    // Liste pour stocker les utilisateurs sélectionnés
+                ArrayList<User> selectedUsers = new ArrayList<>();
+                ArrayList<User> userList = new ArrayList<>();
+
+// Ajoutez des utilisateurs à votre liste userList
+                userList.add(new User("John Doe", R.drawable.a));
+                userList.add(new User("Alice Smith", R.drawable.b));
+
+// Ajoutez des utilisateurs sélectionnés à la liste selectedUsers
+                selectedUsers.add(userList.get(0));
+                selectedUsers.add(userList.get(userList.size() - 1));
+
+// Créez une intention pour passer les utilisateurs sélectionnés à une autre activité
                 Intent intent = new Intent(listteamactivity.this, Teamprofilactivity.class);
+
+// Utilisez putParcelableArrayListExtra pour passer la liste d'utilisateurs sélectionnés
+                intent.putParcelableArrayListExtra("selectedUsers", selectedUsers);
                 startActivity(intent);
+
             }
-        });
+        });*/
 
 
     }
