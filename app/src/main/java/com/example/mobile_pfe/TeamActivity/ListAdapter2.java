@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,25 +24,32 @@ import java.util.List;
 public class ListAdapter2 extends BaseAdapter {
 
     private Context context;
-    private List<User> UserList;
+    private List<User> userList;
+    private ArrayList<User> selectedUsers;
 
-    public ListAdapter2(Context context, List<User> UserList) {
+    public ListAdapter2(Context context, List<User> userList) {
         this.context = context;
-        this.UserList = UserList;
+        this.userList = userList;
+        this.selectedUsers = new ArrayList<>();
     }
+
     @Override
     public int getCount() {
-        return UserList.size();
+        return userList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return UserList.get(position);
+        return userList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
         return position;
+    }
+
+    public ArrayList<User> getSelectedUsers() {
+        return selectedUsers;
     }
 
     @Override
@@ -49,17 +58,29 @@ public class ListAdapter2 extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.listwiew_activity, parent, false);
         }
 
-        User user = UserList.get(position);
+        User user = userList.get(position);
 
         ImageView imageView = convertView.findViewById(R.id.profile_pic);
         TextView username = convertView.findViewById(R.id.personName);
+        CheckBox checkBox = convertView.findViewById(R.id.personNamecheck);
 
-        imageView.setImageResource(user.imageId);
-        username.setText(user.name);
+        imageView.setImageResource(user.getImageId());
+        username.setText(user.getFirstName()); // Utilisez la méthode getName() ou le champ approprié pour obtenir le nom de l'utilisateur
 
-
-        // Implement the click listener for the "More" button here
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    selectedUsers.add(user);
+                } else {
+                    selectedUsers.remove(user);
+                }
+            }
+        });
 
         return convertView;
     }
 }
+
+
+

@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,8 +52,8 @@ public class ListAdapter extends BaseAdapter {
         ImageView imageView = convertView.findViewById(R.id.profile_pic);
         TextView username = convertView.findViewById(R.id.personName);
 
-        imageView.setImageResource(user.imageId);
-        username.setText(user.name);
+        imageView.setImageResource(user.getImageId());
+        username.setText(user.getFirstName());
 
 
         // Implement the click listener for the "More" button here

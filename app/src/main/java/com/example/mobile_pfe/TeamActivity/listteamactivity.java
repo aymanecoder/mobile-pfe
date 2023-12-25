@@ -47,4 +47,3 @@ public class listteamactivity extends AppCompatActivity{
     }
 
 }
-

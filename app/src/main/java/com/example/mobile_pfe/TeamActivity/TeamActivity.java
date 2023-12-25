@@ -17,13 +17,9 @@ import androidx.recyclerview.widget.SnapHelper;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.databinding.ActivityListviewgroupBinding;
 import com.example.mobile_pfe.databinding.ActivityLisviewteamBinding;
 
-import java.util.ArrayList;
-
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
-import com.example.mobile_pfe.TeamActivity.User;
 public class TeamActivity extends AppCompatActivity {
     private CustomAdapter adapter;
 
