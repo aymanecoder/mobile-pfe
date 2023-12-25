@@ -20,6 +20,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".ResultActivity.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
         <activity
@@ -35,6 +38,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".registerActivities.RegisterActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

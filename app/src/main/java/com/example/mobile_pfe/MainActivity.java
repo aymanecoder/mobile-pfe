@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.mobile_pfe.ResultActivity.ResultActivity;
 import com.example.mobile_pfe.loginActivities.login;
 import com.example.mobile_pfe.registerActivities.RegisterActivity;
 
@@ -29,9 +30,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_startpage); // Use the correct layout resource ID
-
+        setContentView(R.layout.activity_main); // Use the correct layout resource ID
+        startSecondActivity();
 }
+    private void startSecondActivity() {
+        // Create an Intent to start SecondActivity
+        Intent intent = new Intent(this, ResultActivity.class);
+
+        // Optionally, you can pass data to the second activity using Intent extras
+        // intent.putExtra("key", "value");
+
+        // Start the SecondActivity
+        startActivity(intent);
+
+        // If you want to finish the main activity after starting the second activity, you can call finish()
+        // finish();
+    }
     public void onRegisterButtonClick(View view) {
         // Handle the button click
         Intent intent = new Intent(this, RegisterActivity.class);
