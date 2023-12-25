@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Model.Coach;
-import com.example.mobile_pfe.Model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.List;
