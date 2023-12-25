@@ -56,4 +56,9 @@
     <string name="all_result">All Result</string>
     <string name="send">Send</string>
 
+    <string name="Match">Matches</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="completed">Completed</string>
+    <string name="team1_logo_description">LOGO TEAM A</string>
+    <string name="team2_logo_description">LOGO TEAM B</string>
 </resources>

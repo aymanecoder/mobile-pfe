@@ -1,0 +1,17 @@
+<!-- res/drawable/rounded_button.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="200dp" /> <!-- Set your desired corner radius -->
+            <solid android:color="@color/primaryColor" /> <!-- Set your desired button color for pressed state -->
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="200dp" /> <!-- Set your desired corner radius -->
+            <solid android:color="#AA5DB075" /> <!-- Set your desired button color for default state -->
+        </shape>
+    </item>
+
+</selector>
