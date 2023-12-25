@@ -318,7 +318,7 @@
                         android:layout_height="50dp">
 
                         <ImageView
-                            android:id="@+id/imageView_membre"
+                            android:id="@+id/imageView_membre_3"
                             android:layout_width="wrap_content"
                             android:layout_height="100dp"
                             app:layout_constraintBottom_toBottomOf="parent"
