@@ -3,11 +3,15 @@ package com.example.mobile_pfe.matchActivities;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.adapters.MatchCompletedAdapter;
@@ -32,6 +36,9 @@ public class CompletedFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView matchTextView;
+    private LinearLayout buttonsLayout;
 
     public CompletedFragment() {
         // Required empty public constructor
@@ -69,7 +76,9 @@ public class CompletedFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_completed, container, false);
-
+        matchTextView = requireActivity().findViewById(R.id.matchTextView);
+        buttonsLayout = requireActivity().findViewById(R.id.buttonsLayout);
+        showViews();
         ListView listView = view.findViewById(R.id.listViewCompleted);
         listView.setDivider(null);
 
@@ -89,8 +98,46 @@ public class CompletedFragment extends Fragment {
 
         // Create and set the adapter
         MatchCompletedAdapter adapter = new MatchCompletedAdapter(requireContext(), matchList);
+        adapter.setOnMoreButtonClickListener(new MatchListAdapter.OnMoreButtonClickListener() {
+            @Override
+            public void onMoreButtonClick(MatchItem matchItem) {
+                // Hide the "Match" title and the LinearLayout with buttons
+                hideViews();
+
+                // Pass team names as parameters to ItemFragment
+
+                // Create a new instance of ItemFragment and set arguments
+                CompletedItemFragment completedItemFragment = new CompletedItemFragment();
+
+                // Replace the current fragment with ItemFragment
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, completedItemFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
         listView.setAdapter(adapter);
 
         return view;
     }
+
+    private void hideViews() {
+        // Delay the execution by 1 second (1000 milliseconds)
+        long delayMillis = 10;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Code to hide views
+                matchTextView.setVisibility(View.GONE);
+                buttonsLayout.setVisibility(View.GONE);
+            }
+        }, delayMillis);
+    }
+
+    private void showViews() {
+        matchTextView.setVisibility(View.VISIBLE);
+        buttonsLayout.setVisibility(View.VISIBLE);
+    }
+
 }

@@ -47,4 +47,6 @@
     <string name="FieldLocal">Field Localization</string>
     <string name="Players">Number Of Players</string>
     <string name="date">Date</string>
+    <string name="StartTime">Start Time</string>
+    <string name="endTime">End Time</string>
 </resources>

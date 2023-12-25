@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/card"
+    tools:context=".matchActivities.ChooseTeamFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_card_whiter"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/AddExistingteams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/border"
+            android:textColor="@color/black"
+            android:text="Add Existing teams"
+            android:fontFamily="serif"
+            />
+        <Button
+            android:id="@+id/login2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/border"
+            android:textColor="@color/black"
+            android:text="Add new teams"
+            android:fontFamily="serif"
+            />
+
+        <Button
+            android:id="@+id/login3Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/border"
+            android:textColor="@color/black"
+            android:text="save and continue"
+            android:fontFamily="serif"
+            />
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
