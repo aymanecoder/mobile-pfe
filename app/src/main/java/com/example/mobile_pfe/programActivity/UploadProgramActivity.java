@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.UI.CoachContent;
 import com.example.mobile_pfe.sevices.ProgramService;
 
 import java.io.File;
@@ -49,6 +51,16 @@ public class UploadProgramActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_program);
+
+        TextView back = findViewById(R.id.Back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UploadProgramActivity.this, ListProgramActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         titleInput = findViewById(R.id.title_input);
         descriptionInput = findViewById(R.id.description_input);

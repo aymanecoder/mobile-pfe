@@ -8,10 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.UI.CoachContent;
+import com.example.mobile_pfe.UI.FindCoaches;
 import com.example.mobile_pfe.adapter.CompetitionAdapter;
 import com.example.mobile_pfe.model.Competition.Competition;
 import com.example.mobile_pfe.model.Program.Program;
@@ -34,6 +37,15 @@ public class ListCompetitionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_competition);
 
+        TextView back = findViewById(R.id.Back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListCompetitionActivity.this, CoachContent.class);
+                startActivity(intent);
+
+            }
+        });
 
         /*Create handle for the RetrofitInstance interface*/
         CompetitionService service = RetrofitInstance.getRetrofitInstance().create(CompetitionService.class);

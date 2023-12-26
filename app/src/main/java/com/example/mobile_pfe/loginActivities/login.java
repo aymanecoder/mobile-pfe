@@ -45,7 +45,7 @@ public class login extends AppCompatActivity {
                     public void onSuccess() {
                         // Handle success, navigate to MainActivity
                         System.out.println("Access Token: " + AppGlobals.getAccessToken());
-                        Intent intent = new Intent(login.this, ChoixProgramActivity.class);
+                        Intent intent = new Intent(login.this, MainActivity.class);
                          startActivity(intent);
                          finish();
                     }

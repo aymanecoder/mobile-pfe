@@ -13,6 +13,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.programActivity.ListCompetitionActivity;
+import com.example.mobile_pfe.programActivity.ListProgramActivity;
 
 public class CoachContent extends AppCompatActivity {
 
@@ -36,12 +38,22 @@ public class CoachContent extends AppCompatActivity {
         });
 
         ImageView workout = findViewById(R.id.workout_image);
-        ImageView nutrition = findViewById(R.id.nutrition_image);
 
         workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CoachContent.this, CoachWorkout.class);
+                Intent intent = new Intent(CoachContent.this, ListProgramActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+        ImageView nutrition = findViewById(R.id.nutrition_image);
+        nutrition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CoachContent.this, ListProgramActivity.class);
                 startActivity(intent);
 
             }
@@ -54,6 +66,15 @@ public class CoachContent extends AppCompatActivity {
                 Intent intent = new Intent(CoachContent.this, CoachVideos.class);
                 startActivity(intent);
 
+            }
+        });
+
+        ImageView challenges = findViewById(R.id.challenge_image);
+        videos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CoachContent.this, ListCompetitionActivity.class);
+                startActivity(intent);
             }
         });
     }

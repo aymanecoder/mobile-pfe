@@ -8,11 +8,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.UI.CoachContent;
+import com.example.mobile_pfe.UI.FindCoaches;
 import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.sevices.ProgramService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,6 +36,16 @@ public class ListProgramActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_program);
 
+
+        TextView back = findViewById(R.id.Back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListProgramActivity.this, CoachContent.class);
+                startActivity(intent);
+
+            }
+        });
 
         /*Create handle for the RetrofitInstance interface*/
         ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
