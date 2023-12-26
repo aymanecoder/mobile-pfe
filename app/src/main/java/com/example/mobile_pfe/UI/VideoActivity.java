@@ -8,12 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
-import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.example.mobile_pfe.R;
 
-public class Video extends AppCompatActivity {
+public class VideoActivity extends AppCompatActivity {
 
  
     @Override
@@ -34,7 +33,7 @@ public class Video extends AppCompatActivity {
         backText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Video.this, CoachVideos.class);
+                Intent intent = new Intent(VideoActivity.this, CoachVideos.class);
                 startActivity(intent);
             }
         });

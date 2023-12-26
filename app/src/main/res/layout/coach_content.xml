@@ -35,7 +35,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="68dp"
-            android:src="@drawable/profile2"
+            android:src="@drawable/coach2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,8 +44,8 @@
             android:layout_width="193dp"
             android:layout_height="33dp"
             android:layout_marginTop="68dp"
-            android:layout_marginEnd="40dp"
-            android:text="Victoria Rbrtson"
+            android:layout_marginEnd="28dp"
+            android:text="Will Smith"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -70,15 +70,17 @@
             android:id="@+id/coach_description"
             android:layout_width="201dp"
             android:layout_height="84dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="40dp"
-            android:text="alkla akfdjdk dfkkdkj kdjfkdjf kjdfkjdk dkjfdkj kdfjdkfj"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="48dp"
+            android:gravity="center"
+            android:text="Here you'll find a  presentation about the coach "
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/coach_name"
-            app:layout_constraintVertical_bias="0.529" />
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

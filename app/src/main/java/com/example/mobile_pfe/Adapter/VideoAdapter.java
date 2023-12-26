@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Model.Video;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.UI.CoachContent;
+import com.example.mobile_pfe.UI.VideoActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +46,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoHolder>{
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Video.class);
+                Intent intent = new Intent(v.getContext(), VideoActivity.class);
                 v.getContext().startActivity(intent);
             }
         });
