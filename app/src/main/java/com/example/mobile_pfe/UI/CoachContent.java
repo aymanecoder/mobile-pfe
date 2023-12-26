@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -24,11 +25,33 @@ public class CoachContent extends AppCompatActivity {
         ScrollView scrollView = findViewById(R.id.scrollView);
         scrollView.setScrollbarFadingEnabled(true);
 
-        ConstraintLayout workout = findViewById(R.id.coach_workout);
+        TextView back = findViewById(R.id.Back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CoachContent.this, FindCoaches.class);
+                startActivity(intent);
+
+            }
+        });
+
+        ImageView workout = findViewById(R.id.workout_image);
+        ImageView nutrition = findViewById(R.id.nutrition_image);
+
         workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CoachContent.this, CoachWorkout.class);
+                startActivity(intent);
+
+            }
+        });
+
+        ImageView videos = findViewById(R.id.videos_image);
+        videos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CoachContent.this, CoachVideos.class);
                 startActivity(intent);
 
             }

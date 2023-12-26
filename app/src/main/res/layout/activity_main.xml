@@ -7,52 +7,63 @@
     android:orientation="vertical">
 
 
-
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="239dp">
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:background="@color/green" />
+            android:id="@+id/green_view"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/bell_icon"
             android:layout_width="47dp"
             android:layout_height="35dp"
-            android:layout_gravity="top|end"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
             android:src="@drawable/notification_bell"
+            app:layout_constraintBottom_toBottomOf="@+id/green_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
              />
-
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/user_image"
-            android:layout_width="184dp"
-            android:layout_height="188dp"
-            android:radius="70dp"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="110dp"
-            android:layout_marginBottom="52dp"
-            android:src="@drawable/profile2" />
+            android:layout_width="112dp"
+            android:layout_height="102dp"
+            android:layout_marginTop="56dp"
+            android:src="@drawable/profile2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/green_view" />
 
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|start"
-            android:layout_marginStart="129dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="23dp"
             android:text="Victoria Robertson"
             android:textColor="@color/black"
-            android:textSize="20sp" />
-    </FrameLayout>
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_image"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -125,19 +136,23 @@
             android:id="@+id/fragmentContainerView"
             android:name="com.example.mobile_pfe.UI.FriendsFragment"
             android:layout_width="match_parent"
+            android:background="#F9F9F9"
             android:layout_height="match_parent" />
     </LinearLayout>
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_vertical">
+
+
 
             <RelativeLayout
                 android:id="@+id/friends"
@@ -146,54 +161,59 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
                 android:padding="10dp"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:elevation="8dp"
+
+                android:background="@drawable/rounded_white_layout">
 
                 <ImageButton
-                    android:id="@+id/button_image"
+                    android:id="@+id/friends_btn_img"
                     android:layout_width="220dp"
                     android:layout_height="130dp"
-                    android:src="@drawable/group_b"
+                    android:src="@drawable/friends_btn_img"
                     android:layout_centerHorizontal="true"
                     android:scaleType="centerCrop"
                     android:layout_gravity="top|start"
                     android:layout_marginTop="5dp"
                     android:layout_marginStart="20dp"
                     android:background="@null"
-                   />
+                    />
 
                 <TextView
+                    android:id="@+id/friends_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/button_image"
+                    android:layout_below="@+id/friends_btn_img"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
                     android:ellipsize="none"
                     android:gravity="center"
                     android:text="Friends"
                     android:textColor="@color/green"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
-
             <RelativeLayout
-                android:id="@+id/teamsLayout"
+                android:id="@+id/coaches"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
                 android:padding="10dp"
                 android:layout_marginTop="30dp"
-                android:elevation="8dp">
+                android:elevation="8dp"
+
+                android:background="@drawable/rounded_white_layout">
 
                 <ImageButton
-                    android:id="@+id/button_image2"
+                    android:id="@+id/coaches_btn_img"
                     android:layout_width="220dp"
                     android:layout_height="130dp"
-                    android:src="@drawable/team_b"
+                    android:src="@drawable/coaches_btn_img"
                     android:layout_centerHorizontal="true"
                     android:scaleType="centerCrop"
                     android:layout_gravity="top|start"
@@ -205,20 +225,146 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/button_image2"
+                    android:layout_below="@+id/coaches_btn_image"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:text="Coaches"
+                    android:textColor="@color/green"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/teams"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="30dp"
+                android:elevation="8dp"
+
+                android:background="@drawable/rounded_white_layout">
+
+                <ImageButton
+                    android:id="@+id/teams_btn_img"
+                    android:layout_width="220dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/teams_btn_img"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@null"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/teams_btn_img"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
                     android:ellipsize="none"
                     android:gravity="center"
                     android:text="Teams"
                     android:textColor="@color/green"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
+            <RelativeLayout
+                android:id="@+id/groups"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="30dp"
+                android:elevation="8dp"
+
+                android:background="@drawable/rounded_white_layout">
+
+                <ImageButton
+                    android:id="@+id/groups_btn_img"
+                    android:layout_width="220dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/groups_btn_img"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@null"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/groups_btn_img"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:text="Groups"
+                    android:textColor="@color/green"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/matchs"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="30dp"
+                android:elevation="8dp"
+
+                android:background="@drawable/rounded_white_layout">
+
+                <ImageButton
+                    android:id="@+id/matchs_btn_img"
+                    android:layout_width="220dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/matchs_btn_img"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@null"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/matchs_btn_img"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:text="Matchs"
+                    android:textColor="@color/green"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

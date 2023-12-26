@@ -6,11 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".UI.Video">
 
+    <ImageView
+        android:id="@+id/Back"
+        android:layout_width="63dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/back_image"
+        app:layout_constraintBottom_toTopOf="@+id/video_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </ImageView>
 
     <VideoView
         android:id="@+id/video_view"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

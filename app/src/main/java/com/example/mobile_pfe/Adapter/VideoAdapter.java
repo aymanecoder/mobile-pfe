@@ -1,14 +1,17 @@
 package com.example.mobile_pfe.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Model.Video;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.UI.CoachContent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +41,15 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoHolder>{
         holder.videoViews.setText(video.getViews());
         holder.videoLevel.setText(video.getLevel());
         holder.image.setImageResource(video.getImage());
+
+        Button playButton = holder.itemView.findViewById(R.id.play_button);
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Video.class);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.mobile_pfe.Adapter.VideoAdapter;
 import com.example.mobile_pfe.Model.Video;
@@ -20,6 +23,7 @@ public class CoachVideos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.coach_videos);
 
         fillVideosList();
 
@@ -27,6 +31,15 @@ public class CoachVideos extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         VideoAdapter adapter = new VideoAdapter(videosList);
         recyclerView.setAdapter(adapter);
+
+        TextView backText = findViewById(R.id.Back);
+        backText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CoachVideos.this, CoachContent.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void fillVideosList(){

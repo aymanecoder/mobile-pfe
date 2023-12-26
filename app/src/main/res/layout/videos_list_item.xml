@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="400dp"
+    android:layout_marginTop="20dp"
     android:background="@drawable/rounded_white_layout">
 
     <androidx.cardview.widget.CardView
@@ -26,7 +27,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/play_button"
         android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
@@ -51,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/play_button">
 
     </TextView>
 

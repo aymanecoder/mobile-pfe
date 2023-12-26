@@ -3,6 +3,7 @@ package com.example.mobile_pfe.UI;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.View;
@@ -91,14 +92,51 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        RelativeLayout myRelativeLayout = findViewById(R.id.friends);
-        myRelativeLayout.setOnClickListener(new View.OnClickListener() {
+        RelativeLayout friendsRelativeLayout = findViewById(R.id.friends);
+        friendsRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FindFriends.class);
                 startActivity(intent);
             }
         });
+
+        ImageButton friendsButton = findViewById(R.id.friends_btn_img);
+        TextView  friendsTextView = findViewById(R.id.friends_textView);
+        RelativeLayout coachesRelativeLayout = findViewById(R.id.friends);
+        coachesRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FindFriends.class);
+                startActivity(intent);
+            }
+        });
+
+        friendsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FindFriends.class);
+                startActivity(intent);
+            }
+        });
+
+        friendsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FindFriends.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton coachesButton = findViewById(R.id.coaches_btn_img);
+        coachesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FindCoaches.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

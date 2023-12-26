@@ -9,26 +9,42 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:background="@color/green">
+        android:layout_height="231dp"
+        android:background="@color/green"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/coach_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="68dp"
             android:src="@drawable/profile2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/coach_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="68dp"
+            android:layout_width="193dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="40dp"
             android:text="Victoria Rbrtson"
             android:textColor="@color/black"
             android:textSize="20dp"
@@ -38,11 +54,13 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="20dp"
+            android:background="@drawable/join_btn_background"
             android:text="Join"
-            android:background="@color/green"
+            android:textAllCaps="false"
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/coach_image"
@@ -53,14 +71,14 @@
             android:layout_width="201dp"
             android:layout_height="84dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="40dp"
             android:text="alkla akfdjdk dfkkdkj kdjfkdjf kjdfkjdk dkjfdkj kdfjdkfj"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/coach_name"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.529" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -69,7 +87,7 @@
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="250dp"
         android:layout_centerHorizontal="true"
         android:scrollbars="none">
 
@@ -86,19 +104,20 @@
                 android:background="@drawable/layout_rounded_background" >
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/workout_image"
-                    android:layout_width="111dp"
-                    android:layout_height="97dp"
+                    android:layout_width="105dp"
+                    android:layout_height="107dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/profile2"
+                    android:src="@drawable/workout_img"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
                     android:text="Workout"
                     android:textColor="@color/green"
                     android:textSize="30dp"
@@ -123,13 +142,13 @@
                 android:background="@drawable/layout_rounded_background" >
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/nutrition_image"
                     android:layout_width="111dp"
                     android:layout_height="97dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/profile2"
+                    android:src="@drawable/nutrition_img"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,13 +176,13 @@
                 android:background="@drawable/layout_rounded_background" >
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/videos_image"
                     android:layout_width="111dp"
                     android:layout_height="97dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/profile2"
+                    android:src="@drawable/video_img"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

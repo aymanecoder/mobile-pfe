@@ -1,6 +1,7 @@
 package com.example.mobile_pfe.Adapter;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,7 @@ public class VideoHolder extends RecyclerView.ViewHolder{
     TextView videoViews;
     TextView videoLevel;
 
-    CircleImageView image;
+    ImageView image;
 
 
     public VideoHolder(@NonNull View itemView) {
