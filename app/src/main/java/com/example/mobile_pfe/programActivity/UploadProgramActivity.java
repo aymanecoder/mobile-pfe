@@ -92,7 +92,7 @@ public class UploadProgramActivity extends AppCompatActivity {
         RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
 
         // Create a MultipartBody.Part from the RequestBody
-        MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("program", file.getName(), requestBody);
 
         // Create RequestBody instances from title and description strings
         RequestBody titleBody = RequestBody.create(MediaType.parse("text/plain"), title);
@@ -114,6 +114,8 @@ public class UploadProgramActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
+                System.out.println("Error Trace");
+                t.printStackTrace();
                 // Handle failure
                 Toast.makeText(UploadProgramActivity.this, "Failed to upload program details: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }

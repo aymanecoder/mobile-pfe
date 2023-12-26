@@ -15,10 +15,10 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 
 public interface ProgramService {
-    @GET("/programmes")
+    @GET("/api/v1/programmes")
     Call<ProgramList> getAll();
 
-    @POST("/programmes")
+    @POST("/api/v1/programmes")
     @Multipart
     Call<ResponseBody> createProgramme(
             @Part MultipartBody.Part file,
