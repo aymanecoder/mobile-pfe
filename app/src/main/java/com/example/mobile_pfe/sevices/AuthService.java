@@ -12,11 +12,8 @@ import retrofit2.http.POST;
 public interface AuthService {
     @POST("/api/v1/auth/login")
     Call<AuthResponse> login(@Body LoginRequest loginRequest);
-<<<<<<< HEAD
 
     @POST("/api/v1/auth/register")
     Call<RegisterResponse> Register(@Body RegisterRequest registerRequest);
 
-=======
->>>>>>> feat/program
 }
