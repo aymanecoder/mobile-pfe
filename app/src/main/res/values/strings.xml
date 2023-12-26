@@ -38,6 +38,7 @@
     <string name="CouchChoice">Coach</string>
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
+<<<<<<< HEAD
     <string name="your_planning">Your Planning</string>
     <string name="back">Back</string>
     <string name="search">Search</string>
@@ -66,4 +67,15 @@
     <string name="date">Date</string>
     <string name="StartTime">Start Time</string>
     <string name="endTime">End Time</string>
+=======
+    <string name="filter">Filter</string>
+    <string name="content">Content</string>
+    <string name="competition">Competition</string>
+    <string name="back">Back</string>
+    <string name="nutritionne">Nutritionnel</string>
+    <string name="entrainement">Entrainement</string>
+    <string name="upload">Upload</string>
+    <string name="equipes">Equipes</string>
+
+>>>>>>> feat/program
 </resources>
