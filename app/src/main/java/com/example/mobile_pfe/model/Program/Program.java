@@ -1,5 +1,7 @@
 package com.example.mobile_pfe.model.Program;
 
+import com.example.mobile_pfe.Network.RetrofitInstance;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
@@ -10,14 +12,17 @@ public class Program {
     @SerializedName("descreption")
     private String descreption;
 
-    @SerializedName("PicturePath")
-    private String PicturePath;
+    @SerializedName("typeProgramme")
+    private String typeProgramme;
+    @SerializedName("picturePath")
+    private String picturePath;
 
 
-    public Program(String title, String descreption, String picturePath) {
+    public Program(String title, String descreption, String picturePath,String typeProgramme) {
         this.title = title;
         this.descreption = descreption;
-        PicturePath = picturePath;
+        this.picturePath = picturePath;
+        this.typeProgramme=typeProgramme;
     }
 
 
@@ -44,11 +49,19 @@ public class Program {
     }
 
     public String getPicturePath() {
-        return PicturePath;
+        return picturePath.replace("http://localhost:8080/", RetrofitInstance.BASE_URL);
     }
 
     public void setPicturePath(String picturePath) {
-        PicturePath = picturePath;
+        this.picturePath = picturePath;
+    }
+
+    public String getTypeProgramme() {
+        return typeProgramme;
+    }
+
+    public void setTypeProgramme(String typeProgramme) {
+        this.typeProgramme = typeProgramme;
     }
 }
 

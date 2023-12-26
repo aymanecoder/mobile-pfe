@@ -10,15 +10,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.adapter.ProgramAdapter;
 import com.example.mobile_pfe.model.Program.Program;
-import com.example.mobile_pfe.model.Program.ProgramList;
 import com.example.mobile_pfe.sevices.ProgramService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,19 +38,21 @@ public class ListProgramActivity extends AppCompatActivity {
         ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<ProgramList> call = service.getAll();
+        Call<List<Program>> call = service.getAll();
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");
 
-        call.enqueue(new Callback<ProgramList>() {
+        call.enqueue(new Callback<List<Program>>() {
             @Override
-            public void onResponse(Call<ProgramList> call, Response<ProgramList> response) {
-                generateEmployeeList(response.body().getProgramArrayList());
+            public void onResponse(Call<List<Program>> call, Response<List<Program>> response){
+                generateEmployeeList((ArrayList<Program>) response.body());
             }
 
             @Override
-            public void onFailure(Call<ProgramList> call, Throwable t) {
+            public void onFailure(Call<List<Program>> call, Throwable t) {
+                System.out.println("get all errors");
+                t.printStackTrace();
                 Toast.makeText(ListProgramActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -70,6 +72,13 @@ public class ListProgramActivity extends AppCompatActivity {
 
     private void generateEmployeeList(ArrayList<Program> programDataList) {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+
+        if (programDataList == null) {
+            // Handle the case where data is null
+            // For example, display a message or perform some appropriate action
+            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         adapter = new ProgramAdapter(programDataList);
 
