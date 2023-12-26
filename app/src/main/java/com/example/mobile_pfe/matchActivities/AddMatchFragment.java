@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mobile_pfe.R;
 
@@ -72,7 +74,27 @@ public class AddMatchFragment extends Fragment implements MapDialogFragment.OnLo
             public void onClick(View v) {
                 showMapDialog();
             }
+
         });
+
+        Button addMore = view.findViewById(R.id.saveButton);
+        addMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                // Hide the "Match" title and the LinearLayout with buttons
+
+
+                // Create a new instance of ItemFragment and set arguments
+                ChooseTeamFragment addMatchFragment = new ChooseTeamFragment();
+
+                // Replace the current fragment with ItemFragment
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, addMatchFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
 
         return view;
     }

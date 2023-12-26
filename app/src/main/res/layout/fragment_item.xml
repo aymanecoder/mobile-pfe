@@ -40,6 +40,7 @@
                     <ImageView
                         android:id="@+id/team1Logo"
                         android:layout_width="48dp"
+                        android:src="@drawable/team1_logo"
                         android:layout_height="48dp"
                         android:contentDescription="@string/team1_logo_description" />
 
@@ -85,6 +86,7 @@
                     <ImageView
                         android:id="@+id/team2Logo"
                         android:layout_width="48dp"
+                        android:src="@drawable/team2_logo"
                         android:layout_height="48dp"
                         android:contentDescription="@string/team2_logo_description" />
 

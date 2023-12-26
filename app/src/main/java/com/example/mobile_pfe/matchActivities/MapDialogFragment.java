@@ -94,17 +94,22 @@ public class MapDialogFragment extends DialogFragment implements OnMapReadyCallb
 
     private String getReadableAddress(double latitude, double longitude) {
         try {
+            Geocoder geocoder = new Geocoder(requireContext(), Locale.getDefault());
             List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
 
             if (addresses != null && addresses.size() > 0) {
                 Address address = addresses.get(0);
-                return address.getAddressLine(0); // You can use other getAddressLine indices for more details
+                return address.getAddressLine(0);
             } else {
                 return "Address not found";
             }
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error fetching address";
+            return "Error fetching address: " + e.getMessage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Unexpected error: " + e.getMessage();
         }
     }
+
 }
