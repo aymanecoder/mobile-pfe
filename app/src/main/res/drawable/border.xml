@@ -3,6 +3,7 @@
     <solid android:color="#FFFFFF" /> <!-- Set the background color of the border -->
     <stroke
         android:color="#A9A9A9"
+
         android:width="1dp" />
     <corners android:radius="20dp"></corners>
 </shape>

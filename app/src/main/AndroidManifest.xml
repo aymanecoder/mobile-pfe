@@ -84,11 +84,29 @@
             android:name=".ResultActivity.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".registerActivities.register1_choosePorfile"
-            android:exported="false" />
+            android:name=".notificationActivities.notification"
+            android:label="notification"
+            android:exported="true"/>
+        <activity
+            android:name=".TeamActivity.Teamprofilactivity"
+            android:label=""
+            android:exported="true"/>
+        <activity
+            android:name=".TeamActivity.listteamactivity"
+            android:label=""
+            android:exported="true"/>
         <activity
             android:name=".loginActivities.login"
+            android:label="GroupActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".TeamActivity.ItemActivity"
+            android:label="TeamActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
+
         <activity
             android:name=".UI.MainActivity"
             android:exported="true">

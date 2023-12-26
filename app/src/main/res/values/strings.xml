@@ -34,10 +34,12 @@
 
     <string name="showPassword">Show Password</string>
 
+
     <string name="chooseYourProfile">choose Your Profile</string>
     <string name="CouchChoice">Coach</string>
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
+
     <string name="your_planning">Your Planning</string>
     <string name="back">Back</string>
     <string name="search">Search</string>
@@ -73,5 +75,13 @@
     <string name="entrainement">Entrainement</string>
     <string name="upload">Upload</string>
     <string name="equipes">Equipes</string>
+    <string name="team_a">Team A</string>
+    <string name="members">20 members</string>
+    <string name="select_team">Select Team members\n</string>
+    <string name="Teams">Teams</string>
+    <string name="fullname3">Full Name</string>
+    <string name="fullname">Group Name</string>
+    <string name="fullname2">Group Members</string>
+    <string name="tongkun_lee">Tongkun Lee</string>
 
 </resources>

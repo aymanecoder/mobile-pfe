@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="650dp"
+        android:text="Join"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/button_style"
+        />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="650dp"
+        android:text="ADD MANUALLY"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/button_style"
+        />
+    <TextView
+        android:id="@+id/profileImageView12"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/recttt"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="250dp"
+        android:text="VS"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+
+
+    <TextView
+        android:id="@+id/profileImageView31"
+        android:layout_width="410dp"
+        android:layout_height="200dp"
+        android:background="@drawable/rectangle"
+        android:text=""
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="0dp" />
+    <TextView
+        android:id="@+id/profileImageViewq"
+        android:layout_width="410dp"
+        android:layout_height="150dp"
+        android:background="@drawable/rect"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="360dp" />
+    <TextView
+        android:id="@+id/Back"
+        android:layout_width="200dp"
+        android:layout_height="200sp"
+        android:text="Back"
+        android:textSize="90px"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="80dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/profileImageView8"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:shapeAppearanceOverlay="@style/circular"
+        android:background="@drawable/profil1"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="240dp"
+        android:text="RCA"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/profileImageView1"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:shapeAppearanceOverlay="@style/circular"
+        android:background="@drawable/profil1"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="240dp"
+        android:text="WAC"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+
+    <TextView
+        android:id="@+id/profileImageVieww"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="200dp"
+        android:text="Match name"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/profileImageViewz"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/place"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="370dp"/>
+    <TextView
+        android:id="@+id/profileImageViewr"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/temperature"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="370dp"/>
+    <TextView
+        android:id="@+id/profileImageViewt"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/clock"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="370dp"/>
+
+
+    <TextView
+        android:id="@+id/profileImageViewg"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Local"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="450dp"/>
+
+    <TextView
+        android:id="@+id/profileImageViewh"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Time"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="450dp"/>
+
+
+    <TextView
+        android:id="@+id/profileImageViewn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Weather"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="450dp"/>
+
+
+</RelativeLayout>
