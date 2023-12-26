@@ -1,5 +1,7 @@
 package com.example.mobile_pfe.model.Program;
 
+import com.example.mobile_pfe.Network.RetrofitInstance;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
@@ -47,7 +49,7 @@ public class Program {
     }
 
     public String getPicturePath() {
-        return picturePath;
+        return picturePath.replace("http://localhost:8080/", RetrofitInstance.BASE_URL);
     }
 
     public void setPicturePath(String picturePath) {
