@@ -1,0 +1,15 @@
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#2A3240" /> <!-- Set your desired oval color for pressed state -->
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#DA2A3240" /> <!-- Set your desired oval color for default state -->
+        </shape>
+    </item>
+
+</selector>
+

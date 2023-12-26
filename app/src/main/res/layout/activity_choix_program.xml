@@ -1,0 +1,67 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/page_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="#E0E0E0">
+
+        <!-- Back button -->
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:text="@string/back"
+            android:textAppearance="@style/back" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Programmes"
+            android:textAppearance="@style/content" />
+    </RelativeLayout>
+
+    <!-- Centered buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <!-- View Programs Button -->
+        <Button
+            android:id="@+id/view_programs_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Programs"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <!-- View Competitions Button -->
+        <Button
+            android:id="@+id/view_competitions_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Competitions"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</RelativeLayout>

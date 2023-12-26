@@ -1,0 +1,34 @@
+<!-- fragment_map_dialog.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Other views as needed -->
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Other views as needed -->
+
+    <EditText
+        android:id="@+id/editTextMatchLocation"
+        android:layout_below="@id/mapView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border"
+        android:inputType="none"
+        android:onClick="selectLocationFromMap"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/gris"
+        android:layout_marginTop="26dp"
+        android:hint="Match Location" />
+
+    <!-- Other views as needed -->
+
+</RelativeLayout>

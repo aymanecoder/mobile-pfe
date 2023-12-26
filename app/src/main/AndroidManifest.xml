@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -16,6 +21,68 @@
         android:theme="@style/Theme.Mobilepfe"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".programActivity.ListMatchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListEquipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.AddCompetitionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListCompetitionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ChoixProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.UploadProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.VideoActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".UI.CoachVideos"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".UI.CoachWorkout"
+            android:exported="false" />
+        <activity
+            android:name=".UI.CoachContent"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".matchActivities.ShowMatches"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".ResultActivity.ResultActivity"
+            android:exported="false" />
         <activity
             android:name=".notificationActivities.notification"
             android:label="notification"
@@ -39,11 +106,9 @@
         <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
+
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TeamActivity.TeamActivity"
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,6 +116,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".registerActivities.RegisterActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

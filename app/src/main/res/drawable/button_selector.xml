@@ -1,0 +1,45 @@
+<!-- res/drawable/custom_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <!-- Background with solid color -->
+            <item>
+                <shape>
+                    <solid android:color="#345DB075" /> <!-- Set your desired pressed color -->
+                    <corners android:radius="5dp" />
+                    <stroke android:color="#00000000" android:width="1dp" />
+                </shape>
+            </item>
+            <!-- Underline with the desired color and height -->
+            <item android:top="40dp" android:bottom="3dp">
+                <shape>
+                    <solid android:color="#335DB075" />
+                    <corners android:radius="200dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Default state (Unchecked or not pressed) -->
+    <item>
+        <layer-list>
+            <!-- Background with solid color -->
+            <item>
+                <shape>
+                    <solid android:color="#00000000" />
+                    <corners android:radius="5dp" />
+                    <stroke android:color="#00000000" android:width="1dp" />
+                </shape>
+            </item>
+            <!-- Underline with the desired color and height -->
+            <item android:top="40dp" android:bottom="3dp">
+                <shape>
+                    <solid android:color="#5DB075" />
+                    <corners android:radius="200dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>
+

@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Logo centered and a little under the top -->
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="200dp"
@@ -28,20 +27,21 @@
         android:fontFamily="serif"
         />
 
+
     <!-- SignUp text to the left of the login text -->
     <TextView
         android:id="@+id/signUpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/logoImageView"
-        android:layout_toRightOf="@id/loginTextView"
-        android:layout_marginTop="20dp"
-        android:textColor="#5DB075"
         android:layout_marginLeft="100dp"
-        android:textSize="15dp"
-        android:text="@string/sign_up_text"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/loginTextView"
         android:fontFamily="serif"
-        />
+        android:onClick="onRegisterButtonClickOfLogin"
+        android:text="@string/sign_up_text"
+        android:textColor="#5DB075"
+        android:textSize="15dp" />
 
     <!-- Email and password text fields -->
     <EditText
@@ -96,13 +96,11 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-
+        android:fontFamily="serif"
         android:text="@string/showPassword"
-        android:textColor="#A9A9A9" /> <!-- Set your desired gray color here -->
+        android:textColor="#A9A9A9" />
 
 
-
-    <!-- Login button with specified color -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"

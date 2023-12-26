@@ -1,6 +1,28 @@
 <resources>
     <string name="app_name">mobile-pfe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="swipe_left_for_register">Swipe Left for Register</string>
+    <string name="login">Login</string>
     <string name="hello">Hello</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="tag">register</string>
+    <string name="logo">Healthy</string>
+    <string name="forgotpass">Forgot your password?</string>
+    <string name="swipe_right_for_login">Swipe Right for Login</string>
+    <string name="register">Register</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="your_name">Full Name</string>
+    <string name="checkBoxNewsLetter">I would like to receive your newsletter and other promotional information.</string>
+    <string name="signup_login">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="show">Show</string>
+    <string name="forgot_your_pass">Forgot your password?</string>
+    <string name="or_login_with">Or Login With</string>
+    <string name="facebook_logo">facebook_logo</string>
+    <string name="http_localhost_8080_signup">http://localhost:8080/signup</string>
     <string name="logo_description">Application Logo</string>
     <string name="login_text">Login</string>
     <string name="sign_up_text">Sign Up</string>
@@ -11,45 +33,55 @@
     <string name="forgot_password_text">Forgot your password</string>
 
     <string name="showPassword">Show Password</string>
+
+
     <string name="chooseYourProfile">choose Your Profile</string>
     <string name="CouchChoice">Coach</string>
     <string name="SportifChoice">Sportif</string>
     <string name="next_button_text">Next</string>
-    <string name="fullname">
-        Group Name
-    </string>
-    <string name="fullname2">
-       Group Members
-    </string>
-    <string name="fullname3">
-      Team name
-    </string>
-    <string name="select_grou">
-Select Group  members
-</string>
-    <string name="joseph_mart">
-      3 Selected
-   </string>
-    <string name="tongkun_lee">
-      Tongkun Lee
-   </string>
-    <string name="back">
-      Back
-   </string>
-    <string name="select_team">
-     Select Team members
-   </string>
-    <string name="select_group">
-     Select group members
-   </string>
-    <string name="Teams">
-     Teams
-   </string>
-    <string name="team_a">
-    Team A
-   </string>
-    <string name="members">
-     20 members
-    </string>
+
+    <string name="your_planning">Your Planning</string>
+    <string name="back">Back</string>
+    <string name="search">Search</string>
+    <string name="click_me">Message</string>
+    <string name="filter">Filter</string>
+    <string name="message_her">Message here...</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis.\n</string>
+    <string name="groupe_name">Groupe name</string>
+    <string name="media">Media</string>
+    <string name="starred_messages">Starred Messages</string>
+    <string name="mute_notification">Mute Notification</string>
+    <string name="Members">Members</string>
+    <string name="membre_name_1">Joseph Martinez</string>
+    <string name="link">Link</string>
+    <string name="docs">Docs</string>
+    <string name="all_result">All Result</string>
+    <string name="send">Send</string>
+
+    <string name="Match">Matches</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="completed">Completed</string>
+    <string name="team1_logo_description">LOGO TEAM A</string>
+    <string name="team2_logo_description">LOGO TEAM B</string>
+
+    <string name="FieldLocal">Field Localization</string>
+    <string name="Players">Number Of Players</string>
+    <string name="date">Date</string>
+    <string name="StartTime">Start Time</string>
+    <string name="endTime">End Time</string>
+    <string name="content">Content</string>
+    <string name="competition">Competition</string>
+    <string name="nutritionne">Nutritionnel</string>
+    <string name="entrainement">Entrainement</string>
+    <string name="upload">Upload</string>
+    <string name="equipes">Equipes</string>
+    <string name="team_a">Team A</string>
+    <string name="members">20 members</string>
+    <string name="select_team">Select Team members\n</string>
+    <string name="Teams">Teams</string>
+    <string name="fullname3">Full Name</string>
+    <string name="fullname">Group Name</string>
+    <string name="fullname2">Group Members</string>
+    <string name="tongkun_lee">Tongkun Lee</string>
 
 </resources>
