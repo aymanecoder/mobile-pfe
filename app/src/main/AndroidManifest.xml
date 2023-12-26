@@ -7,9 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
     <application
@@ -32,6 +31,33 @@
             android:exported="false" />
         <activity
             android:name=".ResultActivity.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListMatchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListEquipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.AddCompetitionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListCompetitionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ChoixProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.UploadProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListProgramActivity"
             android:exported="false" />
         <activity
             android:name=".registerActivities.register1_choosePorfile"

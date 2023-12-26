@@ -18,6 +18,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.mobile_pfe.MainActivity;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.loginActivities.login;
+import com.example.mobile_pfe.programActivity.ChoixProgramActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -62,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void makeSignUpRequest() {
-        String url = getString(R.string.http_localhost_8080_signup); // Replace with your backend API endpoint
+        String url = "http://100.89.22.10:8080"; // Replace with your backend API endpoint
 
         // Get user input from EditText fields
         String name = etName.getText().toString().trim();
@@ -73,10 +74,11 @@ public class RegisterActivity extends AppCompatActivity {
         // Create JSON object with user data
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("name", name);
+            jsonBody.put("firstName", name);
+            jsonBody.put("lastName", name);
             jsonBody.put("email", email);
             jsonBody.put("password", password);
-            jsonBody.put("repassword", repassword);
+            jsonBody.put("role", "USER");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -93,6 +95,9 @@ public class RegisterActivity extends AppCompatActivity {
                         try {
                             String message = response.getString("message");
                             Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegisterActivity.this, login.class);
+                            startActivity(intent);
+                            finish();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -102,7 +107,9 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle errors
-                        Toast.makeText(RegisterActivity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Error: " + error, Toast.LENGTH_SHORT).show();
+                        System.out.println("Error Trace");
+                        error.printStackTrace();
                     }
                 }
         );
