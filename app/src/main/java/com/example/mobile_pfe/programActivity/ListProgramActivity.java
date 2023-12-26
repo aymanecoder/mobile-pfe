@@ -73,6 +73,13 @@ public class ListProgramActivity extends AppCompatActivity {
     private void generateEmployeeList(ArrayList<Program> programDataList) {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
+        if (programDataList == null) {
+            // Handle the case where data is null
+            // For example, display a message or perform some appropriate action
+            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         adapter = new ProgramAdapter(programDataList);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListProgramActivity.this);
