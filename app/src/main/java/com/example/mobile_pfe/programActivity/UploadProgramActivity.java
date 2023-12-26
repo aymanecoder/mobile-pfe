@@ -47,7 +47,8 @@ public class UploadProgramActivity extends AppCompatActivity {
         chooseFileButton = findViewById(R.id.choose_file_button);
         submitButton = findViewById(R.id.submit_button);
 
-        ProgramService programmeService = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
+        this.programmeService = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
+
 
         chooseFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
