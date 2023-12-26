@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".matchActivities.ItemFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,10 +15,12 @@
         android:paddingBottom="14dp"
         android:background="@android:color/white">
 
-        <!-- Existing RelativeLayout with rounded_card background -->
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="190dp"
+
+            android:layout_margin="12dp"
             android:background="@drawable/rounded_card">
 
             <!-- Existing content -->
@@ -39,6 +42,8 @@
                     <ImageView
                         android:id="@+id/team1Logo"
                         android:layout_width="48dp"
+
+                        android:src="@drawable/team1_logo"
                         android:layout_height="48dp"
                         android:contentDescription="@string/team1_logo_description" />
 
@@ -84,6 +89,8 @@
                     <ImageView
                         android:id="@+id/team2Logo"
                         android:layout_width="48dp"
+
+                        android:src="@drawable/team2_logo"
                         android:layout_height="48dp"
                         android:contentDescription="@string/team2_logo_description" />
 
@@ -108,7 +115,119 @@
         </RelativeLayout>
 
 
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="40dp">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                tools:context=".matchActivities.ItemFragment" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="280dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="190dp"
+                app:cardCornerRadius="10dp"
+                android:background="@android:color/transparent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="9dp"
+                    android:paddingStart="19dp"
+                    android:text="Monday,5 March 2023"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/halant_regular"
+                    android:textColor="#A9A9A9" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="30dp"
+                    android:paddingStart="16dp"
+                    android:text="2:00 PM "
+                    android:textStyle="bold"
+                    android:fontFamily="@font/halant_regular"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/calendar"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="2dp"
+                    ></ImageView>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/clock"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="25dp"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="30dp"
+                    android:paddingStart="16dp"
+                    android:text=" | "
+                    android:textStyle="bold"
+                    android:fontFamily="@font/halant_regular"
+                    android:textColor="@color/black" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/location"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginTop="25dp"
+                    ></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="30dp"
+                    android:paddingStart="16dp"
+                    android:text=" Rabat "
+                    android:textStyle="bold"
+                    android:fontFamily="@font/halant_regular"
+                    android:textColor="@color/black" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
 
 
-</FrameLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/yourFragment"
+            android:name="com.example.mobile_pfe.matchActivities.Team1Fragment"
+            android:layout_width="match_parent"
+            android:layout_margin="15dp"
+            android:layout_height="300dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/yourFragment2"
+            android:name="com.example.mobile_pfe.matchActivities.Team1Fragment"
+            android:layout_width="match_parent"
+            android:nestedScrollingEnabled="false"
+            android:layout_margin="15dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView >

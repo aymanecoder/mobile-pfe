@@ -5,9 +5,13 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -121,14 +125,46 @@ public class UpcomingFragment extends Fragment {
             }
         });
 
+
+        Button addMore = view.findViewById(R.id.addMatch);
+        addMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                // Hide the "Match" title and the LinearLayout with buttons
+                hideViews();
+
+
+                // Create a new instance of ItemFragment and set arguments
+                AddMatchFragment addMatchFragment = new AddMatchFragment();
+
+                // Replace the current fragment with ItemFragment
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, addMatchFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+
         listView.setAdapter(adapter);
 
         return view;
     }
     private void hideViews() {
-        matchTextView.setVisibility(View.GONE);
-        buttonsLayout.setVisibility(View.GONE);
+
+        // Delay the execution by 1 second (1000 milliseconds)
+        long delayMillis = 10;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Code to hide views
+                matchTextView.setVisibility(View.GONE);
+                buttonsLayout.setVisibility(View.GONE);
+            }
+        }, delayMillis);
     }
+
 
     private void showViews() {
         matchTextView.setVisibility(View.VISIBLE);

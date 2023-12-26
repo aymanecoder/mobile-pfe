@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -16,6 +21,44 @@
         android:theme="@style/Theme.Mobilepfe"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResultActivity.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListMatchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListEquipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.AddCompetitionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListCompetitionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ChoixProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.UploadProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ProgramActivity"
+            android:exported="false" />
+        <activity
+            android:name=".programActivity.ListProgramActivity"
+            android:exported="false" />
         <activity
             android:name=".UI.VideoActivity"
             android:exported="false">
@@ -62,13 +105,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <activity
-            android:name=".UI.FindFriends"
-            android:exported="false"
-            android:theme="@style/Theme.Mobilepfe" />
-        <activity
-            android:name=".UI.FindCoaches"
-            android:exported="false" />
+
     </application>
 
 </manifest>
