@@ -5,11 +5,13 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -123,6 +125,7 @@ public class UpcomingFragment extends Fragment {
             }
         });
 
+
         Button addMore = view.findViewById(R.id.addMatch);
         addMore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +151,7 @@ public class UpcomingFragment extends Fragment {
         return view;
     }
     private void hideViews() {
+
         // Delay the execution by 1 second (1000 milliseconds)
         long delayMillis = 10;
 

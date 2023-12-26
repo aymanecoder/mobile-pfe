@@ -3,6 +3,7 @@ package com.example.mobile_pfe.matchActivities;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Handler;
@@ -37,8 +38,10 @@ public class CompletedFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
     private TextView matchTextView;
     private LinearLayout buttonsLayout;
+
 
     public CompletedFragment() {
         // Required empty public constructor
@@ -76,6 +79,7 @@ public class CompletedFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_completed, container, false);
+
         matchTextView = requireActivity().findViewById(R.id.matchTextView);
         buttonsLayout = requireActivity().findViewById(R.id.buttonsLayout);
         showViews();
@@ -98,6 +102,7 @@ public class CompletedFragment extends Fragment {
 
         // Create and set the adapter
         MatchCompletedAdapter adapter = new MatchCompletedAdapter(requireContext(), matchList);
+
         adapter.setOnMoreButtonClickListener(new MatchListAdapter.OnMoreButtonClickListener() {
             @Override
             public void onMoreButtonClick(MatchItem matchItem) {
@@ -120,6 +125,7 @@ public class CompletedFragment extends Fragment {
 
         return view;
     }
+
 
     private void hideViews() {
         // Delay the execution by 1 second (1000 milliseconds)

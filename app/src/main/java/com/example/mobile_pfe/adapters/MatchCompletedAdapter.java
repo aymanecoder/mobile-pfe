@@ -19,22 +19,28 @@ public class MatchCompletedAdapter extends BaseAdapter {
     private Context context;
     private List<MatchItem> matchList;
 
+<<<<<<< HEAD
+=======
     public interface OnMoreButtonClickListener {
         void onMoreButtonClick(MatchItem matchItem);
     }
 
     private MatchListAdapter.OnMoreButtonClickListener onMoreButtonClickListener;
 
+>>>>>>> dev
     public MatchCompletedAdapter(Context context, List<MatchItem> matchList) {
         this.context = context;
         this.matchList = matchList;
     }
 
+<<<<<<< HEAD
+=======
     public void setOnMoreButtonClickListener(MatchListAdapter.OnMoreButtonClickListener listener) {
         this.onMoreButtonClickListener = listener;
     }
 
 
+>>>>>>> dev
     @Override
     public int getCount() {
         return matchList.size();
@@ -73,6 +79,8 @@ public class MatchCompletedAdapter extends BaseAdapter {
         team2Name.setText(match.getTeam2Name());
         team2Score.setText(String.valueOf(match.getTeam2Score()));
 
+<<<<<<< HEAD
+=======
         moreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +91,7 @@ public class MatchCompletedAdapter extends BaseAdapter {
             }
         });
 
+>>>>>>> dev
         // Implement the click listener for the "More" button here
 
         return convertView;

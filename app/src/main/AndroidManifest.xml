@@ -60,6 +60,32 @@
             android:name=".programActivity.ListProgramActivity"
             android:exported="false" />
         <activity
+            android:name=".UI.VideoActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".UI.CoachVideos"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".UI.CoachWorkout"
+            android:exported="false" />
+        <activity
+            android:name=".UI.CoachContent"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".UI.MainActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".ResultActivity.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
         <activity
@@ -79,6 +105,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

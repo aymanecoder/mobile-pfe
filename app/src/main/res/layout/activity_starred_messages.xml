@@ -105,6 +105,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="100dp"
                             app:layout_constraintBottom_toBottomOf="parent"
+
                             app:layout_constraintEnd_toStartOf="@+id/membre_name_text"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
@@ -112,6 +113,7 @@
                             app:srcCompat="@mipmap/logo_profile_foreground" />
 
                         <TextView
+
                             android:id="@+id/membre_name_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -159,6 +161,7 @@
                             app:srcCompat="@mipmap/logo_profile_foreground" />
 
                         <TextView
+
                             android:id="@+id/membre_name_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -200,13 +203,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="100dp"
                             app:layout_constraintBottom_toBottomOf="parent"
+
                             app:layout_constraintEnd_toStartOf="@+id/message_name_text"
+
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@mipmap/logo_profile_foreground" />
 
                         <TextView
+
                             android:id="@+id/message_name_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -248,6 +254,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="100dp"
                             app:layout_constraintBottom_toBottomOf="parent"
+
                             app:layout_constraintEnd_toStartOf="@+id/message_name_text"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
@@ -255,6 +262,7 @@
                             app:srcCompat="@mipmap/logo_profile_foreground" />
 
                         <TextView
+
                             android:id="@+id/message_name_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

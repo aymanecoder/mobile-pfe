@@ -1,6 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!-- res/values/styles.xml -->
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Style for the Gray Button -->
+    <style name="button" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/light_green_button</item>
+    </style>
     <style name="GrayButtonStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">70dp</item>
@@ -52,6 +57,7 @@
         <item name="android:paddingBottom">20dp</item>
 
     </style>
+
 
 
     <style name="filter">
