@@ -1,0 +1,146 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="14dp"
+    android:background="@android:color/white">
+
+    <!-- Existing RelativeLayout with rounded_card background -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@drawable/rounded_card">
+
+        <!-- Existing content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp">
+
+            <!-- Team 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Team 1 Logo -->
+                <ImageView
+                    android:id="@+id/team1Logo"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/team1_logo_description" />
+
+                <!-- Team 1 Name -->
+                <TextView
+                    android:id="@+id/team1Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="16dp"
+                    android:text="Team1"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/halant_regular"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+            <!--  team1Score -->
+            <TextView
+                android:id="@+id/team1Score"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="9dp"
+                android:paddingLeft="31dp"
+                android:text="0"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/halant_regular"
+                android:textColor="@color/white"
+                />
+            <!-- VS -->
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="9dp"
+                android:paddingLeft="17dp"
+                android:text="-"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/halant_regular"
+                android:textColor="@color/white"
+                 />
+
+            <!-- team2Score -->
+            <TextView
+                android:id="@+id/team2Score"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="9dp"
+                android:paddingLeft="2dp"
+                android:text="0"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/halant_regular"
+                android:textColor="@color/white"
+                />
+
+            <!-- Team 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Team 2 Logo -->
+                <ImageView
+                    android:id="@+id/team2Logo"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/team2_logo_description" />
+
+                <!-- Team 2 Name -->
+                <TextView
+                    android:id="@+id/team2Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="16dp"
+                    android:text="Team2"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/halant_regular"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white" /> />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <!-- More Button -->
+    <Button
+        android:id="@+id/moreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-23dp"
+        android:background="@drawable/rounded_rectangle_more"
+        android:fontFamily="@font/halant_regular"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:text="More"
+        android:textStyle="bold" />
+
+</LinearLayout>

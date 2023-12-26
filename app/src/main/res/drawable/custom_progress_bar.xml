@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="80dp" /> <!-- Adjust the radius for the desired roundness -->
+            <solid android:color="#E0E0E0" /> <!-- Set your desired background color here -->
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="90dp" /> <!-- Adjust the radius for the desired roundness -->
+                <solid android:color="#5DB075" /> <!-- Set your desired progress color here -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

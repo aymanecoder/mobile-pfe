@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Progress Bar above Logo -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        android:max="100"
+        android:progress="33" />
+
+    <!-- Logo centered and a little under the top -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/logo"
+        android:radius="70dp"
+        android:contentDescription="@string/logo_description" />
+
+    <!-- Rest of your layout remains unchanged -->
+
+    <!-- Login text centered -->
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:text="@string/chooseYourProfile"
+        android:fontFamily="serif"
+        />
+
+
+    <Button
+        android:id="@+id/SportifChoice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/loginTextView"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button_gris"
+        android:textColor="#000000"
+        android:text="@string/SportifChoice"
+        android:fontFamily="serif"
+        />
+
+    <!-- Second Button -->
+    <Button
+        android:id="@+id/CouchChoice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/SportifChoice"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/rounded_button_gris"
+        android:textColor="#000000"
+        android:text="@string/CouchChoice"
+        android:fontFamily="serif"
+        />
+
+
+    <!-- Login button with specified color -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CouchChoice"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#FFFFFF"
+        android:text="@string/next_button_text" />
+
+
+</RelativeLayout>

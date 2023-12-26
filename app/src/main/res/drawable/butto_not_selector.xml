@@ -1,0 +1,43 @@
+<!-- res/drawable/custom_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <!-- Background with solid color -->
+            <item>
+                <shape>
+                    <solid android:color="#11000000" /> <!-- Set your desired pressed color -->
+                    <corners android:radius="5dp" />
+                    <stroke android:color="#11000000" android:width="1dp" />
+                </shape>
+            </item>
+            <!-- Underline with transparent color (0x00000000) to remove it -->
+            <item android:top="2dp" android:bottom="-2dp">
+                <shape>
+                    <solid android:color="#00000000" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Default state (Unchecked or not pressed) -->
+    <item>
+        <layer-list>
+            <!-- Background with solid color -->
+            <item>
+                <shape>
+                    <solid android:color="#00000000" />
+                    <corners android:radius="5dp" />
+                    <stroke android:color="#00000000" android:width="1dp" />
+                </shape>
+            </item>
+            <!-- Underline with transparent color (0x00000000) to remove it -->
+            <item android:top="2dp" android:bottom="-2dp">
+                <shape>
+                    <solid android:color="#00000000" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>
+
