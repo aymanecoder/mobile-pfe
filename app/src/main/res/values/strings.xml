@@ -61,4 +61,9 @@
     <string name="completed">Completed</string>
     <string name="team1_logo_description">LOGO TEAM A</string>
     <string name="team2_logo_description">LOGO TEAM B</string>
+    <string name="FieldLocal">Field Localization</string>
+    <string name="Players">Number Of Players</string>
+    <string name="date">Date</string>
+    <string name="StartTime">Start Time</string>
+    <string name="endTime">End Time</string>
 </resources>
