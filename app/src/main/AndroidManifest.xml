@@ -29,9 +29,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity
-            android:name=".ResultActivity.ResultActivity"
-            android:exported="false" />
+
         <activity
             android:name=".programActivity.ListMatchActivity"
             android:exported="false" />
@@ -78,7 +76,7 @@
 
         </activity>
         <activity
-            android:name=".UI.MainActivity"
+            android:name=".matchActivities.ShowMatches"
             android:exported="true" >
 
         </activity>
@@ -92,7 +90,7 @@
             android:name=".loginActivities.login"
             android:exported="false" />
         <activity
-            android:name=".matchActivities.ShowMatches"
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
