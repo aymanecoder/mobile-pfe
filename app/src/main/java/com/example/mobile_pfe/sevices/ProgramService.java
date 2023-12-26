@@ -2,7 +2,10 @@ package com.example.mobile_pfe.sevices;
 
 import com.example.mobile_pfe.model.Login.AuthResponse;
 import com.example.mobile_pfe.model.Login.LoginRequest;
+import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.model.Program.ProgramList;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -16,13 +19,14 @@ import retrofit2.http.Part;
 
 public interface ProgramService {
     @GET("/api/v1/programmes")
-    Call<ProgramList> getAll();
+    Call<List<Program>> getAll();
 
     @POST("/api/v1/programmes")
     @Multipart
     Call<ResponseBody> createProgramme(
             @Part MultipartBody.Part file,
             @Part("title") RequestBody title,
-            @Part("description") RequestBody description
+            @Part("descreption") RequestBody description,
+            @Part("typeProgramme") RequestBody typeProgramme
     );
 }

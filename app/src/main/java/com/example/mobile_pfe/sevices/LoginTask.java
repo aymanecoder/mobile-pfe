@@ -15,7 +15,7 @@ public class LoginTask {
 
     public void login(String email, String password, final LoginCallback callback) {
         Retrofit retrofit = new retrofit2.Retrofit.Builder()
-                .baseUrl("http://100.89.22.10:8080")
+                .baseUrl("http://192.168.1.103:8080")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
