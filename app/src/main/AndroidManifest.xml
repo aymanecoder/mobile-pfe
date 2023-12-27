@@ -84,6 +84,9 @@
             android:name=".ResultActivity.ResultActivity"
             android:exported="false" />
         <activity
+            android:name=".CoachPlanningActivity.CoachPlanActivity"
+            android:exported="false"/>
+        <activity
             android:name=".notificationActivities.notification"
             android:label="notification"
             android:exported="true"/>
@@ -103,6 +106,18 @@
             android:name=".TeamActivity.ItemActivity"
             android:label="TeamActivity"
             android:exported="true"/>
+        <activity
+            android:name=".GroupChatActivity.GroupChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupChatActivity.GroupChatProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupChatActivity.StarredMessagesActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.mobile_pfe.GroupChatActivity.MediaMessagesActivity"
+            android:exported="false" />
         <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />

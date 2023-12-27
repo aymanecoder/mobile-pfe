@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobile_pfe.Adapter.MyCoachAdapter;
 import com.example.mobile_pfe.Adapter.UserAdapter;
 import com.example.mobile_pfe.Model.User;
 import com.example.mobile_pfe.R;
@@ -50,7 +51,7 @@ public class CoachesFragment extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
-        UserAdapter adapter = new UserAdapter(coachesList);
+        MyCoachAdapter adapter = new MyCoachAdapter(coachesList);
         recyclerView.setAdapter(adapter);
 
         return rootView;
