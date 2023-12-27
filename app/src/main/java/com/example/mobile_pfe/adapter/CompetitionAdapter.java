@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.adapter;
+package com.example.mobile_pfe.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

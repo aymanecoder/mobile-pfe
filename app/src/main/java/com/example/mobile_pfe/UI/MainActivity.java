@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.TeamActivity.TeamActivity;
+import com.example.mobile_pfe.matchActivities.ShowMatches;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -133,6 +135,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FindCoaches.class);
+                startActivity(intent);
+            }
+        });
+
+        RelativeLayout matchsLayout = findViewById(R.id.matchs);
+        matchsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event, e.g., start the ShowMatches activity
+                Intent intent = new Intent(MainActivity.this, ShowMatches.class);
+                startActivity(intent);
+            }
+        });
+
+        RelativeLayout teamsLayout = findViewById(R.id.teams);
+
+        teamsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event, e.g., start the ShowMatches activity
+                Intent intent = new Intent(MainActivity.this, TeamActivity.class);
                 startActivity(intent);
             }
         });
