@@ -2,6 +2,7 @@ package com.example.mobile_pfe.Adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,11 @@ import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.Model.User;
 
 import java.util.List;
-
-public class UserAdapter extends RecyclerView.Adapter<UserHolder> {
+public class GroupAdapter extends RecyclerView.Adapter<UserHolder> {
 
     private List<User> friendsList;
 
-    public UserAdapter(List<User> friendsList) {
+    public GroupAdapter(List<User> friendsList) {
         this.friendsList = friendsList;
     }
 
@@ -42,7 +42,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserHolder> {
             @Override
             public void onClick(View view) {
                 // Handle click event here
-                //navigateToGroupChatActivity(user ,holder);
+                navigateToGroupChatActivity(user ,holder);
             }
         });
     }
@@ -55,6 +55,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserHolder> {
 
         // Start the activity
         holder.itemView.getContext().startActivity(intent);
+        // Finish the current activity
         ((Activity) holder.itemView.getContext()).finish();
     }
 

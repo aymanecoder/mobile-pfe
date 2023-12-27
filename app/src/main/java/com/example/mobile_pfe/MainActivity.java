@@ -70,9 +70,8 @@ public class MainActivity extends AppCompatActivity {
         // Start the SecondActivity
         startActivity(intent);
 
-        // If you want to finish the main activity after starting the second activity, you can call finish()
-        // finish();
-    }
+}
+
     public void onRegisterButtonClick(View view) {
         // Handle the button click
         Intent intent = new Intent(this, RegisterActivity.class);

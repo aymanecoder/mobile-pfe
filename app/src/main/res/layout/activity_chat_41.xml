@@ -71,40 +71,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/vector"
-        android:layout_width="236dp"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
-        android:background="#5DB075"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bg"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/vector_1"
-        android:layout_width="236dp"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
-        android:background="#5DB075"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vector"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <View
         android:id="@+id/bg_text_input"
         android:layout_width="343dp"
         android:layout_height="50dp"
@@ -112,13 +78,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="92dp"
         android:background="@drawable/bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vector_1"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/message_her"

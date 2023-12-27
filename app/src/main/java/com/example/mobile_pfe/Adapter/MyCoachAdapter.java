@@ -9,17 +9,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.GroupChatActivity.GroupChatActivity;
-import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.CoachPlanningActivity.CoachPlanActivity;
 import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.R;
 
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserHolder> {
+
+public class MyCoachAdapter extends RecyclerView.Adapter<UserHolder> {
 
     private List<User> friendsList;
 
-    public UserAdapter(List<User> friendsList) {
+    public MyCoachAdapter(List<User> friendsList) {
         this.friendsList = friendsList;
     }
 
@@ -42,13 +43,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserHolder> {
             @Override
             public void onClick(View view) {
                 // Handle click event here
-                //navigateToGroupChatActivity(user ,holder);
+                navigateToCoachPlanActivity(user ,holder);
             }
         });
     }
-    private void navigateToGroupChatActivity(User user,  UserHolder holder) {
+    private void navigateToCoachPlanActivity(User user,  UserHolder holder) {
         // Create an Intent to start the GroupChat activity
-        Intent intent = new Intent(holder.itemView.getContext(), GroupChatActivity.class);
+        Intent intent = new Intent(holder.itemView.getContext(), CoachPlanActivity.class);
 
         // Pass any necessary data to the next activity (if needed)
         intent.putExtra("user_name", user.getName());
