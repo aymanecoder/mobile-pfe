@@ -102,6 +102,34 @@
             android:name=".UI.MainActivity"
             android:label="GroupActivity"
             android:exported="false"/>
+
+        <activity
+            android:name=".UI.FriendsFragment"
+            android:label="GroupActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".UI.FindFriends"
+            android:label="GroupActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".UI.FindCoaches"
+            android:label="GroupActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".UI.CoachesFragment"
+            android:label="GroupActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".UI.TeamsFragment"
+            android:label="GroupActivity"
+            android:exported="false"/>
+         <activity
+            android:name=".TeamActivity.TeamActivity"
+            android:label="GroupActivity"
+            android:exported="false"/>
+
+
         <activity
             android:name=".TeamActivity.ItemActivity"
             android:label="TeamActivity"
