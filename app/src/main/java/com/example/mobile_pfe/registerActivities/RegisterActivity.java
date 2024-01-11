@@ -2,26 +2,20 @@ package com.example.mobile_pfe.registerActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.compose.ui.semantics.Role;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.mobile_pfe.MainActivity;
+import com.example.mobile_pfe.Model.Globals.AppGlobals;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.loginActivities.login;
-import com.example.mobile_pfe.programActivity.ChoixProgramActivity;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.mobile_pfe.Model.Register.RegisterResponse;
+import com.example.mobile_pfe.sevices.RegisterTask;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText etName, etEmail, etPassword, etRepassword;
@@ -29,92 +23,62 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ativity_register);
-        ImageView cancelOutButton = findViewById(R.id.cancelOutButton);
-        cancelOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle the click event
-                navigateToStarterScreen();
-            }
-        });
+
+        // Initialize views
         etName = findViewById(R.id.et_name);
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         etRepassword = findViewById(R.id.et_repassword);
-
         Button signupButton = findViewById(R.id.signupButton);
+
+        // Set up the signup button click listener
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Call the method to make the POST request
                 makeSignUpRequest();
             }
         });
     }
-    private void navigateToStarterScreen() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        // Optionally, you can finish the current activity if you don't want to go back to it
-        // finish();
-    }
-    public void onLoginButtonClick(View view) {
-        // Handle the button click
-        Intent intent = new Intent(this, login.class);
-        startActivity(intent);
-    }
-    private void makeSignUpRequest() {
-        String url = "http://100.89.22.10:8080"; // Replace with your backend API endpoint
 
-        // Get user input from EditText fields
-        String name = etName.getText().toString().trim();
-        String email = etEmail.getText().toString().trim();
+    private void makeSignUpRequest() {
+        String fullName = etName.getText().toString().trim();
+        String[] names = fullName.split(" ", 2);  // Split the string into two parts
+
+        String firstName = "";
+        String lastName = "";
+
+        if (names.length > 0) {
+            firstName = names[0];  // First part is the first name
+            if (names.length > 1) {
+                lastName = names[1];  // Second part is the last name
+            }
+        }
+        String email = etEmail.getText().toString();
         String password = etPassword.getText().toString().trim();
         String repassword = etRepassword.getText().toString().trim();
-        System.out.printf("%s %s %s %s", repassword, password, email, name);
-        // Create JSON object with user data
-        JSONObject jsonBody = new JSONObject();
-        try {
-            jsonBody.put("firstName", name);
-            jsonBody.put("lastName", name);
-            jsonBody.put("email", email);
-            jsonBody.put("password", password);
-            jsonBody.put("role", "USER");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        Log.e("Request", "Request: " + email );
+        // Use RegisterTask for the registration process
+        RegisterTask registerTask = new RegisterTask();
+        registerTask.Register(email,password ,"USER" ,firstName ,lastName , new RegisterTask.RegisterCallback() {
+            @Override
+            public void onSuccess() {
+                // Handle success
+                Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                navigateToLogin();
+            }
 
-        // Make a POST request using Volley
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.POST,
-                url,
-                jsonBody,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // Handle the response from the backend
-                        try {
-                            String message = response.getString("message");
-                            Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegisterActivity.this, login.class);
-                            startActivity(intent);
-                            finish();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // Handle errors
-                        Toast.makeText(RegisterActivity.this, "Error: " + error, Toast.LENGTH_SHORT).show();
-                        System.out.println("Error Trace");
-                        error.printStackTrace();
-                    }
-                }
-        );
 
-        // Add the request to the Volley request queue
-        Volley.newRequestQueue(this).add(jsonObjectRequest);
+            @Override
+            public void onError(String errorMessage) {
+                // Handle error
+                Toast.makeText(RegisterActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void navigateToLogin() {
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
+        finish();
     }
 }

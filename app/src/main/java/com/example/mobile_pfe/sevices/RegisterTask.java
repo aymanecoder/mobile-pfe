@@ -1,8 +1,12 @@
 package com.example.mobile_pfe.sevices;
 
+import android.util.Log;
+
 import com.example.mobile_pfe.Model.Globals.AppGlobals;
 import com.example.mobile_pfe.Model.Register.RegisterResponse;
 import com.example.mobile_pfe.Model.Register.RegisterRequest;
+
+import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,7 +21,7 @@ public class RegisterTask {
 
     public void Register(String email, String password, String Role, String firstName, String lastName, final RegisterCallback callback) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.101:8080") // Adjust the base URL accordingly
+                .baseUrl("http://192.168.1.177:8080") // Adjust the base URL accordingly
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -31,9 +35,30 @@ public class RegisterTask {
                     RegisterResponse RegisterResponse = response.body();
                     String accessToken = RegisterResponse.getAccessToken();
                     AppGlobals.setAccessToken(accessToken);
+                    Log.d("RegisterAPI", "Access Token: " + accessToken);
+
                     callback.onSuccess();
                 } else {
-                    callback.onError("Invalid credentials. Please try again.");
+                    // Error case
+                    Log.e("RegisterAPI", "Response Code: " + response.code());
+                    String errorMessage = "Unknown error occurred";
+                    if (response.errorBody() != null) {
+                        try {
+                            errorMessage = response.errorBody().string();
+                            if (errorMessage.isEmpty()) {
+                                errorMessage = "Error body is empty";
+                            }
+                        } catch (IOException e) {
+                            Log.e("RegisterAPI", "Error reading error body", e);
+                            errorMessage = "Exception occurred: " + e.getMessage();
+                        }
+                    } else {
+                        errorMessage = "Error body is null";
+                    }
+                    Log.e("RegisterAPI", "Response Error: " + errorMessage);
+                    callback.onError("Please try again. Error: " + errorMessage);
+
+
                 }
             }
 
@@ -48,6 +73,7 @@ public class RegisterTask {
 
     public interface RegisterCallback {
         void onSuccess();
+
         void onError(String errorMessage);
     }
 }
