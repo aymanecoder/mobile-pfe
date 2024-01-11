@@ -63,26 +63,36 @@
         android:background="@drawable/rounded_background">
 
         <!-- Entrainement button -->
-        <TextView
+        <Button
             android:id="@+id/entrainement"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="onEntrainementClicked"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/halant_regular"
+            android:textColor="@color/colorTextPrimary"
             android:text="@string/entrainement"
-            android:textAppearance="@style/entrainement" />
+            android:background="@drawable/button_selector"
+            style="@style/MyButtonStyle" />
 
         <!-- Nutrition button -->
-        <TextView
+        <Button
             android:id="@+id/nutrition"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="onNutritionClicked"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:text="@string/nutritionne"
-            android:textAppearance="@style/nutritionne"
+            android:fontFamily="@font/halant_regular"
+            android:textColor="@color/gris"
+            android:background="@drawable/butto_not_selector"
+            style="@style/MyButtonStyle"
             />
 
     </LinearLayout>
@@ -98,19 +108,11 @@
 
     <!-- Your other views above the posts -->
     <!-- ScrollView to hold multiple posts -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/search_view">
-
-        <!-- Container for posts -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/search_view"/>
-    </ScrollView>
-
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/fragment_container" />
 </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
