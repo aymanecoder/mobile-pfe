@@ -1,6 +1,5 @@
-package com.example.mobile_pfe.model.Equipe;
+package com.example.mobile_pfe.Model.Equipe;
 
-import com.example.mobile_pfe.model.Equipe.Equipe;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;

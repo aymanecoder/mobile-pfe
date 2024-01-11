@@ -1,10 +1,7 @@
-package com.example.mobile_pfe.model.Program;
+package com.example.mobile_pfe.Model.Program;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
-import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.google.gson.annotations.SerializedName;
-
-import java.io.File;
 
 public class Program {
     @SerializedName("title")

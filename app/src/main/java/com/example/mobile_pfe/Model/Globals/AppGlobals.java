@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model.Globals;
+package com.example.mobile_pfe.Model.Globals;
 
 public class AppGlobals {
     public static String accessToken;

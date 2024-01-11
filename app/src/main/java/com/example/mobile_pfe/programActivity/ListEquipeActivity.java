@@ -1,7 +1,6 @@
 package com.example.mobile_pfe.programActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -10,10 +9,8 @@ import android.widget.Toast;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Equipe.Equipe;
-import com.example.mobile_pfe.model.Equipe.EquipeList;
-import com.example.mobile_pfe.model.Equipe.Equipe;
-import com.example.mobile_pfe.model.Equipe.EquipeList;
+import com.example.mobile_pfe.Model.Equipe.Equipe;
+import com.example.mobile_pfe.Model.Equipe.EquipeList;
 import com.example.mobile_pfe.sevices.EquipeService;
 
 import java.util.ArrayList;

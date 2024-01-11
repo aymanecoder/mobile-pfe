@@ -15,7 +15,7 @@ import android.widget.ListView;
 
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.adapters.TeamListAdapter;
-import com.example.mobile_pfe.model.TeamItem;
+import com.example.mobile_pfe.Model.TeamItem;
 
 import java.util.ArrayList;
 import java.util.List;
