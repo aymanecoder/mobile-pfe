@@ -111,7 +111,7 @@ public class EntrainFragment extends Fragment {
         call.enqueue(new Callback<List<Program>>() {
             @Override
             public void onResponse(Call<List<Program>> call, Response<List<Program>> response){
-                Log.wtf("reponse", response.body() + "");
+                Log.wtf("reponse", response + "");
                 generateEmployeeList((ArrayList<Program>) response.body());
             }
 
@@ -133,18 +133,18 @@ public class EntrainFragment extends Fragment {
 
 
     private void generateEmployeeList(ArrayList<Program> programDataList) {
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view);
 
-        if (programDataList == null) {
-            // Handle the case where data is null
-            // For example, display a message or perform some appropriate action
+        if (programDataList == null || programDataList.isEmpty()) {
+            // Handle the case where data is null or empty
+            Log.e("EntrainFragment", "No data available");
             Toast.makeText(requireContext(), "No data available", Toast.LENGTH_SHORT).show();
             return;
         }
 
         adapter = new ProgramAdapter(programDataList);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext());
 
         recyclerView.setLayoutManager(layoutManager);
 

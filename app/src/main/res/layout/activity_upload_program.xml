@@ -128,6 +128,29 @@
         android:padding="8dp"
         android:hint="Enter Description" />
 
+    <!-- Selection Input (Spinner) -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <RadioButton
+            android:id="@+id/radioEntrainement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_option_entrainement" />
+
+        <RadioButton
+            android:id="@+id/radioNutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_option_nutrition" />
+
+    </RadioGroup>
+
+
     <!-- File Input -->
     <Button
         android:id="@+id/choose_file_button"

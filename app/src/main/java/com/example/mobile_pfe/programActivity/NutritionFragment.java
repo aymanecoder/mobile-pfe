@@ -50,6 +50,9 @@ public class NutritionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private View view;
+
+
 
     //Vars
     private TextView matchTextView;
@@ -94,10 +97,9 @@ public class NutritionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_nutrition, container, false);
-//        matchTextView = requireContext().findViewById(R.id.matchTextView);
-//        buttonsLayout = requireContext().findViewById(R.id.buttonsLayout);
-//        showViews();
+        view = inflater.inflate(R.layout.fragment_nutrition, container, false);
+
+
         /*Create handle for the RetrofitInstance interface*/
         ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
 
@@ -110,6 +112,7 @@ public class NutritionFragment extends Fragment {
         call.enqueue(new Callback<List<Program>>() {
             @Override
             public void onResponse(Call<List<Program>> call, Response<List<Program>> response){
+                Log.wtf("reponse", response + "");
                 generateEmployeeList((ArrayList<Program>) response.body());
             }
 
@@ -121,36 +124,17 @@ public class NutritionFragment extends Fragment {
             }
         });
 
+
         return view;
-    }
-//    private void hideViews() {
-//
-//        // Delay the execution by 1 second (1000 milliseconds)
-//        long delayMillis = 10;
-//
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                // Code to hide views
-//                matchTextView.setVisibility(View.GONE);
-//                buttonsLayout.setVisibility(View.GONE);
-//            }
-//        }, delayMillis);
-//    }
-
-
-    private void showViews() {
-        matchTextView.setVisibility(View.VISIBLE);
-        buttonsLayout.setVisibility(View.VISIBLE);
     }
 
 
     private void generateEmployeeList(ArrayList<Program> programDataList) {
-        recyclerView = (RecyclerView) requireActivity().findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view);
 
-        if (programDataList == null) {
-            // Handle the case where data is null
-            // For example, display a message or perform some appropriate action
+        if (programDataList == null || programDataList.isEmpty()) {
+            // Handle the case where data is null or empty
+            Log.e("EntrainFragment", "No data available");
             Toast.makeText(requireContext(), "No data available", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -163,6 +147,7 @@ public class NutritionFragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
     }
+
 
 
 
