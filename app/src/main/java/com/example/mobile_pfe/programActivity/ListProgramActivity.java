@@ -1,22 +1,30 @@
 package com.example.mobile_pfe.programActivity;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.UI.CoachContent;
-import com.example.mobile_pfe.UI.FindCoaches;
-import com.example.mobile_pfe.model.Program.Program;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.example.mobile_pfe.sevices.ProgramService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -27,91 +35,168 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ListProgramActivity extends AppCompatActivity {
+public class ListProgramActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
     private ProgramAdapter adapter;
     private RecyclerView recyclerView;
+    private Button entrainButton, nutritionButton;
+    private float x1,x2;
+    private static int MIN_DISTANCE =150;
+    private GestureDetector gestureDetector;
+
+    private ColorStateList originalTextColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_program);
 
+        this.gestureDetector = new GestureDetector(ListProgramActivity.this,this);
 
-        TextView back = findViewById(R.id.Back);
-        back.setOnClickListener(new View.OnClickListener() {
+
+        entrainButton = findViewById(R.id.entrainement);
+        nutritionButton = findViewById(R.id.nutrition);
+
+        // Set up ViewPager with the adapter
+
+        // Set the default fragment to UpcomingFragment
+        replaceFragment(new EntrainFragment());
+
+
+
+        entrainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ListProgramActivity.this, CoachContent.class);
-                startActivity(intent);
-
+                replaceFragment(new EntrainFragment());
+                setButtonStyles(entrainButton, nutritionButton);
             }
         });
 
-        /*Create handle for the RetrofitInstance interface*/
-        ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
-
-        /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Program>> call = service.getAll();
-
-        /*Log the URL called*/
-        Log.wtf("URL Called", call.request().url() + "");
-
-        call.enqueue(new Callback<List<Program>>() {
+        nutritionButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<List<Program>> call, Response<List<Program>> response){
-                generateEmployeeList((ArrayList<Program>) response.body());
-            }
-
-            @Override
-            public void onFailure(Call<List<Program>> call, Throwable t) {
-                System.out.println("get all errors");
-                t.printStackTrace();
-                Toast.makeText(ListProgramActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                replaceFragment(new NutritionFragment());
+                setButtonStyles(nutritionButton, entrainButton);
             }
         });
 
-        FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
-        fabAdd.setOnClickListener(new View.OnClickListener() {
+        // Move the backButton code here
+        TextView backButton = findViewById(R.id.Back);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                // Navigate to UploadActivity when fabAdd is clicked
-                Intent intent = new Intent(ListProgramActivity.this, UploadProgramActivity.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
-    }
 
+        originalTextColor = backButton.getTextColors();
+        backButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Pressed state: Set text color to white
+                        backButton.setTextColor(Color.WHITE);
+                        break;
 
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // Released or canceled state: Restore the original text color
+                        backButton.setTextColor(originalTextColor);
+                        break;
+                }
+                return false;
+            }
+        });
+        Log.d("AccessToken", "Value: " + AppGlobals.getAccessToken());
+// Now you can call extractUserRole
+        List<String> userRoles = AppGlobals.extractUserRoles();
 
-    private void generateEmployeeList(ArrayList<Program> programDataList) {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        Log.d("UserRole", "Value: " + userRoles);
 
-        if (programDataList == null) {
-            // Handle the case where data is null
-            // For example, display a message or perform some appropriate action
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
-            return;
+        if (userRoles.contains("COACH")) {
+            FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
+            fabAdd.setVisibility(View.VISIBLE);
+
+            fabAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Navigate to UploadActivity when fabAdd is clicked
+                    Intent intent = new Intent(ListProgramActivity.this, UploadProgramActivity.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
+            fabAdd.setVisibility(View.GONE);
         }
 
-        adapter = new ProgramAdapter(programDataList);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListProgramActivity.this);
-
-        recyclerView.setLayoutManager(layoutManager);
-
-        recyclerView.setAdapter(adapter);
     }
 
-    public void onNutritionClicked(View view) {
-        // Hide Entrainement and show Nutrition section
-//        findViewById(R.id.entrainementSection).setVisibility(View.GONE);
-//        findViewById(R.id.nutritionSection).setVisibility(View.VISIBLE);
+
+
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
-    public void onEntrainementClicked(View view) {
-        // Hide Nutrition and show Entrainement section
-//        findViewById(R.id.nutritionSection).setVisibility(View.GONE);
-//        findViewById(R.id.entrainementSection).setVisibility(View.VISIBLE);
+    private void setButtonStyles(Button selectedButton, Button unselectedButton) {
+        // Set the background drawables
+        selectedButton.setBackgroundResource(R.drawable.button_selector);
+        unselectedButton.setBackgroundResource(R.drawable.butto_not_selector);
+
+        int textColorSelector = ContextCompat.getColor(this, R.color.colorTextPrimary);
+        int textColor = ContextCompat.getColor(this, R.color.gris);
+
+        selectedButton.setTextColor(textColorSelector);
+        unselectedButton.setTextColor(textColor);
     }
 
+
+    @Override
+    public boolean onDown(@NonNull MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(@NonNull MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(@NonNull MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(@Nullable MotionEvent motionEvent, @NonNull MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(@NonNull MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onFling(@Nullable MotionEvent motionEvent, @NonNull MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        // Get the current fragment
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+
+        // Check the current fragment and set button styles accordingly
+        if (currentFragment instanceof EntrainFragment) {
+            setButtonStyles(entrainButton, nutritionButton);
+        } else if (currentFragment instanceof NutritionFragment) {
+            setButtonStyles(nutritionButton, entrainButton);
+        }
+    }
 }

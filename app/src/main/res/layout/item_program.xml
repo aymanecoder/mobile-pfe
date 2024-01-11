@@ -1,9 +1,10 @@
 <!-- fragment_post.xml -->
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:orientation="vertical">
 
     <!-- Post Title -->
     <TextView
@@ -41,4 +42,4 @@
 
     <!-- Add more views for additional post details if needed -->
 
-</RelativeLayout>
+</LinearLayout>

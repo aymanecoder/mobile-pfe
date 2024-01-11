@@ -83,6 +83,8 @@ dependencies {
     implementation  'de.hdodenhof:circleimageview:3.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.8'
+
 
 
 }

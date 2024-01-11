@@ -9,8 +9,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
 
     private static Retrofit retrofit;
-    public static final String BASE_URL = "http://192.168.0.102:8080/";
+    public static final String BASE_URL = "http://192.168.1.103:8080/";
     private static final String AUTH_TOKEN = AppGlobals.getAccessToken();
+
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
             System.out.println("AUTH_TOKEN"+RetrofitInstance.AUTH_TOKEN);
@@ -25,4 +26,6 @@ public class RetrofitInstance {
         }
         return retrofit;
     }
+
+
 }

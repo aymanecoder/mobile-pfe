@@ -126,14 +126,41 @@
         android:layout_marginTop="20dp"
         android:background="#F0F0F0"
         android:padding="8dp"
-        android:hint="Enter Description" />
+        android:hint="Enter Description"
+
+        />
+
+    <!-- Selection Input (Spinner) -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:layout_below="@id/description_input"
+        >
+
+        <RadioButton
+            android:id="@+id/radioEntrainement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_option_entrainement" />
+
+        <RadioButton
+            android:id="@+id/radioNutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selection_option_nutrition" />
+
+    </RadioGroup>
+
 
     <!-- File Input -->
     <Button
         android:id="@+id/choose_file_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/description_input"
+        android:layout_below="@id/radioGroup"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp"
         android:layout_marginTop="22dp"

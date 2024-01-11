@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
+import com.example.mobile_pfe.programActivity.ListProgramActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,6 +52,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        TextView myPrograms = findViewById(R.id.myPrograms);
+        myPrograms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView , ProgramsFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name")
+                        .commit();
+
+            }
+        });
 
         TextView myTeams = findViewById(R.id.myTeams);
         myTeams.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +152,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageButton programsButton = findViewById(R.id.programs_btn_img);
+        programsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListProgramActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         RelativeLayout matchsLayout = findViewById(R.id.matchs);
         matchsLayout.setOnClickListener(new View.OnClickListener() {

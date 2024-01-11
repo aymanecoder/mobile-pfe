@@ -94,6 +94,16 @@
                 android:textSize="16dp" />
 
             <TextView
+                android:id="@+id/myPrograms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:text="My Programs"
+                android:textColor="@color/green"
+                android:textSize="16dp" />
+
+            <TextView
                 android:id="@+id/myTeams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -225,7 +235,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/coaches_btn_image"
+                    android:layout_below="@+id/coaches_btn_img"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
@@ -234,6 +244,48 @@
                     android:ellipsize="none"
                     android:gravity="center"
                     android:text="Coaches"
+                    android:textColor="@color/green"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/programs"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_marginTop="30dp"
+                android:elevation="8dp"
+
+                android:background="@drawable/rounded_white_layout">
+
+                <ImageButton
+                    android:id="@+id/programs_btn_img"
+                    android:layout_width="220dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/programs_btn_img"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@null"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/programs_btn_img"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="none"
+                    android:gravity="center"
+                    android:text="Programs"
                     android:textColor="@color/green"
                     android:textSize="30dp"
                     android:textStyle="bold" />
@@ -267,12 +319,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/teams_btn_img"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
                     android:ellipsize="none"
                     android:gravity="center"
                     android:text="Teams"

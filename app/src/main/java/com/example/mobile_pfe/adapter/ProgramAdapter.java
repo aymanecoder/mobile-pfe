@@ -1,4 +1,6 @@
 package com.example.mobile_pfe.Adapter;
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,13 @@ import java.util.ArrayList;
 
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramViewHolder> {
 
+
     private ArrayList<Program> dataList;
 
     public ProgramAdapter(ArrayList<Program> dataList) {
+
+
+        Log.wtf("dataList", dataList + "");
         this.dataList = dataList;
     }
 
@@ -30,6 +36,8 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
 
     @Override
     public void onBindViewHolder(ProgramViewHolder holder, int position) {
+
+        Log.d("ProgramAdapter", "onBindViewHolder called for position: " + position);
         holder.txtPostTitle.setText(dataList.get(position).getTitle());
         holder.txtPostDescreption.setText(dataList.get(position).getDescreption());
         Glide.with(holder.itemView.getContext())

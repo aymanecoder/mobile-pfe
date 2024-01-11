@@ -83,5 +83,8 @@
     <string name="fullname">Group Name</string>
     <string name="fullname2">Group Members</string>
     <string name="tongkun_lee">Tongkun Lee</string>
+    <string name="selection_option_entrainement">ENTRAINEMENT</string>
+    <string name="selection_option_nutrition">NUTRITION</string>
+    <string name="selection_prompt">Select Option</string>
 
 </resources>
