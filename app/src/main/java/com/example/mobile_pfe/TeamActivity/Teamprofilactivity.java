@@ -1,77 +1,124 @@
 package com.example.mobile_pfe.TeamActivity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.TeamActivity.ApiService;
-import com.example.mobile_pfe.TeamActivity.TeamResponse;
-import com.example.mobile_pfe.TeamActivity.User;
-import java.util.ArrayList;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import com.example.mobile_pfe.TeamActivity.TeamDetails;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Teamprofilactivity extends AppCompatActivity {
-/**
+
      private EditText emailEditText;
      private Button saveButton;
      private TextView errorTextView;
+     private ImageView logoImageView;
+     private Uri selectedImageUri; // Add this variable to store the selected image URI
+     private String defaultImagePath; // Add this variable to store the default image path
+     private Bitmap selectedBitmap; // Add this variable to store the selected bitmap
+     private static final int PICK_IMAGE_REQUEST = 1;
 
      @Override
      protected void onCreate(Bundle savedInstanceState) {
-     super.onCreate(savedInstanceState);
-     setContentView(R.layout.activity_teamprofil);
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.activity_teamprofil);
 
-     emailEditText = findViewById(R.id.emailEditText);
-     saveButton = findViewById(R.id.Save);
-     errorTextView = findViewById(R.id.errorTextView);
+          emailEditText = findViewById(R.id.emailEditText);
+          saveButton = findViewById(R.id.Save);
+          errorTextView = findViewById(R.id.errorTextView);
+          logoImageView = findViewById(R.id.logoImageView);
 
-     ArrayList<User> selectedUsers = getIntent().getParcelableArrayListExtra("selectedUsers");
+          // Load the default image into logoImageView
+          loadDefaultImage();
 
-     saveButton.setOnClickListener(new View.OnClickListener() {
-     @Override
-     public void onClick(View v) {
-     String email = emailEditText.getText().toString().trim();
+          saveButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                    if (!emailEditText.getText().toString().trim().isEmpty()) {
+                         String teamName = emailEditText.getText().toString().trim();
+                         String logoImageUrl;
 
-     if (!selectedUsers.isEmpty()) {
-     // Ici, vous pouvez récupérer les informations du premier utilisateur sélectionné
-     User user = selectedUsers.get(0);
-     // Vous pouvez utiliser les informations de l'utilisateur pour créer un objet TeamResponse
-     // TeamDetails team = new User(user.name, user.imageId);
+                         if (selectedImageUri != null) {
+                              // User changed the image from the gallery
+                              selectedBitmap = getBitmapFromUri(selectedImageUri);
+                              logoImageView.setImageBitmap(selectedBitmap);
+                              logoImageUrl = saveBitmapToStorage(selectedBitmap); // Use the dynamically generated path
+                         } else {
+                              // User didn't change the image, use the default image path
+                              logoImageUrl = defaultImagePath;
+                         }
 
-     // Initialisation de Retrofit
-     Retrofit retrofit = new Retrofit.Builder()
-     .baseUrl("http://localhost:8080/api/v1/") // L'URL de base doit être définie ici
-     .addConverterFactory(GsonConverterFactory.create())
-     .build();
+                         Intent intent = new Intent(Teamprofilactivity.this, listteamactivity.class);
+                         intent.putExtra("teamName", teamName);
+                         intent.putExtra("logoImageUrl", logoImageUrl);
+                         startActivity(intent);
+                    } else {
+                         errorTextView.setVisibility(View.VISIBLE);
+                    }
+               }
+          });
 
-     // Création de l'interface ApiService pour l'appel à l'API
-     ApiService apiService = retrofit.create(ApiService.class);
+          logoImageView.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                    openGallery();
+               }
+          });
+     }
 
-     // Envoi des données au serveur via l'appel à l'API
-     Call<Void> call = apiService.sendDataToServer(teamResponse);
-     call.enqueue(new Callback<Void>() {
-     @Override
-     public void onResponse(Call<Void> call, Response<Void> response) {
-     // Gérer la réponse du serveur ici en cas de succès
+     private void openGallery() {
+          Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+          startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST);
      }
 
      @Override
-     public void onFailure(Call<Void> call, Throwable t) {
-     // Gérer les erreurs de l'appel au serveur ici
+     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+          super.onActivityResult(requestCode, resultCode, data);
+          if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+               selectedImageUri = data.getData();
+               // Set the selected image to the logoImageView
+               logoImageView.setImageURI(selectedImageUri);
+          }
      }
-     });
-     } else {
-     // Gérer le cas où aucun utilisateur n'est sélectionné
+
+     private Bitmap getBitmapFromUri(Uri uri) {
+          try {
+               return MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+          } catch (IOException e) {
+               e.printStackTrace();
+               return null;
+          }
      }
+
+     private String saveBitmapToStorage(Bitmap bitmap) {
+          // Save the bitmap to a specific location with a dynamically generated name
+          String imageName = "selected_image_" + System.currentTimeMillis() + ".png";
+          File file = new File(getFilesDir(), imageName);
+          try (FileOutputStream fos = new FileOutputStream(file)) {
+               bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+               return file.getAbsolutePath();
+          } catch (IOException e) {
+               e.printStackTrace();
+               return null;
+          }
      }
-     });
-     }**/
+
+     private void loadDefaultImage() {
+          // Load your default image into logoImageView here
+          // Example:
+          logoImageView.setImageResource(R.drawable.background);
+          defaultImagePath = saveBitmapToStorage(getBitmapFromUri(Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.background)));
+     }
 }

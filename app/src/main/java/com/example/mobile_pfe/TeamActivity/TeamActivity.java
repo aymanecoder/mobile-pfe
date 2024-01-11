@@ -66,7 +66,7 @@ public class TeamActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(TeamActivity.this, listteamactivity.class);
+                Intent intent = new Intent(TeamActivity.this, Teamprofilactivity.class);
                 startActivity(intent);
             }
         });

@@ -22,12 +22,15 @@ import retrofit2.Response;
 
 public class listteamactivity extends AppCompatActivity {
     ActivityListviewteamBinding Binding;
+    private ArrayList<Sportif> selectedSportifs; // Added field to store selected sportifs
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Binding = ActivityListviewteamBinding.inflate(getLayoutInflater());
         setContentView(Binding.getRoot());
+
+        selectedSportifs = new ArrayList<>(); // Initialize the selected sportifs list
 
         SportifService sportifService = RetrofitInstance.getSportifService();
 
@@ -48,22 +51,19 @@ public class listteamactivity extends AppCompatActivity {
                 // Handle failure
             }
         });
+
+        // Add a click listener to the "Save" button
+        Button saveButton = findViewById(R.id.Save);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     private void displaySportifs(List<Sportif> sportifs) {
-        ArrayList<User> userArrayList = new ArrayList<>();
-
-        for (Sportif sportif : sportifs) {
-            String fullName = sportif.getFirstName() + " " + sportif.getLastName();
-            int imageId = R.drawable.default_image; // Set a default image or load from the URL
-
-            // Assuming you have a method to load images from the URL, update imageId accordingly
-
-            User user = new User(fullName, imageId);
-            userArrayList.add(user);
-        }
-
-        ListAdapter2 listAdapter = new ListAdapter2(listteamactivity.this, userArrayList);
+        ListAdapter2 listAdapter = new ListAdapter2(listteamactivity.this, sportifs);
         Binding.lisvieww.setAdapter(listAdapter);
     }
 }
