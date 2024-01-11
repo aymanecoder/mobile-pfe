@@ -76,7 +76,7 @@
 
         </activity>
         <activity
-            android:name=".matchActivities.ShowMatches"
+            android:name=".loginActivities.login"
             android:exported="false" >
 
         </activity>
@@ -125,7 +125,7 @@
             android:label="GroupActivity"
             android:exported="false"/>
          <activity
-            android:name=".TeamActivity.TeamActivity"
+            android:name=".matchActivities.ShowMatches"
             android:label="GroupActivity"
             android:exported="false"/>
 
@@ -151,7 +151,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".loginActivities.login"
+            android:name=".TeamActivity.TeamActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

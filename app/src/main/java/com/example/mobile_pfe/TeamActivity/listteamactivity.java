@@ -6,63 +6,64 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityListviewteamBinding;
-import java.util.ArrayList;
+import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.sevices.SportifService;
 
-public class listteamactivity extends AppCompatActivity{
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class listteamactivity extends AppCompatActivity {
     ActivityListviewteamBinding Binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Binding = ActivityListviewteamBinding.inflate(getLayoutInflater());
         setContentView(Binding.getRoot());
 
+        SportifService sportifService = RetrofitInstance.getSportifService();
 
-        int[] imageId={R.drawable.d,R.drawable.d,R.drawable.e ,
-                R.drawable.g ,R.drawable.m,R.drawable.a };
-        String[] name={"Alex","Ayman Biti","Boutaib Mohamed","ZOZO YASSINE","MOMO LGHISSI","KOKO ADIL"};
+        Call<List<Sportif>> call = sportifService.getSportifs();
+        call.enqueue(new Callback<List<Sportif>>() {
+            @Override
+            public void onResponse(Call<List<Sportif>> call, Response<List<Sportif>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<Sportif> sportifs = response.body();
+                    displaySportifs(sportifs);
+                } else {
+                    // Handle error
+                }
+            }
 
-        ArrayList<User> userArrayList = new  ArrayList<>();
-        for(int i=0;i<6;i++)
-        {
-            User user = new User(name[i],imageId[i]);
+            @Override
+            public void onFailure(Call<List<Sportif>> call, Throwable t) {
+                // Handle failure
+            }
+        });
+    }
+
+    private void displaySportifs(List<Sportif> sportifs) {
+        ArrayList<User> userArrayList = new ArrayList<>();
+
+        for (Sportif sportif : sportifs) {
+            String fullName = sportif.getFirstName() + " " + sportif.getLastName();
+            int imageId = R.drawable.default_image; // Set a default image or load from the URL
+
+            // Assuming you have a method to load images from the URL, update imageId accordingly
+
+            User user = new User(fullName, imageId);
             userArrayList.add(user);
         }
 
-        ListAdapter2 listAdapter = new ListAdapter2(listteamactivity.this,userArrayList);
-
-
+        ListAdapter2 listAdapter = new ListAdapter2(listteamactivity.this, userArrayList);
         Binding.lisvieww.setAdapter(listAdapter);
-        Binding.lisvieww.setClickable(true);
-        Button saveButton = findViewById(R.id.Save);
-        /*
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            /*    // Liste pour stocker les utilisateurs sélectionnés
-                ArrayList<User> selectedUsers = new ArrayList<>();
-                ArrayList<User> userList = new ArrayList<>();
-
-// Ajoutez des utilisateurs à votre liste userList
-                userList.add(new User("John Doe", R.drawable.a));
-                userList.add(new User("Alice Smith", R.drawable.b));
-
-// Ajoutez des utilisateurs sélectionnés à la liste selectedUsers
-                selectedUsers.add(userList.get(0));
-                selectedUsers.add(userList.get(userList.size() - 1));
-
-// Créez une intention pour passer les utilisateurs sélectionnés à une autre activité
-                Intent intent = new Intent(listteamactivity.this, Teamprofilactivity.class);
-
-// Utilisez putParcelableArrayListExtra pour passer la liste d'utilisateurs sélectionnés
-                intent.putParcelableArrayListExtra("selectedUsers", selectedUsers);
-                startActivity(intent);
-
-            }
-        });*/
-
-
     }
-
 }

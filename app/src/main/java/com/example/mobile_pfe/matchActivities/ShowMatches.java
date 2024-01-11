@@ -145,9 +145,15 @@ public class ShowMatches extends AppCompatActivity implements GestureDetector.On
     private void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
-        transaction.addToBackStack(null);
+
+        // Skip adding the transaction to the back stack for UpcomingFragment
+        if (!(fragment instanceof UpcomingFragment)) {
+            transaction.addToBackStack(null);
+        }
+
         transaction.commit();
     }
+
 
     @Override
     public boolean onDown(@NonNull MotionEvent motionEvent) {
