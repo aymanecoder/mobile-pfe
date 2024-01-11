@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.adapters.MatchListAdapter;
-import com.example.mobile_pfe.model.MatchItem;
+import com.example.mobile_pfe.Model.MatchItem;
 
 import java.util.ArrayList;
 import java.util.List;

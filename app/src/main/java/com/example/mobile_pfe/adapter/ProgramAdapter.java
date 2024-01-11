@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Program.Program;
+import com.example.mobile_pfe.Model.Program.Program;
 
 import java.util.ArrayList;
 

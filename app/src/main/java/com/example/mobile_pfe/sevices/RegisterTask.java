@@ -1,8 +1,8 @@
 package com.example.mobile_pfe.sevices;
 
-import com.example.mobile_pfe.model.Globals.AppGlobals;
-import com.example.mobile_pfe.model.Register.RegisterResponse;
-import com.example.mobile_pfe.model.Register.RegisterRequest;
+import com.example.mobile_pfe.Model.Globals.AppGlobals;
+import com.example.mobile_pfe.Model.Register.RegisterResponse;
+import com.example.mobile_pfe.Model.Register.RegisterRequest;
 
 import retrofit2.Call;
 import retrofit2.Callback;

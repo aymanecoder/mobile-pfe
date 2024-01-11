@@ -1,6 +1,6 @@
-package com.example.mobile_pfe.model.Login;
+package com.example.mobile_pfe.Model.Register;
 
-public class AuthResponse {
+public class RegisterResponse {
     private String access_token;
 
     public String getAccessToken() {
