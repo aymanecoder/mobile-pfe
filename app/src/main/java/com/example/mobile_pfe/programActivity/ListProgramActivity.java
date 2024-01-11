@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.example.mobile_pfe.sevices.ProgramService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -106,17 +107,29 @@ public class ListProgramActivity extends AppCompatActivity implements GestureDet
                 return false;
             }
         });
+        Log.d("AccessToken", "Value: " + AppGlobals.getAccessToken());
+// Now you can call extractUserRole
+        List<String> userRoles = AppGlobals.extractUserRoles();
 
+        Log.d("UserRole", "Value: " + userRoles);
 
-        FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
-        fabAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Navigate to UploadActivity when fabAdd is clicked
-                Intent intent = new Intent(ListProgramActivity.this, UploadProgramActivity.class);
-                startActivity(intent);
-            }
-        });
+        if (userRoles.contains("COACH")) {
+            FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
+            fabAdd.setVisibility(View.VISIBLE);
+
+            fabAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Navigate to UploadActivity when fabAdd is clicked
+                    Intent intent = new Intent(ListProgramActivity.this, UploadProgramActivity.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
+            fabAdd.setVisibility(View.GONE);
+        }
+
     }
 
 
