@@ -27,6 +27,17 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
         this.dataList = dataList;
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(Program program);
+    }
+
+    private OnItemClickListener listener;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+
     @Override
     public ProgramViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
@@ -52,7 +63,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
         return dataList.size();
     }
 
-    static class ProgramViewHolder extends RecyclerView.ViewHolder {
+    class ProgramViewHolder extends RecyclerView.ViewHolder {
         TextView txtPostTitle, txtPostDescreption;
         ImageView postImage;
 
@@ -61,6 +72,15 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramV
             txtPostTitle = itemView.findViewById(R.id.post_title);
             txtPostDescreption = itemView.findViewById(R.id.post_description);
             postImage = itemView.findViewById(R.id.post_image);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(dataList.get(getAdapterPosition()));
+                    }
+                }
+            });
         }
     }
 }
