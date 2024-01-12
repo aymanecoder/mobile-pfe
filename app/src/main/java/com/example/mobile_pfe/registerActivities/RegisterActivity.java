@@ -56,10 +56,11 @@ public class RegisterActivity extends AppCompatActivity {
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString().trim();
         String repassword = etRepassword.getText().toString().trim();
-        Log.e("Request", "Request: " + email );
+        String Role = "USER";
+        Log.e("Request", "Request: " + email +"Role"+Role  );
         // Use RegisterTask for the registration process
         RegisterTask registerTask = new RegisterTask();
-        registerTask.Register(email,password ,"USER" ,firstName ,lastName , new RegisterTask.RegisterCallback() {
+        registerTask.Register(email, password ,Role ,firstName ,lastName , new RegisterTask.RegisterCallback() {
             @Override
             public void onSuccess() {
                 // Handle success
