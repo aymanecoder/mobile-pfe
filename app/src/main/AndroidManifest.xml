@@ -31,6 +31,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+
             android:name=".programActivity.ListMatchActivity"
             android:exported="false" />
         <activity
@@ -90,7 +91,7 @@
             android:name=".loginActivities.login"
             android:exported="false" />
         <activity
-            android:name=".UI.MainActivity"
+            android:name=".profileActivities.profile"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
