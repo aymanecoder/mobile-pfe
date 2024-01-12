@@ -34,6 +34,7 @@ public class AppGlobals {
         AppGlobals.sportId = sportId;
     }
 
+
     public static List<String> extractUserRoles() {
         try {
             JWT jwt = JWTParser.parse(accessToken);
