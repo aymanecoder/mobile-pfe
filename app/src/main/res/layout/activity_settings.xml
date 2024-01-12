@@ -47,7 +47,7 @@
     </RelativeLayout>
 
     <View
-        android:id="@+id/ellipse_17"
+        android:id="@+id/ellipse_18"
         android:layout_below="@id/full_name"
         android:layout_width="130dp"
         android:layout_height="130dp"
@@ -86,7 +86,7 @@
         android:layout_marginBottom="523dp"
         android:alpha="0.2"
         android:background="@android:color/darker_gray"
-        android:foreground="@drawable/line" />
+        />
 
     <View
         android:id="@+id/icon_person"
@@ -177,7 +177,7 @@
         android:layout_marginBottom="447dp"
         android:alpha="0.2"
         android:background="@android:color/darker_gray"
-        android:foreground="@drawable/line" />
+        />
 
     <View
         android:id="@+id/line4"
@@ -193,7 +193,7 @@
         android:layout_marginBottom="369dp"
         android:alpha="0.2"
         android:background="@android:color/darker_gray"
-        android:foreground="@drawable/line" />
+         />
 
     <RelativeLayout
         android:id="@+id/button"
