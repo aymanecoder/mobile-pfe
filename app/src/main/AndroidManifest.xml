@@ -95,10 +95,6 @@
             android:label=""
             android:exported="false"/>
         <activity
-            android:name=".TeamActivity.listteamactivity"
-            android:label=""
-            android:exported="false"/>
-        <activity
             android:name=".UI.MainActivity"
             android:label="GroupActivity"
             android:exported="false"/>
