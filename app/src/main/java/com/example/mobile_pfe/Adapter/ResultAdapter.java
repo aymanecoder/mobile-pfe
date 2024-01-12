@@ -12,7 +12,7 @@ import android.content.Context;
         import androidx.annotation.Nullable;
 
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.Model.ResultModel;
+import com.example.mobile_pfe.model.ResultModel;
 
 import java.util.ArrayList;
 

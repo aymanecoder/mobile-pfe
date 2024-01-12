@@ -1,6 +1,6 @@
 package com.example.mobile_pfe.Network;
 
-import com.example.mobile_pfe.Model.Globals.AppGlobals;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

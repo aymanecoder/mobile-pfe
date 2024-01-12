@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.Model.TeamItem;
+import com.example.mobile_pfe.model.TeamItem;
 
 import java.util.List;
 

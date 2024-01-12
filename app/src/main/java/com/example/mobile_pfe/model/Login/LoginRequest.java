@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.Model.Login;
+package com.example.mobile_pfe.model.Login;
 
 public class LoginRequest {
     private String email;

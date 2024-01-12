@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.Model.Competition;
+package com.example.mobile_pfe.model.Competition;
 
 import com.google.gson.annotations.SerializedName;
 

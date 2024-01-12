@@ -9,11 +9,10 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.Model.Video;
+import com.example.mobile_pfe.model.Video;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.UI.VideoActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoHolder>{

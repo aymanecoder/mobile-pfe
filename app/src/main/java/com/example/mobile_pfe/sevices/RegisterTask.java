@@ -2,9 +2,9 @@ package com.example.mobile_pfe.sevices;
 
 import android.util.Log;
 
-import com.example.mobile_pfe.Model.Globals.AppGlobals;
-import com.example.mobile_pfe.Model.Register.RegisterResponse;
-import com.example.mobile_pfe.Model.Register.RegisterRequest;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
+import com.example.mobile_pfe.model.Register.RegisterResponse;
+import com.example.mobile_pfe.model.Register.RegisterRequest;
 
 import java.io.IOException;
 

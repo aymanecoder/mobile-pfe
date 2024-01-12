@@ -82,14 +82,14 @@ dependencies {
     //Dependency for circular ImageView
     implementation  'de.hdodenhof:circleimageview:3.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-<<<<<<<<< Temporary merge branch 1
+
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
     implementation 'com.nimbusds:nimbus-jose-jwt:9.8'
 
 
 
     implementation "androidx.databinding:databinding-runtime:4.0.0"
->>>>>>>>> Temporary merge branch 2
+
 
 
 }

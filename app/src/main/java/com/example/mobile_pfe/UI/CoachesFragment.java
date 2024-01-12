@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Adapter.MyCoachAdapter;
-import com.example.mobile_pfe.Adapter.UserAdapter;
-import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;

@@ -6,15 +6,14 @@ import android.util.Log;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.compose.ui.semantics.Role;
 
-import com.example.mobile_pfe.Model.Globals.AppGlobals;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.loginActivities.login;
-import com.example.mobile_pfe.Model.Register.RegisterResponse;
 import com.example.mobile_pfe.sevices.RegisterTask;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -29,8 +28,19 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         etRepassword = findViewById(R.id.et_repassword);
-        Button signupButton = findViewById(R.id.signupButton);
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
 
+        Button signupButton = findViewById(R.id.signupButton);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                // on below line we are getting radio button from our group.
+                RadioButton radioButton = findViewById(checkedId);
+
+                String Role = (String) radioButton.getText();
+            }
+        });
         // Set up the signup button click listener
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
