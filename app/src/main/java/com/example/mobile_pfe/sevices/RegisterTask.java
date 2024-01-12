@@ -26,8 +26,8 @@ public class RegisterTask {
                 .build();
 
         AuthService authService = retrofit.create(AuthService.class);
-        Call<RegisterResponse> call = authService.Register(new RegisterRequest(email, password,Role,firstName,lastName));
-
+        Call<RegisterResponse> call = authService.Register(new RegisterRequest(email, password, Role, firstName, lastName));
+        Log.d("RegisterRequest", "RegisterRequest: Role " +   Role);
         call.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
