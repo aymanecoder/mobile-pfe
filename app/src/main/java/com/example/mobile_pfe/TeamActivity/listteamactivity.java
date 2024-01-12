@@ -18,9 +18,16 @@ import com.example.mobile_pfe.programActivity.UploadProgramActivity;
 import com.example.mobile_pfe.sevices.SportifService;
 import com.example.mobile_pfe.sevices.TeamService;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -84,7 +91,7 @@ public class listteamactivity extends AppCompatActivity {
                         Log.d("SelectedSportif", "Sportif ID: " + sportif.getId());
                         System.out.println("Sportif ID: " + sportif.getId());
                     }
-
+                    System.out.println("REQuestbody " + "logo" + logoImageUrl + "title" + teamName + "description" + description + 1 + "SelctedSportifs" + selectedSportifs);
                     // Implement the logic for sending data to the server
                     sendCreateTeamRequest(logoImageUrl, teamName, description, 1, selectedSportifs, 1);
                 }
@@ -97,17 +104,34 @@ public class listteamactivity extends AppCompatActivity {
     }
 
     private void sendCreateTeamRequest(String logo, String teamName, String description, Integer adminId, List<Sportif> selectedSportifs, Integer sportId) {
-        List<Integer> memberIds = new ArrayList<>();
-        for (Sportif sportif : selectedSportifs) {
-            memberIds.add(sportif.getId()); // Assuming you have a method to get the ID of Sportif
+        // Create a map of member IDs with keys like "members[1].id", "members[2].id", etc.
+        Map<String, Integer> memberIds = new HashMap<>();
+        for (int i = 0; i < selectedSportifs.size(); i++) {
+            memberIds.put("members[" + i + "].id", selectedSportifs.get(i).getId());
         }
 
-        TeamService teamService = RetrofitInstance.getTeamService();
-        Call<Void> call = teamService.createTeam(new TeamRequestBody(logo, teamName, description, adminId, memberIds, sportId));
+        MultipartBody.Part filePart = null;
+        if (logo != null && !logo.isEmpty()) {
+            // Create a MultipartBody.Part for the file (assuming you have the file path)
+            File file = new File(logo);
+            RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+            filePart = MultipartBody.Part.createFormData("logo", file.getName(), requestFile);
+        }
 
-        call.enqueue(new Callback<Void>() {
+        // Create RequestBody for other parameters
+        RequestBody teamNameBody = RequestBody.create(MediaType.parse("text/plain"), teamName);
+        RequestBody descriptionBody = RequestBody.create(MediaType.parse("text/plain"), description);
+        RequestBody adminIdBody = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(adminId));
+        RequestBody sportIdBody = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(sportId));
+
+        TeamService teamService = RetrofitInstance.getTeamService();
+
+        // Use the modified createTeam method with Map<String, Integer> for members
+        Call<ResponseBody> call = teamService.createTeam(filePart, teamNameBody, descriptionBody, sportIdBody, adminIdBody, memberIds);
+
+        call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(listteamactivity.this, "Team details uploaded successfully", Toast.LENGTH_SHORT).show();
                 } else {
@@ -117,9 +141,12 @@ public class listteamactivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(listteamactivity.this, "Failed to upload program details: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+
+
 }

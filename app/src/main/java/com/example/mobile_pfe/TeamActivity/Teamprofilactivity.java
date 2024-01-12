@@ -1,5 +1,6 @@
 package com.example.mobile_pfe.TeamActivity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -14,6 +15,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.TeamItem;
 
@@ -88,7 +92,11 @@ public class Teamprofilactivity extends AppCompatActivity {
           logoImageView.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                    openGallery();
+                    if (checkStoragePermission()) {
+                         openGallery();;
+                    } else {
+                         requestStoragePermission();
+                    }
                }
           });
      }
@@ -132,6 +140,19 @@ public class Teamprofilactivity extends AppCompatActivity {
                filePath = null;
           }
           return filePath;
+     }
+
+     private boolean checkStoragePermission() {
+          int resultRead = ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE);
+          int resultWrite = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+          return resultRead == PackageManager.PERMISSION_GRANTED && resultWrite == PackageManager.PERMISSION_GRANTED;
+     }
+
+     private void requestStoragePermission() {
+          ActivityCompat.requestPermissions(this, new String[]{
+                  android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                  android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+          }, PICK_IMAGE_REQUEST);
      }
 
 
