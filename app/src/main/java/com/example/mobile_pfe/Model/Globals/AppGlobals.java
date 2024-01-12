@@ -11,13 +11,29 @@ import java.util.List;
 
 public class AppGlobals {
     public static String accessToken;
+
+    public static Integer sportId;
     public static String getAccessToken() {
         return accessToken;
     }
 
-    public static void setAccessToken(String accessToken) {
+    public static void setAccessToken(String accessToken)
+    {
+
         AppGlobals.accessToken = accessToken;
     }
+
+
+    public static Integer getSportId() {
+        return sportId;
+    }
+
+    public static void setSportId(Integer sportId)
+    {
+        Log.d("sportid",""+sportId);
+        AppGlobals.sportId = sportId;
+    }
+
 
     public static List<String> extractUserRoles() {
         try {
