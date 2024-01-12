@@ -8,7 +8,7 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="45dp"
         android:layout_marginStart="145dp"
         android:textSize="30sp"
         android:text="@string/TeamA"
@@ -56,6 +56,37 @@
 
         />
 
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="372dp"
+        android:textColor="@color/gris"
+        android:text="@string/description"
+        android:textAppearance="@style/fullname3"
+
+        />
+
+
+    <EditText
+        android:id="@+id/desEditText"
+        android:hint="Description"
+        android:layout_marginStart="40dp"
+        android:textColorHint="#A9A9A9"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="70dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/border"
+        android:inputType="textEmailAddress"
+        android:fontFamily="serif"
+
+
+        />
 
     <TextView
         android:id="@+id/errorTextView"
@@ -73,7 +104,7 @@
         android:id="@+id/Save"
         android:layout_width="327dp"
         android:layout_height="64dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="501dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/rounded_button"
@@ -85,7 +116,7 @@
         android:id="@+id/Save2"
         android:layout_width="327dp"
         android:layout_height="64dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="590dp"
         android:layout_below="@id/textview"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="20dp"

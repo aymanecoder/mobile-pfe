@@ -33,6 +33,11 @@ public class ListAdapter2 extends BaseAdapter {
         this.selectedSportifs = new ArrayList<>();
     }
 
+    public void updateData(List<Sportif> newSportifList) {
+        this.sportifList.clear();
+        this.sportifList.addAll(newSportifList);
+        notifyDataSetChanged();
+    }
     @Override
     public int getCount() {
         return sportifList.size();

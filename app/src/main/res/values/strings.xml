@@ -84,5 +84,6 @@
     <string name="fullname2">Group Members</string>
     <string name="tongkun_lee">Tongkun Lee</string>
     <string name="TeamA">Team A</string>
+    <string name="description">Description</string>
 
 </resources>

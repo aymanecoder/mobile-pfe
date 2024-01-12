@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.model.TeamItem;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,7 +23,8 @@ import java.io.IOException;
 
 public class Teamprofilactivity extends AppCompatActivity {
 
-     private EditText emailEditText;
+     private EditText teamNameEditText;
+     private EditText descriptionEditText;
      private Button saveButton;
      private TextView errorTextView;
      private ImageView logoImageView;
@@ -35,34 +38,46 @@ public class Teamprofilactivity extends AppCompatActivity {
           super.onCreate(savedInstanceState);
           setContentView(R.layout.activity_teamprofil);
 
-          emailEditText = findViewById(R.id.emailEditText);
+          teamNameEditText = findViewById(R.id.emailEditText);
           saveButton = findViewById(R.id.Save);
           errorTextView = findViewById(R.id.errorTextView);
           logoImageView = findViewById(R.id.logoImageView);
+          descriptionEditText = findViewById(R.id.desEditText);
 
-          // Load the default image into logoImageView
-          loadDefaultImage();
+
+
+
 
           saveButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                    if (!emailEditText.getText().toString().trim().isEmpty()) {
-                         String teamName = emailEditText.getText().toString().trim();
+                    if (!teamNameEditText.getText().toString().trim().isEmpty()) {
+                         String teamName = teamNameEditText.getText().toString().trim();
+                         String description = descriptionEditText.getText().toString().trim();
                          String logoImageUrl;
 
                          if (selectedImageUri != null) {
-                              // User changed the image from the gallery
                               selectedBitmap = getBitmapFromUri(selectedImageUri);
                               logoImageView.setImageBitmap(selectedBitmap);
-                              logoImageUrl = saveBitmapToStorage(selectedBitmap); // Use the dynamically generated path
+
+                              // Get the real path from the URI
+                              logoImageUrl = getRealPathFromUri(selectedImageUri);
+                              if (logoImageUrl == null) {
+                                   // Handle the case when the real path is null
+                                   // This might happen due to issues in obtaining the real path
+                                   // You may display an error message or handle it as needed
+                                   Toast.makeText(Teamprofilactivity.this, "Failed to obtain image path", Toast.LENGTH_SHORT).show();
+                                   return;
+                              }// Use the dynamically generated path
                          } else {
                               // User didn't change the image, use the default image path
-                              logoImageUrl = defaultImagePath;
+                              logoImageUrl = null;
                          }
 
                          Intent intent = new Intent(Teamprofilactivity.this, listteamactivity.class);
                          intent.putExtra("teamName", teamName);
                          intent.putExtra("logoImageUrl", logoImageUrl);
+                         intent.putExtra("description", description);
                          startActivity(intent);
                     } else {
                          errorTextView.setVisibility(View.VISIBLE);
@@ -102,23 +117,25 @@ public class Teamprofilactivity extends AppCompatActivity {
           }
      }
 
-     private String saveBitmapToStorage(Bitmap bitmap) {
-          // Save the bitmap to a specific location with a dynamically generated name
-          String imageName = "selected_image_" + System.currentTimeMillis() + ".png";
-          File file = new File(getFilesDir(), imageName);
-          try (FileOutputStream fos = new FileOutputStream(file)) {
-               bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-               return file.getAbsolutePath();
-          } catch (IOException e) {
+     private String getRealPathFromUri(Uri uri) {
+          String filePath = null;
+          try {
+               Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+               if (cursor != null) {
+                    cursor.moveToFirst();
+                    int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                    filePath = cursor.getString(index);
+                    cursor.close();
+               }
+          } catch (Exception e) {
                e.printStackTrace();
-               return null;
+               filePath = null;
           }
+          return filePath;
      }
 
-     private void loadDefaultImage() {
-          // Load your default image into logoImageView here
-          // Example:
-          logoImageView.setImageResource(R.drawable.background);
-          defaultImagePath = saveBitmapToStorage(getBitmapFromUri(Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.background)));
-     }
+
+
+
+
 }
