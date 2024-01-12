@@ -84,4 +84,51 @@
     <string name="fullname2">Group Members</string>
     <string name="tongkun_lee">Tongkun Lee</string>
 
+    <string name="edit_accoun">
+        Edit Account
+    </string>
+    <string name="save">Save</string>
+    <string name="settings">
+        Settings
+    </string>
+    <string name="full_name">
+        Full Name
+    </string>
+    <string name="log_out">
+        Log Out
+    </string>
+    <string name="joseph_mart">
+    <b>Name</b>\nYassine Oussi
+    </string>
+    <string name="email_us">
+    <b>Email</b>\nYassine@uit.ac.ma
+    </string>
+    <string name="password_us">
+    <b>Password</b>\n*************
+
+    </string>
+    <string name="fullName">
+        Full Name
+    </string>
+    <string name="friends_10_">
+        Friends (10)
+    </string>
+    <string name="groups_5_">
+        Groups (5)
+    </string>
+    <string name="my_teams_2_">
+        My Teams (2)
+    </string>
+    <string name="matches_10">
+        Matches\n10
+    </string>
+    <string name="loses_3">
+            Loses\n3
+    </string>
+    <string name="wins_7">
+            Wins      7
+    </string>
+
+
+
 </resources>
