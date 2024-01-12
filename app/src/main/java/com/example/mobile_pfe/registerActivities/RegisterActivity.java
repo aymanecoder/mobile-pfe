@@ -18,7 +18,7 @@ import com.example.mobile_pfe.sevices.RegisterTask;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText etName, etEmail, etPassword, etRepassword;
-
+    private String Role;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ativity_register);
@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
                 // on below line we are getting radio button from our group.
                 RadioButton radioButton = findViewById(checkedId);
 
-                String Role = (String) radioButton.getText();
+                Role = (String) radioButton.getText();
             }
         });
         // Set up the signup button click listener
@@ -66,7 +66,6 @@ public class RegisterActivity extends AppCompatActivity {
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString().trim();
         String repassword = etRepassword.getText().toString().trim();
-        String Role = "USER";
         Log.e("Request", "Request: " + email +"Role"+Role  );
         // Use RegisterTask for the registration process
         RegisterTask registerTask = new RegisterTask();
