@@ -5,8 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +20,7 @@ import com.example.mobile_pfe.UI.CoachContent;
 import com.example.mobile_pfe.UI.FindCoaches;
 import com.example.mobile_pfe.Adapter.CompetitionAdapter;
 import com.example.mobile_pfe.model.Competition.Competition;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.sevices.CompetitionService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,12 +36,16 @@ public class ListCompetitionActivity extends AppCompatActivity {
 
     private CompetitionAdapter adapter;
     private RecyclerView recyclerView;
+
+    private ColorStateList originalTextColor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_competition);
 
         TextView back = findViewById(R.id.Back);
+
+        originalTextColor = back.getTextColors();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,15 +76,47 @@ public class ListCompetitionActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
-        fabAdd.setOnClickListener(new View.OnClickListener() {
+        back.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                // Navigate to UploadActivity when fabAdd is clicked
-                Intent intent = new Intent(ListCompetitionActivity.this, AddCompetitionActivity.class);
-                startActivity(intent);
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Pressed state: Set text color to white
+                        back.setTextColor(Color.WHITE);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // Released or canceled state: Restore the original text color
+                        back.setTextColor(originalTextColor);
+                        break;
+                }
+                return false;
             }
         });
+        Log.d("AccessToken", "Value: " + AppGlobals.getAccessToken());
+// Now you can call extractUserRole
+        List<String> userRoles = AppGlobals.extractUserRoles();
+
+        Log.d("UserRole", "Value: " + userRoles);
+
+        if (userRoles.contains("COACH")) {
+            FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
+            fabAdd.setVisibility(View.VISIBLE);
+
+            fabAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Navigate to UploadActivity when fabAdd is clicked
+                    Intent intent = new Intent(ListCompetitionActivity.this, AddCompetitionActivity.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
+            fabAdd.setVisibility(View.GONE);
+        }
+
     }
 
     private void generateEmployeeList(ArrayList<Competition> programDataList) {

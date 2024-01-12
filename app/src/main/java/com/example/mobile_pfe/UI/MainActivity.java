@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
+import com.example.mobile_pfe.programActivity.ListCompetitionActivity;
 import com.example.mobile_pfe.programActivity.ListProgramActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -184,6 +185,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        RelativeLayout challengesLayout = findViewById(R.id.challenges);
+
+        challengesLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event, e.g., start the ShowMatches activity
+                Intent intent = new Intent(MainActivity.this, ListCompetitionActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
