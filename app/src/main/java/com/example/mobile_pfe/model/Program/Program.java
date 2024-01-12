@@ -7,6 +7,9 @@ import com.google.gson.annotations.SerializedName;
 import java.io.File;
 
 public class Program {
+
+    @SerializedName("id")
+    private Long id;
     @SerializedName("title")
     private String title;
     @SerializedName("descreption")
@@ -18,7 +21,8 @@ public class Program {
     private String picturePath;
 
 
-    public Program(String title, String descreption, String picturePath,String typeProgramme) {
+    public Program(Long id,String title, String descreption, String picturePath,String typeProgramme) {
+        this.id=id;
         this.title = title;
         this.descreption = descreption;
         this.picturePath = picturePath;
@@ -50,6 +54,14 @@ public class Program {
 
     public String getPicturePath() {
         return picturePath.replace("http://localhost:8080/", RetrofitInstance.BASE_URL);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setPicturePath(String picturePath) {

@@ -1,5 +1,6 @@
 package com.example.mobile_pfe.programActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -140,6 +141,16 @@ public class NutritionFragment extends Fragment {
         }
 
         adapter = new ProgramAdapter(programDataList);
+
+        adapter.setOnItemClickListener(new ProgramAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Program program) {
+                // Handle item click, for example, navigate to another activity with program ID
+                Intent intent = new Intent(requireContext(), ProgramActivity.class);
+                intent.putExtra("programId", program.getId());
+                startActivity(intent);
+            }
+        });
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext());
 
