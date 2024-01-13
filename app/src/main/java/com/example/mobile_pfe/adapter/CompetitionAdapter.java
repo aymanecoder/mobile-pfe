@@ -3,6 +3,7 @@ package com.example.mobile_pfe.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +26,8 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
 
     public interface OnItemClickListener {
         void onItemClick(Competition competition);
+
+        void onButtonClick(Competition competition);
     }
 
     private CompetitionAdapter.OnItemClickListener listener;
@@ -63,6 +66,8 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
         TextView txtPostTitle, teams_count,post_date;
         ImageView postImage;
 
+        Button joinChallengeButton;
+
         CompetitionViewHolder(View itemView) {
             super(itemView);
             txtPostTitle = (TextView) itemView.findViewById(R.id.post_title);
@@ -70,11 +75,24 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
             post_date = (TextView) itemView.findViewById(R.id.post_date);
             postImage = itemView.findViewById(R.id.post_image);
 
+            joinChallengeButton = itemView.findViewById(R.id.join_challenge_button);
+
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
                         listener.onItemClick(dataList.get(getAdapterPosition()));
+                    }
+                }
+            });
+
+            joinChallengeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Handle button click here
+                    if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        listener.onButtonClick(dataList.get(getAdapterPosition()));
                     }
                 }
             });

@@ -136,8 +136,14 @@ public class ListCompetitionActivity extends AppCompatActivity {
             @Override
             public void onItemClick(Competition competition) {
                 Intent intent = new Intent(ListCompetitionActivity.this, CompetitionActivity.class);
+                Log.d("competitionId"," "+competition.getId());
                 intent.putExtra("competitionId", competition.getId());
                 startActivity(intent);
+            }
+
+            @Override
+            public void onButtonClick(Competition competition) {
+                // to do
             }
         });
 

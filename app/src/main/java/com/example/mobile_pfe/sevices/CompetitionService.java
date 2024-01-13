@@ -2,6 +2,7 @@ package com.example.mobile_pfe.sevices;
 
 import com.example.mobile_pfe.model.Competition.Competition;
 import com.example.mobile_pfe.model.Competition.CompetitionList;
+import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.model.Program.ProgramList;
 
 import java.util.List;
@@ -14,11 +15,15 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface CompetitionService {
     @GET("/api/v1/challenges")
     Call<List<Competition>> getAll();
 
+
+    @GET("/api/v1/challenges/{id}")
+    Call<Competition> getById(@Path("id") int id);
 
     @POST("/api/v1/challenges")
     @Multipart
