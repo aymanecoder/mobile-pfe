@@ -3,10 +3,12 @@ package com.example.mobile_pfe.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.Competition.Competition;
 
@@ -21,17 +23,34 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
         this.dataList = dataList;
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(Competition competition);
+    }
+
+    private CompetitionAdapter.OnItemClickListener listener;
+
+    public void setOnItemClickListener(CompetitionAdapter.OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+
     @Override
     public CompetitionAdapter.CompetitionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_program, parent, false);
+        View view = layoutInflater.inflate(R.layout.item_competition, parent, false);
         return new CompetitionAdapter.CompetitionViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(CompetitionAdapter.CompetitionViewHolder holder, int position) {
         holder.txtPostTitle.setText(dataList.get(position).getTitle());
-        holder.txtPostDescreption.setText(dataList.get(position).getDescreption());
+        holder.post_date.setText(dataList.get(position).getCreationDate());
+        holder.teams_count.setText(String.valueOf(dataList.get(position).getNbrTeams())+" teams");
+        Glide.with(holder.itemView.getContext())
+                .load(dataList.get(position).getLogoPath())
+                .placeholder(R.drawable.notfound) // Placeholder image while loading
+                .error(R.drawable.notfound) // Error image if it fails to load
+                .into(holder.postImage);
     }
 
     @Override
@@ -41,12 +60,24 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
 
     class CompetitionViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtPostTitle, txtPostDescreption;
+        TextView txtPostTitle, teams_count,post_date;
+        ImageView postImage;
 
         CompetitionViewHolder(View itemView) {
             super(itemView);
             txtPostTitle = (TextView) itemView.findViewById(R.id.post_title);
-            txtPostDescreption = (TextView) itemView.findViewById(R.id.post_description);
+            teams_count = (TextView) itemView.findViewById(R.id.teams_count);
+            post_date = (TextView) itemView.findViewById(R.id.post_date);
+            postImage = itemView.findViewById(R.id.post_image);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(dataList.get(getAdapterPosition()));
+                    }
+                }
+            });
         }
     }
 }

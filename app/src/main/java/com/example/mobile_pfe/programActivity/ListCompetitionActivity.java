@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.UI.CoachContent;
@@ -130,6 +131,15 @@ public class ListCompetitionActivity extends AppCompatActivity {
         }
 
         adapter = new CompetitionAdapter(programDataList);
+
+        adapter.setOnItemClickListener(new CompetitionAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Competition competition) {
+                Intent intent = new Intent(ListCompetitionActivity.this, CompetitionActivity.class);
+                intent.putExtra("competitionId", competition.getId());
+                startActivity(intent);
+            }
+        });
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListCompetitionActivity.this);
 

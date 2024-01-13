@@ -16,7 +16,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 
 public interface CompetitionService {
-    @GET("/challenges")
+    @GET("/api/v1/challenges")
     Call<List<Competition>> getAll();
 
 
@@ -25,7 +25,7 @@ public interface CompetitionService {
     Call<ResponseBody> createCompetition(
             @Part MultipartBody.Part file,
             @Part("title") RequestBody title,
-            @Part("descreption") RequestBody description,
+            @Part("description") RequestBody description,
             @Part("nbrTeams") RequestBody nbrTeams,
             @Part("creationDate") RequestBody creationDate,
             @Part("sport.id") RequestBody sportId
