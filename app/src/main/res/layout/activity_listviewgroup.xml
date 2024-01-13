@@ -8,13 +8,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
    <TextView
-       android:id="@+id/select_team"
+       android:id="@+id/select_group"
        android:layout_width="264dp"
        android:layout_height="30dp"
        android:layout_marginLeft="56dp"
        android:layout_alignParentTop="true"
        android:layout_marginTop="35dp"
-       android:text="@string/select_team"
+       android:text="@string/select_group_members"
        android:textAppearance="@style/select_team"
 
        />

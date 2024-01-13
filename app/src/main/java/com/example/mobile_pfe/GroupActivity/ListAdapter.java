@@ -4,18 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.GroupActivity.User;
+import com.example.mobile_pfe.TeamActivity.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdapter extends BaseAdapter {
@@ -45,7 +40,7 @@ public class ListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.listwiew_activity, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.lisvieweachteam_activity, parent, false);
         }
 
         User user = UserList.get(position);
@@ -53,8 +48,8 @@ public class ListAdapter extends BaseAdapter {
         ImageView imageView = convertView.findViewById(R.id.profile_pic);
         TextView username = convertView.findViewById(R.id.personName);
 
-        imageView.setImageResource(user.imageId);
-        username.setText(user.name);
+        imageView.setImageResource(user.getImageId());
+        username.setText(user.getFirstName());
 
 
         // Implement the click listener for the "More" button here

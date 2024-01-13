@@ -11,6 +11,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.mobile_pfe.GroupActivity.GroupActivity;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
@@ -183,7 +184,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        RelativeLayout groupsLayout = findViewById(R.id.groups);
 
+        groupsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event, e.g., start the ShowMatches activity
+                Intent intent = new Intent(MainActivity.this, GroupActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
