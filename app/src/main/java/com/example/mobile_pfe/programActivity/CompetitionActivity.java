@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.Program.Program;
+import com.example.mobile_pfe.sevices.CompetitionService;
 import com.example.mobile_pfe.sevices.ProgramService;
 
 import retrofit2.Call;
@@ -22,13 +23,13 @@ public class CompetitionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_competition);
 
-        if (getIntent().hasExtra("programId")) {
-            int programId = getIntent().getIntExtra("programId", 1);
-            Toast.makeText(this, "Received program ID: " + programId, Toast.LENGTH_SHORT).show();
+        if (getIntent().hasExtra("competitionId")) {
+            int competitionId = getIntent().getIntExtra("competitionId", 1);
+            Toast.makeText(this, "Received competition ID: " + competitionId, Toast.LENGTH_SHORT).show();
             // Use the program ID as needed
 
 
-            ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
+            CompetitionService service = RetrofitInstance.getRetrofitInstance().create(CompetitionService.class);
 
             /*Call the method with parameter in the interface to get the employee data*/
             Call<Program> call = service.getById(programId);
