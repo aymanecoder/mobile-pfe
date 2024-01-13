@@ -88,7 +88,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
                 android:text="Post Description"
-                android:layout_below="@id/post_author"/>
+                android:layout_below="@id/nmbrTeams"/>
 
             <!-- Date TextView -->
             <TextView
