@@ -144,6 +144,7 @@ public class ListCompetitionActivity extends AppCompatActivity {
             @Override
             public void onButtonClick(Competition competition) {
                 // to do
+                Log.d("button competitionId"," "+competition.getId());
             }
         });
 

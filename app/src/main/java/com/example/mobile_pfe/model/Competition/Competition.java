@@ -11,8 +11,8 @@ public class Competition {
     private Long id;
     @SerializedName("title")
     private String title;
-    @SerializedName("descreption")
-    private String descreption;
+    @SerializedName("description")
+    private String description;
 
     @SerializedName("nbrTeams")
     private int nbrTeams;
@@ -34,7 +34,7 @@ public class Competition {
     public Competition(Long id, String title, String descreption, int nbrTeams, String creationDate, String logoPath) {
         this.id = id;
         this.title = title;
-        this.descreption = descreption;
+        this.description = descreption;
         this.nbrTeams = nbrTeams;
         this.creationDate = creationDate;
         this.logoPath = logoPath;
@@ -73,11 +73,11 @@ public class Competition {
     }
 
     public String getDescreption() {
-        return descreption;
+        return description;
     }
 
     public void setDescreption(String descreption) {
-        this.descreption = descreption;
+        this.description = descreption;
     }
 }
 
