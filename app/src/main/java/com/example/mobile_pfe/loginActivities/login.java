@@ -47,7 +47,7 @@ public class login extends AppCompatActivity {
                         System.out.println("Access Token: " + AppGlobals.getAccessToken());
                         Intent intent = new Intent(login.this, ListSportActivity.class);
                          startActivity(intent);
-                         finish();
+
                     }
 
                     @Override

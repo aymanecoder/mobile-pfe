@@ -155,7 +155,15 @@
         <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
-
+        <activity
+            android:name=".GroupActivity.GroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupActivity.listgroupactivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupActivity.ItemActivity"
+            android:exported="false" />
         <activity
             android:name=".loginActivities.login"
             android:exported="true">

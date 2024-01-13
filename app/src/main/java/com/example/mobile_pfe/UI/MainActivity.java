@@ -3,6 +3,7 @@ package com.example.mobile_pfe.UI;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -179,7 +180,9 @@ public class MainActivity extends AppCompatActivity {
         teamsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle the click event, e.g., start the ShowMatches activity
+                Log.e("TeamActivity", "TeamActivity: Role +" );
+
+                // Handle the click event, e.g., start the TeamActivity activity
                 Intent intent = new Intent(MainActivity.this, TeamActivity.class);
                 startActivity(intent);
             }
@@ -189,7 +192,8 @@ public class MainActivity extends AppCompatActivity {
         groupsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle the click event, e.g., start the ShowMatches activity
+                Log.e("GroupActivity", "GroupActivity: Role +" );
+                // Handle the click event, e.g., start the GroupActivity activity
                 Intent intent = new Intent(MainActivity.this, GroupActivity.class);
                 startActivity(intent);
             }

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
         <TextView
-            android:id="@+id/select_Group"
+            android:id="@+id/select_Team"
             android:layout_width="264dp"
             android:layout_height="30dp"
             android:layout_marginLeft="56dp"

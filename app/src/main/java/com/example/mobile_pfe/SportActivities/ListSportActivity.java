@@ -81,6 +81,7 @@ public class ListSportActivity extends AppCompatActivity {
                 AppGlobals.setSportId(sport.getId());
                 Intent intent = new Intent(ListSportActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListSportActivity.this);

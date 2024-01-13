@@ -9,16 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.TeamActivity.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdapter extends BaseAdapter {
 
     private Context context;
-    private List<User> UserList;
+    private ArrayList<com.example.mobile_pfe.GroupActivity.User> UserList;
 
-    public ListAdapter(Context context, List<User> UserList) {
+    public ListAdapter(Context context, ArrayList<com.example.mobile_pfe.GroupActivity.User> UserList) {
         this.context = context;
         this.UserList = UserList;
     }
