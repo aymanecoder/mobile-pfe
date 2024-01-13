@@ -127,7 +127,7 @@ public class listteamactivity extends AppCompatActivity {
         TeamService teamService = RetrofitInstance.getTeamService();
 
         // Use the modified createTeam method with Map<String, Integer> for members
-        Call<ResponseBody> call = teamService.createTeam(filePart, teamNameBody, descriptionBody, sportIdBody, adminIdBody, memberIds);
+        Call<ResponseBody> call = teamService.createTeam(filePart, teamNameBody, descriptionBody, sportIdBody, memberIds);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override

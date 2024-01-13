@@ -8,7 +8,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
-    private static final String AUTH_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA1MTAwOTgwLCJleHAiOjE3MDUxMDk2MjB9.lx2sItZIl8XmY2FEkH2ow32SKzOnb8KvZeikeVKnWM1x28286Zbrd2fyTVOKiXVvlUWbzfhkCHZHp1vjF7a3SQ";
+    private static final String AUTH_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA1MTU1NjAzLCJleHAiOjE3MDUxNjQyNDN9.f9D7nvGTQf4dAtxzpJQ2Zqkj67NakO_0btFq9IaB2ifRiX_NIZ9uas14ODVcUDlWXPji4ckTUF9pgO7XjnmTyQ";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {

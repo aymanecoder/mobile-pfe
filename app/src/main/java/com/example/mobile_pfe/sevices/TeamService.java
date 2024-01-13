@@ -24,7 +24,6 @@ public interface TeamService {
             @Part("title") RequestBody teamName,
             @Part("description") RequestBody description,
             @Part("sport.id") RequestBody sportId,
-            @Part("admin.id") RequestBody adminId,
             @PartMap Map<String, Integer> memberIds
     );
 
