@@ -28,7 +28,7 @@ public class CompetitionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_competition);
 
         if (getIntent().hasExtra("competitionId")) {
-            Long competitionId =  getIntent().getLongExtra("competitionId",1L);
+            int competitionId =  getIntent().getIntExtra("competitionId",1);
             Toast.makeText(this, "Received competition ID: " + competitionId, Toast.LENGTH_SHORT).show();
             // Use the competition ID as needed
 

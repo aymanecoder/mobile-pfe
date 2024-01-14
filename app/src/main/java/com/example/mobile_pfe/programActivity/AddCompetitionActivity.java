@@ -160,6 +160,8 @@ public class AddCompetitionActivity extends AppCompatActivity {
                 // Handle successful upload response
                 if (response.isSuccessful()) {
                     Toast.makeText(AddCompetitionActivity.this, "Program details uploaded successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AddCompetitionActivity.this, ListCompetitionActivity.class);
+                    startActivity(intent);
                 } else {
                     // Handle unsuccessful response
                     Toast.makeText(AddCompetitionActivity.this, "Failed to upload program details", Toast.LENGTH_SHORT).show();

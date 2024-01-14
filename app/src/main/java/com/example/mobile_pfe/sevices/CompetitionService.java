@@ -6,6 +6,7 @@ import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.model.Program.ProgramList;
 
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -25,6 +26,8 @@ public interface CompetitionService {
     @GET("/api/v1/challenges/{id}")
     Call<Competition> getById(@Path("id") int id);
 
+    @GET("/api/v1/challenges/joinChallenge/{id}")
+    Call<Map<String, String>> joinChallenge(@Path("id") int id);
     @POST("/api/v1/challenges")
     @Multipart
     Call<ResponseBody> createCompetition(

@@ -28,7 +28,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -145,6 +147,48 @@ public class ListCompetitionActivity extends AppCompatActivity {
             public void onButtonClick(Competition competition) {
                 // to do
                 Log.d("button competitionId"," "+competition.getId());
+
+                CompetitionService service = RetrofitInstance.getRetrofitInstance().create(CompetitionService.class);
+
+                Call<Map<String, String>> call = service.joinChallenge(competition.getId());
+
+                /* Log the URL called */
+                Log.wtf("URL Called", call.request().url() + "");
+
+                call.enqueue(new Callback<Map<String, String>>() {
+
+                    @Override
+                    public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
+                        if (response.isSuccessful()) {
+                            Map<String, String> responseBody = response.body();
+
+                            if (responseBody != null && responseBody.containsKey("status") && responseBody.containsKey("message")) {
+                                String status = responseBody.get("status");
+                                String message = responseBody.get("message");
+
+                                if ("success".equals(status)) {
+                                    Toast.makeText(ListCompetitionActivity.this, "Success: " + message, Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(ListCompetitionActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(ListCompetitionActivity.this, "Invalid response format", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            // Handle error response
+                            Toast.makeText(ListCompetitionActivity.this, "Error: " + response.message(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Map<String, String>> call, Throwable t) {
+                        t.printStackTrace();
+                        Log.d("error", t.getMessage());
+                        Toast.makeText(ListCompetitionActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
         });
 

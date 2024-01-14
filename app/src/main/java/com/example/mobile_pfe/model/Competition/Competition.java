@@ -8,7 +8,7 @@ import java.util.Date;
 public class Competition {
 
     @SerializedName("id")
-    private Long id;
+    private int id;
     @SerializedName("title")
     private String title;
     @SerializedName("description")
@@ -27,11 +27,11 @@ public class Competition {
         return nbrTeams;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public Competition(Long id, String title, String descreption, int nbrTeams, String creationDate, String logoPath) {
+    public Competition(int id, String title, String descreption, int nbrTeams, String creationDate, String logoPath) {
         this.id = id;
         this.title = title;
         this.description = descreption;
@@ -40,7 +40,7 @@ public class Competition {
         this.logoPath = logoPath;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

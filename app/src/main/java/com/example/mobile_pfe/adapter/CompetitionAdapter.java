@@ -1,5 +1,6 @@
 package com.example.mobile_pfe.Adapter;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,10 @@ import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.Competition.Competition;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.CompetitionViewHolder>{
 
@@ -47,7 +51,9 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
     @Override
     public void onBindViewHolder(CompetitionAdapter.CompetitionViewHolder holder, int position) {
         holder.txtPostTitle.setText(dataList.get(position).getTitle());
-        holder.post_date.setText(dataList.get(position).getCreationDate());
+        //holder.post_date.setText(dataList.get(position).getCreationDate());
+        String competitionEndDate = dataList.get(position).getCreationDate(); // Assuming you have an endDate field
+        setCountdownTimer(holder, competitionEndDate);
         holder.teams_count.setText(String.valueOf(dataList.get(position).getNbrTeams())+" teams");
         Glide.with(holder.itemView.getContext())
                 .load(dataList.get(position).getLogoPath())
@@ -98,4 +104,39 @@ public class CompetitionAdapter extends RecyclerView.Adapter<CompetitionAdapter.
             });
         }
     }
+
+    private void setCountdownTimer(CompetitionViewHolder holder, String endDate) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+            Date endDateObj = sdf.parse(endDate);
+
+            long currentTime = System.currentTimeMillis();
+            long endTime = endDateObj.getTime();
+
+            long timeDifference = endTime - currentTime;
+
+            // Create a countdown timer
+            new CountDownTimer(timeDifference, 1000) {
+                public void onTick(long millisUntilFinished) {
+                    // Update the TextView with the remaining time
+                    long seconds = millisUntilFinished / 1000;
+                    long minutes = seconds / 60;
+                    long hours = minutes / 60;
+
+                    String timeRemaining = String.format("%02d:%02d:%02d",
+                            hours % 24, minutes % 60, seconds % 60);
+
+                    holder.post_date.setText(timeRemaining);
+                }
+
+                public void onFinish() {
+                    holder.post_date.setText("Challenge started");
+                }
+            }.start();
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

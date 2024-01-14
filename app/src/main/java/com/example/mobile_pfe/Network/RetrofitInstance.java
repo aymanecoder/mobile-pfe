@@ -1,6 +1,7 @@
 package com.example.mobile_pfe.Network;
 
 import com.example.mobile_pfe.model.Globals.AppGlobals;
+import com.google.gson.GsonBuilder;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -20,7 +21,7 @@ public class RetrofitInstance {
 
             retrofit = new retrofit2.Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory((GsonConverterFactory.create(new GsonBuilder().setLenient().create())))
                     .client(httpClient.build())
                     .build();
         }
