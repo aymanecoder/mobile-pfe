@@ -1,6 +1,6 @@
 package com.example.mobile_pfe.sevices;
 
-import com.example.mobile_pfe.Model.Profil.profil;
+import com.example.mobile_pfe.model.Profil.profil;
 
 import retrofit2.http.Body;
 import retrofit2.http.PUT;
