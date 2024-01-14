@@ -29,7 +29,7 @@ public class ItemActivity extends AppCompatActivity {
 
         ArrayList<User> userArrayList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
-            User user = new User(name[i], imageId[i]);
+            User user = new User(name[i], imageId[i],i);
             userArrayList.add(user);
         }
 

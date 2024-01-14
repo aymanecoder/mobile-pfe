@@ -4,16 +4,19 @@ public class User {
 
         private String firstName;
         private int imageId;
-
-        public User(String firstName, int imageId) {
-            this.firstName = firstName;
+        private int id; // Sportif's ID
+        public User(String name, int imageId, int id) {
+            this.firstName = name;
             this.imageId = imageId;
+            this.id = id;
         }
 
         public String getFirstName() {
             return firstName;
         }
-
+        public int getId() {
+            return id;
+        }
         public void setFirstName(String firstName) {
             this.firstName = firstName;
         }

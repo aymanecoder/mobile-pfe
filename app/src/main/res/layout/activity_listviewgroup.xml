@@ -30,7 +30,7 @@
        android:drawableLeft="@drawable/ic_search" />
 
    <Button
-       android:id="@+id/Save"
+       android:id="@+id/confirmSelectionButton"
        android:layout_width="327dp"
        android:layout_height="64dp"
        android:layout_marginTop="660dp"
@@ -40,7 +40,8 @@
        android:textColor="#FFFFFF"
        android:text="Save"
        android:fontFamily="serif"
-       />
+       android:onClick="onConfirmSelectionClicked"/>
+   />
 
 <LinearLayout
     android:layout_width="match_parent"
