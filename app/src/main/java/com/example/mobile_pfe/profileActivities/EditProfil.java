@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mobile_pfe.Model.Profil.profil;
+import com.example.mobile_pfe.model.Profil.profil;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.sevices.ProfilService;
 

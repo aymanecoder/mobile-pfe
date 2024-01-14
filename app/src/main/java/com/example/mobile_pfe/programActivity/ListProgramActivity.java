@@ -21,18 +21,11 @@ import android.widget.TextView;
 
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.R;
-<<<<<<< HEAD
 
-import com.example.mobile_pfe.Model.Globals.AppGlobals;
 
-import com.example.mobile_pfe.UI.CoachContent;
-import com.example.mobile_pfe.Model.Program.Program;
-
-import com.example.mobile_pfe.sevices.ProgramService;
-=======
 import com.example.mobile_pfe.model.Globals.AppGlobals;
 
->>>>>>> e1054c4943ca83359ef39fb62615648b2ae324cd
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;

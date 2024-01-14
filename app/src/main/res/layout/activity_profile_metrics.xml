@@ -67,14 +67,14 @@
         android:layout_marginBottom="670dp"
         android:src="@drawable/ellipse_17" />
 
-    <View
+    <Button
         android:id="@+id/icon_gear_"
         android:layout_width="41.57dp"
         android:layout_height="41.31dp"
         android:layout_marginLeft="345dp"
         android:layout_marginTop="30dp"
-        android:foreground="@drawable/settings_icon"
-        android:src="@drawable/settings_icon" />
+        android:background="@drawable/settings_icon"
+         />
 
 
 
