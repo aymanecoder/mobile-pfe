@@ -52,6 +52,9 @@ public class AppGlobals {
             }
             else {
                 // Handle if roles claim is neither a list nor a string (adjust as needed)
+
+
+
                 return Collections.singletonList("USER");
             }
         } catch (Exception e) {

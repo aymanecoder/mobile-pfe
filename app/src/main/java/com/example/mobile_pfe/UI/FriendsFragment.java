@@ -27,11 +27,11 @@ public class FriendsFragment extends Fragment {
     }
 
     private void fillFriendsList(){
-        friendsList.add(new User("Clarice Starling", R.drawable.profile2));
-        friendsList.add(new User("Clarice Starling", R.drawable.profile2));
-        friendsList.add(new User("Clarice Starling", R.drawable.profile2));
-        friendsList.add(new User("Clarice Starling", R.drawable.profile2));
-        friendsList.add(new User("Clarice Starling", R.drawable.profile2));
+      //  friendsList.add(new User("Clarice Starling", R.drawable.profile2));
+      //  friendsList.add(new User("Clarice Starling", R.drawable.profile2));
+     //   friendsList.add(new User("Clarice Starling", R.drawable.profile2));
+     //   friendsList.add(new User("Clarice Starling", R.drawable.profile2));
+     //   friendsList.add(new User("Clarice Starling", R.drawable.profile2));
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {

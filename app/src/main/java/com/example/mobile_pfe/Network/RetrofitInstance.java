@@ -1,6 +1,7 @@
 package com.example.mobile_pfe.Network;
 
 import com.example.mobile_pfe.Model.Globals.AppGlobals;
+import com.example.mobile_pfe.sevices.ProfilService;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -9,9 +10,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
 
     private static Retrofit retrofit;
-    public static final String BASE_URL = "http://192.168.1.103:8080/";
+    public static final String BASE_URL = "http:// 192.168.11.108:8080/";
     private static final String AUTH_TOKEN = AppGlobals.getAccessToken();
-
+    public static ProfilService getProfilService() {
+        return getRetrofitInstance().create(ProfilService.class);
+    }
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
             System.out.println("AUTH_TOKEN"+RetrofitInstance.AUTH_TOKEN);

@@ -29,12 +29,8 @@ public class GroupsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    private void fillGroupsList(){
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
+   private void fillGroupsList(){
+        //
     }
 
 

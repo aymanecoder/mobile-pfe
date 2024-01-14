@@ -24,12 +24,12 @@ import android.widget.Toast;
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-<<<<<<< HEAD
-import com.example.mobile_pfe.model.Globals.AppGlobals;
-=======
+
+import com.example.mobile_pfe.Model.Globals.AppGlobals;
+
 import com.example.mobile_pfe.UI.CoachContent;
 import com.example.mobile_pfe.Model.Program.Program;
->>>>>>> 0cc1d155556ae52f9a344b93999987346bc911fc
+
 import com.example.mobile_pfe.sevices.ProgramService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

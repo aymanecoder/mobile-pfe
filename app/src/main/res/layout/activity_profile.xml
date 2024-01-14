@@ -6,17 +6,7 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/label5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="243dp"
-        android:layout_marginBottom="192dp"
-        android:text="Confirm password"
-        android:textColor="#020202"
-        android:textSize="16sp" />
+
 
     <TextView
         android:id="@+id/edit_accoun"
@@ -102,7 +92,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="270dp"
         android:layout_marginBottom="398dp"
-        android:text="Old password"
+        android:text="Email               "
         android:textColor="#020202"
         android:textSize="16sp" />
 
@@ -114,7 +104,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="257dp"
         android:layout_marginBottom="297dp"
-        android:text="New password"
+        android:text="Password         "
         android:textColor="#020202"
         android:textSize="16sp" />
 
@@ -182,17 +172,7 @@
         android:background="@drawable/rounded_border"
         android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="315dp"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginBottom="127dp"
-        android:background="@drawable/rounded_border"
-        android:padding="10dp" />
+
 
     <TextView
         android:id="@+id/label"
@@ -202,7 +182,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="289dp"
         android:layout_marginBottom="598dp"
-        android:text="New Name"
+        android:text="Fist Name"
         android:textColor="#020202"
         android:textSize="16sp" />
 
@@ -214,7 +194,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="295dp"
         android:layout_marginBottom="494dp"
-        android:text="New Email"
+        android:text="Last Name"
         android:textColor="#020202"
         android:textSize="16sp" />
 
