@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.Model.Profil.profil;
 import com.example.mobile_pfe.Network.RetrofitInstance;
+import com.example.mobile_pfe.sevices.CompetitionService;
 import com.example.mobile_pfe.sevices.ProfilService;
 
 import retrofit2.Call;
@@ -26,7 +27,7 @@ public class Profil extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        apiService = RetrofitInstance.getProfilService();
+        apiService = RetrofitInstance.getRetrofitInstance().create(ProfilService.class);
 
         etName = findViewById(R.id.Name);
         etEmail = findViewById(R.id.email);
