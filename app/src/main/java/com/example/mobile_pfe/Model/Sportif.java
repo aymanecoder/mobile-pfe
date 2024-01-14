@@ -1,6 +1,8 @@
 package com.example.mobile_pfe.model;
 
-public class Sportif {
+import java.io.Serializable;
+
+public class Sportif implements Serializable {
     private int id;
     private String firstName;
     private String lastName;

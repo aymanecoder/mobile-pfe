@@ -4,36 +4,34 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.TeamActivity.User;
-import java.util.ArrayList;
-import java.util.List;
+import com.example.mobile_pfe.model.Sportif;
 
+import java.util.List;
 public class ListAdapter extends BaseAdapter {
 
     private Context context;
-    private List<User> UserList;
+    private List<Sportif> sportifList;
 
-    public ListAdapter(Context context, List<User> UserList) {
+    public ListAdapter(Context context, List<Sportif> sportifList) {
         this.context = context;
-        this.UserList = UserList;
+        this.sportifList = sportifList;
     }
+
     @Override
     public int getCount() {
-        return UserList.size();
+        return sportifList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return UserList.get(position);
+        return sportifList.get(position);
     }
 
     @Override
@@ -47,14 +45,21 @@ public class ListAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.lisvieweachteam_activity, parent, false);
         }
 
-        User user = UserList.get(position);
+        Sportif sportif = sportifList.get(position);
 
         ImageView imageView = convertView.findViewById(R.id.profile_pic);
-        TextView username = convertView.findViewById(R.id.personName);
+        TextView username = convertView.findViewById(R.id.personName2);
+        String pictureUrl =sportif.getPicturePath();
+        // Load image using Glide
+        if (pictureUrl !=null) {
+            Glide.with(context)
+                    .load(pictureUrl != null ? pictureUrl.replace("localhost", "192.168.0.102") : "")
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(imageView);
+        }
 
-        imageView.setImageResource(user.getImageId());
-        username.setText(user.getFirstName());
 
+        username.setText(sportif.getFirstName());
 
         // Implement the click listener for the "More" button here
 

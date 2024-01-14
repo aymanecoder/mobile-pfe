@@ -56,37 +56,48 @@ public class Teamprofilactivity extends AppCompatActivity {
                @Override
                public void onClick(View v) {
                     if (!teamNameEditText.getText().toString().trim().isEmpty()) {
-                         String teamName = teamNameEditText.getText().toString().trim();
-                         String description = descriptionEditText.getText().toString().trim();
-                         String logoImageUrl;
+                         if (teamNameEditText.getText().toString().trim().length() > 3) {
+                              String teamName = teamNameEditText.getText().toString().trim();
+                              String description = descriptionEditText.getText().toString().trim();
+                              String logoImageUrl;
 
-                         if (selectedImageUri != null) {
-                              selectedBitmap = getBitmapFromUri(selectedImageUri);
-                              logoImageView.setImageBitmap(selectedBitmap);
+                              // Check if selectedImageUri is not null
+                              if (selectedImageUri != null) {
+                                   selectedBitmap = getBitmapFromUri(selectedImageUri);
+                                   logoImageView.setImageBitmap(selectedBitmap);
 
-                              // Get the real path from the URI
-                              logoImageUrl = getRealPathFromUri(selectedImageUri);
-                              if (logoImageUrl == null) {
-                                   // Handle the case when the real path is null
-                                   // This might happen due to issues in obtaining the real path
-                                   // You may display an error message or handle it as needed
-                                   Toast.makeText(Teamprofilactivity.this, "Failed to obtain image path", Toast.LENGTH_SHORT).show();
+                                   // Get the real path from the URI
+                                   logoImageUrl = getRealPathFromUri(selectedImageUri);
+
+                                   // Check if the real path is not null
+                                   if (logoImageUrl == null) {
+                                        // Handle the case when the real path is null
+                                        // This might happen due to issues in obtaining the real path
+                                        // You may display an error message or handle it as needed
+                                        Toast.makeText(Teamprofilactivity.this, "Failed to obtain image path", Toast.LENGTH_SHORT).show();
+                                        return;
+                                   }
+                              } else {
+                                   // User didn't change the image, use the default image path
+                                   Toast.makeText(Teamprofilactivity.this, "You must select a new image for your team", Toast.LENGTH_SHORT).show();
                                    return;
-                              }// Use the dynamically generated path
-                         } else {
-                              // User didn't change the image, use the default image path
-                              logoImageUrl = null;
-                         }
+                              }
 
-                         Intent intent = new Intent(Teamprofilactivity.this, listteamactivity.class);
-                         intent.putExtra("teamName", teamName);
-                         intent.putExtra("logoImageUrl", logoImageUrl);
-                         intent.putExtra("description", description);
-                         startActivity(intent);
+                              Intent intent = new Intent(Teamprofilactivity.this, listteamactivity.class);
+                              intent.putExtra("teamName", teamName);
+                              intent.putExtra("logoImageUrl", logoImageUrl);
+                              intent.putExtra("description", description);
+                              startActivity(intent);
+                         } else {
+                              // Team name is too short, display an error message
+                              Toast.makeText(Teamprofilactivity.this, "Team name should be at least 4 characters long", Toast.LENGTH_SHORT).show();
+                         }
                     } else {
+                         // Team name is empty, display an error message
                          errorTextView.setVisibility(View.VISIBLE);
                     }
                }
+
           });
 
           logoImageView.setOnClickListener(new View.OnClickListener() {
