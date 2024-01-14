@@ -155,6 +155,8 @@ public class UploadProgramActivity extends AppCompatActivity {
                 // Handle successful upload response
                 if (response.isSuccessful()) {
                     Toast.makeText(UploadProgramActivity.this, "Program details uploaded successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UploadProgramActivity.this, ListProgramActivity.class);
+                    startActivity(intent);
                 } else {
                     // Handle unsuccessful response
                     Toast.makeText(UploadProgramActivity.this, "Failed to upload program details", Toast.LENGTH_SHORT).show();
