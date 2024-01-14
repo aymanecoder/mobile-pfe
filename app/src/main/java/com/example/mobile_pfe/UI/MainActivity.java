@@ -13,11 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.mobile_pfe.GroupActivity.GroupActivity;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
 import com.example.mobile_pfe.programActivity.ListCompetitionActivity;
 import com.example.mobile_pfe.programActivity.ListProgramActivity;
+import com.example.mobile_pfe.sevices.ProfilService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -210,6 +212,43 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        TextView UserName =findViewById(R.id.user_name);
+//        CiruserImage =findViewById(R.id.user_image);
+
+
+        ProfilService service = RetrofitInstance.getRetrofitInstance().create(ProfilService.class);
+
+        /*Call the method with parameter in the interface to get the employee data*/
+        Call<> call = service.getUserProfile();
+
+        /*Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<Competition>() {
+            @Override
+            public void onResponse(Call<Competition> call, Response<Competition> response) {
+                Competition competitionData =(Competition) response.body();
+                Log.wtf("Response", " "+competitionData);
+                if (competitionData != null) {
+
+                    generateCompetitionData(competitionData);
+                } else {
+                    Log.e("Response", "Competition data is null");
+                    // Handle the case where the Competition data is null
+                    Toast.makeText(CompetitionActivity.this, "Competition data is null", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Competition> call, Throwable t) {
+                System.out.println("get all errors");
+                t.printStackTrace();
+                Toast.makeText(CompetitionActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 }

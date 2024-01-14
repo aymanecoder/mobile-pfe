@@ -1,8 +1,6 @@
 package com.example.mobile_pfe.Model.Profil;
 
-import java.util.List;
-
-public class profil {
+public class Profil {
 
 
         private String firstName;

@@ -16,8 +16,8 @@ import retrofit2.http.Header;
 
 public interface ProfilService {
     @GET("api/v1/profile/profile")
-    Call<profil> getUserProfile();
+    Call<Profil> getUserProfile();
 
     @PUT("/api/v1/profile/profile")
-    Call<profil> updateProfile(@Body profil updatedProfile);
+    Call<Profil> updateProfile(@Body profil updatedProfile);
 }
