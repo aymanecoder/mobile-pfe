@@ -9,13 +9,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.mobile_pfe.Adapter.CompetitionAdapter;
+import com.example.mobile_pfe.Adapter.SportAdapter;
 import com.example.mobile_pfe.Adapter.SportAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.UI.MainActivity;
-import com.example.mobile_pfe.model.Globals.AppGlobals;
+import com.example.mobile_pfe.model.Sport.Sport;
 import com.example.mobile_pfe.model.Sport.Sport;
 import com.example.mobile_pfe.sevices.SportService;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 
 import java.util.ArrayList;
 import java.util.List;

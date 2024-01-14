@@ -8,13 +8,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
    <TextView
-       android:id="@+id/select_team"
+       android:id="@+id/select_group"
        android:layout_width="264dp"
        android:layout_height="30dp"
        android:layout_marginLeft="56dp"
        android:layout_alignParentTop="true"
        android:layout_marginTop="35dp"
-       android:text="@string/select_team"
+       android:text="@string/select_group_members"
        android:textAppearance="@style/select_team"
 
        />
@@ -30,7 +30,7 @@
        android:drawableLeft="@drawable/ic_search" />
 
    <Button
-       android:id="@+id/Save"
+       android:id="@+id/confirmSelectionButton"
        android:layout_width="327dp"
        android:layout_height="64dp"
        android:layout_marginTop="660dp"
@@ -40,7 +40,8 @@
        android:textColor="#FFFFFF"
        android:text="Save"
        android:fontFamily="serif"
-       />
+       android:onClick="onConfirmSelectionClicked"/>
+   />
 
 <LinearLayout
     android:layout_width="match_parent"

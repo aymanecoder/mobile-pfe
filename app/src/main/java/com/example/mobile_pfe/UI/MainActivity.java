@@ -3,6 +3,7 @@ package com.example.mobile_pfe.UI;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -11,9 +12,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.mobile_pfe.GroupActivity.GroupActivity;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
+import com.example.mobile_pfe.programActivity.ListCompetitionActivity;
 import com.example.mobile_pfe.programActivity.ListProgramActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -178,12 +181,35 @@ public class MainActivity extends AppCompatActivity {
         teamsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle the click event, e.g., start the ShowMatches activity
+                Log.e("TeamActivity", "TeamActivity: Role +" );
+
+                // Handle the click event, e.g., start the TeamActivity activity
                 Intent intent = new Intent(MainActivity.this, TeamActivity.class);
                 startActivity(intent);
             }
         });
+        RelativeLayout groupsLayout = findViewById(R.id.groups);
 
+        groupsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("GroupActivity", "GroupActivity: Role +" );
+                // Handle the click event, e.g., start the GroupActivity activity
+                Intent intent = new Intent(MainActivity.this, GroupActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        RelativeLayout challengesLayout = findViewById(R.id.challenges);
+
+        challengesLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event, e.g., start the ShowMatches activity
+                Intent intent = new Intent(MainActivity.this, ListCompetitionActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

@@ -133,6 +133,9 @@
     </string>
     <string name="user">USER</string>
     <string name="coach">COACH</string>
+    <string name="groups">Groups</string>
+    <string name="group_a">Group A</string>
+    <string name="select_group_members">Select Group Members</string>
 
 
 </resources>

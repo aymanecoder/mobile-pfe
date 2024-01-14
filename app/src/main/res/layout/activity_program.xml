@@ -50,7 +50,7 @@
         <ImageView
             android:id="@+id/post_image"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="350dp"
             android:scaleType="fitXY"
             android:layout_gravity="center"
             android:src="@drawable/notfound"/>
@@ -61,11 +61,13 @@
             android:id="@+id/post_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="34sp"
-        android:text="Post Title"
-            android:layout_marginStart="10dp"
-            android:layout_gravity="center_horizontal"
-        android:layout_below="@id/post_image"/>
+            android:textSize="40sp"
+            android:text="Post Title"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            android:layout_below="@id/post_image"/>
 
         <!-- Author TextView -->
         <TextView

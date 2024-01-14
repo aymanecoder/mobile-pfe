@@ -22,9 +22,10 @@ import android.widget.TextView;
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.R;
 
+import com.example.mobile_pfe.UI.CoachContent;
 
+import com.example.mobile_pfe.sevices.ProgramService;
 import com.example.mobile_pfe.model.Globals.AppGlobals;
-
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

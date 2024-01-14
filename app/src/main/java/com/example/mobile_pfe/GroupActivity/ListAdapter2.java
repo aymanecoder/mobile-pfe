@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.TeamActivity;
+package com.example.mobile_pfe.GroupActivity;
 
 
 import android.content.Context;
@@ -14,18 +14,17 @@ import android.widget.TextView;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListAdapter2 extends BaseAdapter {
 
     private Context context;
-    private List<User> userList;
+    private ArrayList<com.example.mobile_pfe.GroupActivity.User> userList;
     private ArrayList<User> selectedUsers;
 
-    public ListAdapter2(Context context, List<User> userList) {
+    public ListAdapter2(Context context, ArrayList<com.example.mobile_pfe.GroupActivity.User> userList) {
         this.context = context;
         this.userList = userList;
-        this.selectedUsers = new ArrayList<>();
+        this.selectedUsers = new ArrayList<com.example.mobile_pfe.GroupActivity.User>();
     }
 
     @Override
@@ -43,7 +42,7 @@ public class ListAdapter2 extends BaseAdapter {
         return position;
     }
 
-    public ArrayList<User> getSelectedUsers() {
+    public ArrayList<com.example.mobile_pfe.GroupActivity.User> getSelectedUsers() {
         return selectedUsers;
     }
 
@@ -53,7 +52,7 @@ public class ListAdapter2 extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.listwiew_activity, parent, false);
         }
 
-        User user = userList.get(position);
+        com.example.mobile_pfe.GroupActivity.User user = userList.get(position);
 
         ImageView imageView = convertView.findViewById(R.id.profile_pic);
         TextView username = convertView.findViewById(R.id.personName);
