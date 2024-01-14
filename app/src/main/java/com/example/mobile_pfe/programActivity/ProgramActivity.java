@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.Model.Program.Program;
 import com.example.mobile_pfe.sevices.ProgramService;
 import com.example.mobile_pfe.model.Program.Program;
 import java.util.ArrayList;
