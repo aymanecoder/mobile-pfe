@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.Model.Profil;
+package com.example.mobile_pfe.model.Profil;
 
 import java.util.List;
 
