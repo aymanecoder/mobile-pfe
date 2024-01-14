@@ -6,14 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.mobile_pfe.Adapter.UserAdapterTwo;
 import com.example.mobile_pfe.Adapter.WorkoutAdapter;
-import com.example.mobile_pfe.Model.User;
-import com.example.mobile_pfe.Model.Workout;
+import com.example.mobile_pfe.model.Workout;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;

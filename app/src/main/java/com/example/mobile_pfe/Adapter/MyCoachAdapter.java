@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.CoachPlanningActivity.CoachPlanActivity;
-import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.List;

@@ -1,5 +1,4 @@
 package com.example.mobile_pfe.Adapter;
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.Model.Program.Program;
+import com.example.mobile_pfe.model.Program.Program;
 
 import java.util.ArrayList;
 

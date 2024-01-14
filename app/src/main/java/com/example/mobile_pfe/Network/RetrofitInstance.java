@@ -1,7 +1,11 @@
 package com.example.mobile_pfe.Network;
 
+<<<<<<< HEAD
 import com.example.mobile_pfe.Model.Globals.AppGlobals;
 import com.example.mobile_pfe.sevices.ProfilService;
+=======
+import com.example.mobile_pfe.model.Globals.AppGlobals;
+>>>>>>> e1054c4943ca83359ef39fb62615648b2ae324cd
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

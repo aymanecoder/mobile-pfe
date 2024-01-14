@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.Model.MatchItem;
+import com.example.mobile_pfe.model.MatchItem;
 
 import java.util.List;
 

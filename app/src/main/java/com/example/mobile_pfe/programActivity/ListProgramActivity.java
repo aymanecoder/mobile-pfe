@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -19,11 +18,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
-import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+<<<<<<< HEAD
 
 import com.example.mobile_pfe.Model.Globals.AppGlobals;
 
@@ -31,14 +29,13 @@ import com.example.mobile_pfe.UI.CoachContent;
 import com.example.mobile_pfe.Model.Program.Program;
 
 import com.example.mobile_pfe.sevices.ProgramService;
+=======
+import com.example.mobile_pfe.model.Globals.AppGlobals;
+
+>>>>>>> e1054c4943ca83359ef39fb62615648b2ae324cd
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ListProgramActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
     private ProgramAdapter adapter;

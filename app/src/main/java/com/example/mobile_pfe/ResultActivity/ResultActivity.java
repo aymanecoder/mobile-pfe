@@ -7,7 +7,7 @@ import android.widget.GridView;
 
 import com.example.mobile_pfe.Adapter.ResultAdapter;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.Model.ResultModel;
+import com.example.mobile_pfe.model.ResultModel;
 
 import java.util.ArrayList;
 
