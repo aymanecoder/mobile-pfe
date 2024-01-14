@@ -28,11 +28,11 @@ public class CoachesFragment extends Fragment {
 
 
     private void fillCoachesList(){
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.profile1));
+     //   coachesList.add(new User("Jaden smith", R.drawable.coach2));
+     //   coachesList.add(new User("Jaden smith", R.drawable.coach2));
+       // coachesList.add(new User("Jaden smith", R.drawable.coach2));
+       // coachesList.add(new User("Jaden smith", R.drawable.coach2));
+      //  coachesList.add(new User("Jaden smith", R.drawable.profile1));
     }
 
     @Override

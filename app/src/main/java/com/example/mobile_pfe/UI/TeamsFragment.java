@@ -28,11 +28,11 @@ public class TeamsFragment extends Fragment {
     }
 
     private void fillTeamsList(){
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team B", R.drawable.team_b));
+      //  teamsList.add(new User("Team A", R.drawable.team_a));
+      //  teamsList.add(new User("Team A", R.drawable.team_a));
+      //  teamsList.add(new User("Team A", R.drawable.team_a));
+     //   teamsList.add(new User("Team A", R.drawable.team_a));
+      //  teamsList.add(new User("Team B", R.drawable.team_b));
     }
 
 

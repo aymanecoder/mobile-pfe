@@ -28,11 +28,11 @@ public class MatchesFragment extends Fragment {
     }
 
     private void fillMatchesList(){
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
+    //    matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
     }
 
     @Override

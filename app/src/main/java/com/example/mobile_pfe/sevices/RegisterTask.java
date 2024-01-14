@@ -17,7 +17,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 
-public class RegisterTask {
+public class
+
+
+
+RegisterTask {
 
     public void Register(String email, String password, String Role, String firstName, String lastName, final RegisterCallback callback) {
         Retrofit retrofit = new Retrofit.Builder()

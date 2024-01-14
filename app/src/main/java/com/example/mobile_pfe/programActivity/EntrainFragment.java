@@ -24,8 +24,8 @@ import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.adapters.MatchListAdapter;
 import com.example.mobile_pfe.matchActivities.AddMatchFragment;
 import com.example.mobile_pfe.matchActivities.ItemFragment;
-import com.example.mobile_pfe.model.MatchItem;
-import com.example.mobile_pfe.model.Program.Program;
+import com.example.mobile_pfe.Model.MatchItem;
+import com.example.mobile_pfe.Model.Program.Program;
 import com.example.mobile_pfe.sevices.ProgramService;
 
 import java.util.ArrayList;

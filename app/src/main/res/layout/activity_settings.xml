@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="ExtraText">
+
+    <!-- Navigation Bar -->
     <RelativeLayout
         android:id="@+id/navigation_"
         android:layout_width="468dp"
@@ -11,8 +14,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="-2dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        >
+        android:layout_marginTop="24dp">
 
         <View
             android:id="@+id/ellipse_17"
@@ -42,13 +44,11 @@
             android:textAppearance="@style/settings"
             style="@style/BoldText"
             android:translationY="-0.48sp" />
-
-
     </RelativeLayout>
 
+    <!-- User Information Section -->
     <View
-        android:id="@+id/ellipse_18"
-        android:layout_below="@id/full_name"
+        android:id="@+id/imageprofil"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_alignParentLeft="true"
@@ -70,8 +70,7 @@
         android:text="@string/full_name"
         android:textAppearance="@style/full_name" />
 
-
-
+    <!-- Lines -->
     <View
         android:id="@+id/line"
         android:layout_width="100dp"
@@ -85,44 +84,16 @@
         android:layout_marginRight="43dp"
         android:layout_marginBottom="523dp"
         android:alpha="0.2"
-        android:background="@android:color/darker_gray"
-        />
+        android:background="@android:color/darker_gray" />
 
-    <View
-        android:id="@+id/icon_person"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="27dp"
-        android:layout_marginTop="346dp"
-        android:foreground="@drawable/icon_person"
-        android:src="@drawable/icon_person" />
 
-    <View
-        android:id="@+id/icon_password"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="500dp"
-        android:foreground="@drawable/icon_key"
-        android:src="@drawable/icon_key" />
 
-    <View
-        android:id="@+id/icon_email"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="430dp"
-        android:foreground="@drawable/icon_email"
-        android:src="@drawable/icon_email" />
+
+
+
 
     <TextView
-        android:id="@+id/joseph_mart"
+        android:id="@+id/Name"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/line"
@@ -130,7 +101,7 @@
         android:layout_marginTop="6dp"
         android:gravity="top"
         android:lineSpacingExtra="2sp"
-        android:text="@string/joseph_mart"
+        android:text=""
         android:textAppearance="@style/joseph_mart"
         android:translationY="-1sp" />
 
@@ -144,41 +115,8 @@
         android:layout_marginEnd="73dp"
         android:gravity="top"
         android:lineSpacingExtra="2sp"
-        android:text="@string/password_us"
         android:textAppearance="@style/joseph_mart"
         android:translationY="-1sp" />
-
-    <TextView
-        android:id="@+id/joseph_mart2"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/line"
-        android:layout_alignEnd="@+id/line2"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="75dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:text="@string/email_us"
-        android:textAppearance="@style/joseph_mart"
-        android:translationY="-1sp" />
-
-
-    <View
-        android:id="@+id/line2"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="447dp"
-        android:alpha="0.2"
-        android:background="@android:color/darker_gray"
-        />
-
     <View
         android:id="@+id/line4"
         android:layout_width="100dp"
@@ -192,9 +130,40 @@
         android:layout_marginRight="42dp"
         android:layout_marginBottom="369dp"
         android:alpha="0.2"
-        android:background="@android:color/darker_gray"
-         />
+        android:background="@android:color/darker_gray" />
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/line"
+        android:layout_alignEnd="@+id/line2"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="75dp"
+        android:gravity="top"
+        android:lineSpacingExtra="2sp"
+        android:text=""
+        android:textAppearance="@style/joseph_mart"
+        android:translationY="-1sp" />
 
+    <!-- More Lines -->
+    <View
+        android:id="@+id/line2"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="42dp"
+        android:layout_marginBottom="447dp"
+        android:alpha="0.2"
+        android:background="@android:color/darker_gray" />
+
+
+
+    <!-- Logout Button -->
     <RelativeLayout
         android:id="@+id/button"
         android:layout_width="131dp"
@@ -202,7 +171,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="33dp"
-        android:layout_marginTop="789dp"
+        android:layout_marginTop="700dp"
         android:background="@drawable/rounded_button_back">
 
         <TextView
@@ -219,19 +188,22 @@
             android:text="@string/log_out"
             android:textAppearance="@style/log_out" />
     </RelativeLayout>
-    <RelativeLayout
+
+    <!-- Edit Button -->
+
+        <Button
         android:id="@+id/button_edit"
         android:layout_width="131dp"
         android:layout_height="63dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="789dp"
-        android:background="@drawable/rounded_button_background">
+        android:layout_marginTop="700dp"
+            android:text="Update"
+            android:textColor="@color/white"
+        android:background="@drawable/rounded_button_background"/>
 
-
-
-    <TextView
+        <TextView
             android:id="@+id/edit"
             android:layout_width="77dp"
             android:layout_height="30dp"
@@ -244,7 +216,7 @@
             android:gravity="center_horizontal|top"
             android:text="Update"
             android:textAppearance="@style/log_out" />
-    </RelativeLayout>
 
 
 </RelativeLayout>
+

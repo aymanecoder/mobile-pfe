@@ -33,12 +33,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao" />
 
+        <activity android:name=".profileActivities.EditProfil"
+                 android:exported="false"
+            />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".programActivity.ListMatchActivity"
-            android:exported="false" />
+            android:name=".profileActivities.Profil"
+            android:exported="true" />
         <activity
             android:name=".programActivity.ListVideoActivity"
             android:exported="false" />
@@ -97,6 +101,10 @@
             android:label="notification"
             android:exported="false"/>
         <activity
+            android:name=".TeamActivity.TeamActivity"
+            android:label=""
+            android:exported="false"/>
+        <activity
             android:name=".TeamActivity.Teamprofilactivity"
             android:label=""
             android:exported="false"/>
@@ -130,10 +138,7 @@
             android:name=".UI.TeamsFragment"
             android:label="GroupActivity"
             android:exported="false"/>
-         <activity
-            android:name=".TeamActivity.TeamActivity"
-            android:label="GroupActivity"
-            android:exported="false"/>
+
 
 
         <activity
@@ -149,6 +154,7 @@
         <activity
             android:name=".GroupChatActivity.StarredMessagesActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.mobile_pfe.GroupChatActivity.MediaMessagesActivity"
             android:exported="false" />
