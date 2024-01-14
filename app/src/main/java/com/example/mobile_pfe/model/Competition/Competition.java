@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.Model.Competition;
+package com.example.mobile_pfe.model.Competition;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.google.gson.annotations.SerializedName;

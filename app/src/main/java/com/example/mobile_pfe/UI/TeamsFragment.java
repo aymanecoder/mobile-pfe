@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mobile_pfe.Adapter.UserAdapter;
-import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;
@@ -28,11 +28,11 @@ public class TeamsFragment extends Fragment {
     }
 
     private void fillTeamsList(){
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team A", R.drawable.team_a));
-        teamsList.add(new User("Team B", R.drawable.team_b));
+      //  teamsList.add(new User("Team A", R.drawable.team_a));
+      //  teamsList.add(new User("Team A", R.drawable.team_a));
+      //  teamsList.add(new User("Team A", R.drawable.team_a));
+     //   teamsList.add(new User("Team A", R.drawable.team_a));
+      //  teamsList.add(new User("Team B", R.drawable.team_b));
     }
 
 

@@ -9,11 +9,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.Model.Coach;
+import com.example.mobile_pfe.model.Coach;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.UI.CoachContent;
-import com.example.mobile_pfe.UI.FindCoaches;
-import com.example.mobile_pfe.UI.MainActivity;
 
 import java.util.List;
 

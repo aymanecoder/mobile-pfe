@@ -131,7 +131,8 @@
     <string name="wins_7">
             Wins      7
     </string>
-
+    <string name="user">USER</string>
+    <string name="coach">COACH</string>
 
 
 </resources>

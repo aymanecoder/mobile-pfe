@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Adapter.MyCoachAdapter;
-import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;
@@ -28,11 +28,11 @@ public class ProgramsFragment extends Fragment {
 
 
     private void fillCoachesList(){
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.coach2));
-        coachesList.add(new User("Jaden smith", R.drawable.profile1));
+       // coachesList.add(new User("Jaden smith", R.drawable.coach2));
+       // coachesList.add(new User("Jaden smith", R.drawable.coach2));
+        //coachesList.add(new User("Jaden smith", R.drawable.coach2));
+       // coachesList.add(new User("Jaden smith", R.drawable.coach2));
+      //  coachesList.add(new User("Jaden smith", R.drawable.profile1));
     }
 
     @Override

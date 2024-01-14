@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.core:core:1.12.0'
 
     implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.compose.ui:ui-android:1.5.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -82,14 +83,21 @@ dependencies {
     //Dependency for circular ImageView
     implementation  'de.hdodenhof:circleimageview:3.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-<<<<<<<<< Temporary merge branch 1
+
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
     implementation 'com.nimbusds:nimbus-jose-jwt:9.8'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.2'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.2'
 
 
 
     implementation "androidx.databinding:databinding-runtime:4.0.0"
->>>>>>>>> Temporary merge branch 2
+<<<<<<< HEAD
+    implementation 'com.squareup.picasso:picasso:2.71828'
+=======
+>>>>>>> e1054c4943ca83359ef39fb62615648b2ae324cd
+
 
 
 }

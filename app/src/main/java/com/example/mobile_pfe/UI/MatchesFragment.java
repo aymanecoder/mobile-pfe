@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mobile_pfe.Adapter.UserAdapter;
-import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;
@@ -28,11 +28,11 @@ public class MatchesFragment extends Fragment {
     }
 
     private void fillMatchesList(){
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
-        matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
+    //    matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
+      //  matchesList.add(new User("Match 1", R.drawable.match1));
     }
 
     @Override

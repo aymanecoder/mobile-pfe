@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // Use the correct layout resource ID
-        startSecondActivity();
+        //startSecondActivity();
         // Assuming this code is in your activity or fragment
 
         RelativeLayout matchsLayout = findViewById(R.id.matchs);
@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Start the SecondActivity
         startActivity(intent);
-
-}
+    }
 
     public void onRegisterButtonClick(View view) {
         // Handle the button click

@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.Model.Globals;
+package com.example.mobile_pfe.model.Globals;
 
 import android.util.Log;
 
@@ -52,6 +52,9 @@ public class AppGlobals {
             }
             else {
                 // Handle if roles claim is neither a list nor a string (adjust as needed)
+
+
+
                 return Collections.singletonList("USER");
             }
         } catch (Exception e) {

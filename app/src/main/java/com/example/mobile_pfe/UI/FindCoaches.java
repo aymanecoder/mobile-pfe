@@ -3,7 +3,6 @@ package com.example.mobile_pfe.UI;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,9 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Adapter.CoachAdapter;
-import com.example.mobile_pfe.Adapter.UserAdapterTwo;
-import com.example.mobile_pfe.Model.Coach;
-import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.model.Coach;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;
