@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamDetails;
 import com.example.mobile_pfe.adapters.TeamListAdapter;
@@ -91,7 +92,7 @@ public class Team1Fragment extends Fragment {
             title.setText(teamList.getTeamName());
             if (teamList.getLogoPath()!=null) {
                 Glide.with(requireContext())
-                        .load(teamList.getLogoPath().replace("localhost", "192.168.0.102"))
+                        .load(teamList.getLogoPath().replace("localhost",  RetrofitInstance.BASE_URL_IP))
                         .apply(RequestOptions.circleCropTransform())
                         .into(logo);
             }else{

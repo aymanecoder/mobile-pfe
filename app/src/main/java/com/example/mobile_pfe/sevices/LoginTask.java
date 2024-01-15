@@ -1,5 +1,6 @@
 package com.example.mobile_pfe.sevices;
 
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.example.mobile_pfe.model.Login.AuthResponse;
 import com.example.mobile_pfe.model.Login.LoginRequest;
@@ -14,7 +15,7 @@ public class LoginTask {
 
     public void login(String email, String password, final LoginCallback callback) {
         Retrofit retrofit = new retrofit2.Retrofit.Builder()
-                .baseUrl("http://192.168.0.102:8080")
+                .baseUrl(RetrofitInstance.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

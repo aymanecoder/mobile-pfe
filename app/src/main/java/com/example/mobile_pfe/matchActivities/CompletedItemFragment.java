@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.MatchResponse;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -247,7 +248,7 @@ public class CompletedItemFragment extends Fragment implements OnMapReadyCallbac
     private void loadTeamLogo(String pictureUrl, ImageView imageView) {
         if (pictureUrl != null) {
             Glide.with(requireContext())
-                    .load(pictureUrl.replace("localhost", "192.168.0.102"))
+                    .load(pictureUrl.replace("localhost",  RetrofitInstance.BASE_URL_IP))
                     .apply(RequestOptions.circleCropTransform())
                     .into(imageView);
         } else {

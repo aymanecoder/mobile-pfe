@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityListvieweachteamBinding;
 import com.example.mobile_pfe.model.Sportif;
@@ -69,7 +70,7 @@ public class ItemActivity extends AppCompatActivity {
 
             // Load image using Glide
             Glide.with(this)
-                    .load(pictureUrl != null ? pictureUrl.replace("localhost", "192.168.0.102") : "")
+                    .load(pictureUrl != null ? pictureUrl.replace("localhost",  RetrofitInstance.BASE_URL_IP) : "")
                     .apply(RequestOptions.circleCropTransform())
                     .into(Binding.profilePic1);
             System.out.println("ItemActivity Members List: " + pictureUrl);

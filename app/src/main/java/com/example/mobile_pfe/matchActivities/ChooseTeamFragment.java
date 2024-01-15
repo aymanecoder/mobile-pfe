@@ -88,7 +88,7 @@ public class ChooseTeamFragment extends Fragment {
             }
         });
         Button addNewTeams = view.findViewById(R.id.AddNewTeams);
-        addExistingTeam.setOnClickListener(new View.OnClickListener() {
+        addNewTeams.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //her switch from this fragment to TeamActivity

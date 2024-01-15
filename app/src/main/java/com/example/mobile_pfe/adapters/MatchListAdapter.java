@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.MatchItem;
 import com.example.mobile_pfe.model.MatchResponse;
@@ -95,7 +96,7 @@ public class MatchListAdapter extends BaseAdapter {
         // Load team logos using Glide
         if (pictureUrl1 != null) {
             Glide.with(context)
-                    .load(pictureUrl1.replace("localhost", "192.168.0.102"))
+                    .load(pictureUrl1.replace("localhost",  RetrofitInstance.BASE_URL_IP))
                     .apply(RequestOptions.circleCropTransform())
                     .into(team1Logo);
         }else{
@@ -104,7 +105,7 @@ public class MatchListAdapter extends BaseAdapter {
 
         if (pictureUrl2 != null) {
             Glide.with(context)
-                    .load(pictureUrl2.replace("localhost", "192.168.0.102"))
+                    .load(pictureUrl2.replace("localhost", RetrofitInstance.BASE_URL_IP))
                     .apply(RequestOptions.circleCropTransform())
                     .into(team2Logo);
         }else{

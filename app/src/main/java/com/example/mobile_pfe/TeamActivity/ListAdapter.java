@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.model.Sportif;
 
@@ -53,7 +54,7 @@ public class ListAdapter extends BaseAdapter {
         // Load image using Glide
         if (pictureUrl !=null) {
             Glide.with(context)
-                    .load(pictureUrl != null ? pictureUrl.replace("localhost", "192.168.0.102") : "")
+                    .load(pictureUrl != null ? pictureUrl.replace("localhost",  RetrofitInstance.BASE_URL_IP) : "")
                     .apply(RequestOptions.circleCropTransform())
                     .into(imageView);
         }

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamDetails;
 import com.example.mobile_pfe.model.MatchItem;
@@ -46,7 +47,7 @@ public class TeamListAdapter extends RecyclerView.Adapter<TeamListAdapter.TeamVi
         holder.team1Name.setText(sportif.getFirstName() +" "+ sportif.getLastName());
         if (sportif.getPicturePath()!=null) {
             Glide.with(context)
-                    .load(sportif.getPicturePath().replace("localhost", "192.168.0.102"))
+                    .load(sportif.getPicturePath().replace("localhost", RetrofitInstance.BASE_URL_IP))
                     .apply(RequestOptions.circleCropTransform())
                     .into(holder.team1Logo);
         }

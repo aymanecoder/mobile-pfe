@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.membersTextView.setText(context.getString(R.string.members, teamDetails.getMembersCount()));
 
         Glide.with(context)
-                .load(teamDetails.getLogoPath().replace("localhost", "192.168.0.102"))
+                .load(teamDetails.getLogoPath().replace("localhost",  RetrofitInstance.BASE_URL_IP))
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.profilePicImageView);
 

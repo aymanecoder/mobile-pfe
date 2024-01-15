@@ -2,6 +2,7 @@ package com.example.mobile_pfe.sevices;
 
 import android.util.Log;
 
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.example.mobile_pfe.model.Register.RegisterResponse;
 import com.example.mobile_pfe.model.Register.RegisterRequest;
@@ -25,7 +26,7 @@ RegisterTask {
 
     public void Register(String email, String password, String Role, String firstName, String lastName, final RegisterCallback callback) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.96:9000") // Adjust the base URL accordingly
+                .baseUrl(RetrofitInstance.BASE_URL) // Adjust the base URL accordingly
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
