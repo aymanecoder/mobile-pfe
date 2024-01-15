@@ -12,6 +12,15 @@ import java.util.List;
 public class AppGlobals {
     public static String accessToken;
 
+    public static String getEmail() {
+        return email;
+    }
+
+    public static void setEmail(String email) {
+        AppGlobals.email = email;
+    }
+
+    public static String email;
     public static Integer sportId;
     public static String getAccessToken() {
         return accessToken;
