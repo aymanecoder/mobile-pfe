@@ -21,6 +21,9 @@ public interface ProgramService {
     @GET("/api/v1/programmes/byTypeProgram/{typeProgram}")
     Call<List<Program>> getProgramsByTypeProgram(@Path("typeProgram") String typeProgram);
 
+//
+//    @GET("/bySportandTypeProgram/{sport}/{typeProgram}")
+//    Call<List<Program>> getProgramsBySportAndTypeProgram(@Path("sport") int sport, @Path("typeProgram") String typeProgram);
     @GET("/api/v1/programmes/{id}")
     Call<Program> getById(@Path("id") int id);
 

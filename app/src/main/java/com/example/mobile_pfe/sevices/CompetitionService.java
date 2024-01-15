@@ -21,6 +21,8 @@ public interface CompetitionService {
     @GET("/api/v1/challenges")
     Call<List<Competition>> getAll();
 
+    @GET("/api/v1/challenges/bySport/{sport}")
+    Call<List<Competition>> getChallengesBySportAndTypeProgram(@Path("sport") int sport);
 
     @GET("/api/v1/challenges/{id}")
     Call<Competition> getById(@Path("id") int id);

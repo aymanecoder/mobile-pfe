@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model.Globals;
+package com.example.mobile_pfe.Model.Globals;
 
 import android.util.Log;
 

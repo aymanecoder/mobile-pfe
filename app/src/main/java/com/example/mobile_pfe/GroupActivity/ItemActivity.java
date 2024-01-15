@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityListvieweachgroupBinding;
-import com.example.mobile_pfe.model.Globals.AppGlobals;
+import com.example.mobile_pfe.Model.Globals.AppGlobals;
 import com.example.mobile_pfe.model.GroupDTO;
 import com.example.mobile_pfe.model.Members;
 import com.example.mobile_pfe.model.Sportif;
