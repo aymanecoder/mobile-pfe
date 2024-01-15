@@ -30,10 +30,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private List<TeamDetails> selectedTeams = new ArrayList<>(); // List to store selected teams
     private OnItemClickListener listener;
 
-    public CustomAdapter(Context context, List<TeamDetails> teamDetailsList, OnItemClickListener listener) {
+    private boolean fromMatch;
+
+    public CustomAdapter(Context context, List<TeamDetails> teamDetailsList, OnItemClickListener listener,boolean fromMatch) {
         this.context = context;
         this.teamDetailsList = teamDetailsList;
         this.listener = listener;
+        this.fromMatch=fromMatch;
     }
 
     @NonNull
@@ -58,6 +61,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         // Set the checkbox state based on whether the team is selected or not
         holder.checkBox.setOnCheckedChangeListener(null); // Remove previous listener to avoid interference
         holder.checkBox.setChecked(selectedTeams.contains(teamDetails));
+
+        if (this.fromMatch) {
+            holder.checkBox.setVisibility(View.VISIBLE);
+        } else {
+            holder.checkBox.setVisibility(View.GONE);
+        }
 
         // Set click listener for the item view
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +114,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             teamNameTextView = itemView.findViewById(R.id.teama);
             membersTextView = itemView.findViewById(R.id.members);
             checkBox = itemView.findViewById(R.id.checkBox);
+
         }
     }
 

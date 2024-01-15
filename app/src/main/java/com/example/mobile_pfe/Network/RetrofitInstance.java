@@ -1,6 +1,7 @@
 package com.example.mobile_pfe.Network;
 
 import com.example.mobile_pfe.model.Globals.AppGlobals;
+import com.example.mobile_pfe.sevices.MatchService;
 import com.example.mobile_pfe.sevices.SportifService;
 import com.example.mobile_pfe.sevices.TeamService;
 
@@ -8,7 +9,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
-    private static final String AUTH_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA1Mjc0ODIxLCJleHAiOjE3MDUyODM0NjF9.hIp4nmilvE0tcXfyWxRYNYPex2H5SoNUBVQvBjih6UZMlCZgEZ3YD4B0AtFBpwYP8XjoDLiWU3atXSK0zr_Hfg";
+    private static final String AUTH_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA1Mjg1NzE5LCJleHAiOjE3MDUyOTQzNTl9.oQa47U0XHVGUMkvdsOE_veefHnzouOtAeSI12umfqP6R4OirakIAH3NXQ9RRNUeM6I2qyBaLo4S9IGarlRIxoQ";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
@@ -31,5 +32,10 @@ public class RetrofitInstance {
     }
     public static TeamService getTeamService() {
         return getRetrofitInstance().create(TeamService.class);
+    }
+
+    // Create an instance of MatchService
+    public static MatchService getMatchService() {
+        return getRetrofitInstance().create(MatchService.class);
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -15,13 +16,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.matchActivities.MatchRepository;
+import com.example.mobile_pfe.matchActivities.ShowMatches;
 import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.sevices.MatchRequest;
+import com.example.mobile_pfe.sevices.MatchService;
 import com.example.mobile_pfe.sevices.TeamService;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,6 +43,9 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
         setContentView(R.layout.activity_lisviewteam);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        boolean fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
+
+
 
         TeamService teamService = RetrofitInstance.getTeamService();
         Call<List<TeamDetails>> call = teamService.getTeams();
@@ -55,7 +64,7 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
 
                     originalTeamDetailsList = new ArrayList<>(teamDetailsList);
 
-                    adapter = new CustomAdapter(TeamActivity.this, teamDetailsList, TeamActivity.this);
+                    adapter = new CustomAdapter(TeamActivity.this, teamDetailsList, TeamActivity.this,fromChooseTeam);
                     recyclerView.setAdapter(adapter);
 
                     Toast.makeText(TeamActivity.this, "Success to upload team details", Toast.LENGTH_SHORT).show();
@@ -67,6 +76,61 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
             @Override
             public void onFailure(Call<List<TeamDetails>> call, Throwable t) {
                 Toast.makeText(TeamActivity.this, "Failed to connect to the server", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        // Find your button in the layout
+        Button yourButton = findViewById(R.id.createMatch);
+
+//         Conditionally show/hide the button based on the flag
+        if (fromChooseTeam) {
+            yourButton.setVisibility(View.VISIBLE);
+        } else {
+            yourButton.setVisibility(View.GONE);
+        }
+
+        yourButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                List<TeamDetails> selectedTeams = adapter.getSelectedTeams();
+                if(selectedTeams.size()==2) {
+                    MatchRepository matchRepository = MatchRepository.getInstance();
+                    MatchRequest matchRequest = matchRepository.getMatchRequest();
+                    matchRequest.setSport(1);
+                    matchRequest.setTypeMatch("UPCOMING");
+                    matchRequest.setTeamIdsFromSelectedTeams(selectedTeams);
+                    System.out.println("Match details 2 :" + matchRequest.toString());
+                    //her switch from this fragment to TeamActivity
+                    MatchService matchService = RetrofitInstance.getMatchService();
+
+                    // Use the modified createTeam method with Map<String, Integer> for members
+                    Call<ResponseBody> call = matchService.createMatch(matchRequest);
+
+                    call.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            if (response.isSuccessful()) {
+                                Toast.makeText(TeamActivity.this, "match details uploaded successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(TeamActivity.this, ShowMatches.class);
+                                startActivity(intent);
+
+                            } else {
+                                // Handle unsuccessful response
+                                Toast.makeText(TeamActivity.this, "Failed to upload match details", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            Toast.makeText(TeamActivity.this, "Failed to connect " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                else{
+                    Toast.makeText(TeamActivity.this, "You must select two teams " , Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.mobile_pfe.matchActivities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.TeamActivity.TeamActivity;
+import com.example.mobile_pfe.TeamActivity.listteamactivity;
+import com.example.mobile_pfe.sevices.MatchRequest;
+import com.example.mobile_pfe.sevices.MatchService;
+import com.example.mobile_pfe.sevices.TeamService;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +75,54 @@ public class ChooseTeamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_choose_team, container, false);
+        View view = inflater.inflate(R.layout.fragment_choose_team, container, false);
+        Button addExistingTeam = view.findViewById(R.id.AddExistingteams);
+        addExistingTeam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //her switch from this fragment to TeamActivity
+                Intent intent = new Intent(getActivity(), TeamActivity.class);
+                intent.putExtra("fromChooseTeam", true);
+                startActivity(intent);
+            }
+        });
+
+        Button saveAndContinue = view.findViewById(R.id.login3Button);
+        saveAndContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MatchRepository matchRepository = MatchRepository.getInstance();
+                MatchRequest matchRequest = matchRepository.getMatchRequest();
+                matchRequest.setSport(1);
+                matchRequest.setTypeMatch("UPCOMING");
+
+                //her switch from this fragment to TeamActivity
+                MatchService matchService = RetrofitInstance.getMatchService();
+
+                // Use the modified createTeam method with Map<String, Integer> for members
+                Call<ResponseBody> call = matchService.createMatch(matchRequest);
+
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(getActivity(), "match details uploaded successfully", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Handle unsuccessful response
+                            Toast.makeText(getActivity(), "Failed to upload match details", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(getActivity(), "Failed to connect " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+
+        });
+
+        return view;
     }
 }

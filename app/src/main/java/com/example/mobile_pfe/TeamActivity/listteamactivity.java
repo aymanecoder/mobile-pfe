@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityListviewteamBinding;
+import com.example.mobile_pfe.matchActivities.ShowMatches;
 import com.example.mobile_pfe.model.Equipe.TeamRequestBody;
 import com.example.mobile_pfe.model.Sportif;
 import com.example.mobile_pfe.programActivity.UploadProgramActivity;
@@ -134,6 +135,8 @@ public class listteamactivity extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(listteamactivity.this, "Team details uploaded successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(listteamactivity.this, TeamActivity.class);
+                    startActivity(intent);
                 } else {
                     // Handle unsuccessful response
                     Toast.makeText(listteamactivity.this, "Failed to upload team details", Toast.LENGTH_SHORT).show();

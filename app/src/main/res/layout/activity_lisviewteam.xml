@@ -34,8 +34,9 @@
 
         <LinearLayout
             android:layout_width="400dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="695dp"
+            android:orientation="vertical"
+            android:id="@+id/line1">
 
             <TextView
                 android:id="@+id/back"
@@ -61,7 +62,21 @@
                 app:spanCount="2"
                 tools:listitem="@layout/listviewteam_activi" />
 
+
+
         </LinearLayout>
+        <Button
+            android:id="@+id/createMatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/line1"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#FFFFFF"
+            android:text="Create Match"
+            android:fontFamily="serif"/>
 
         <ImageButton
             android:id="@+id/ellipse_1"
@@ -69,6 +84,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="300dp"
             android:layout_marginTop="640dp"
+
             android:background="@drawable/buttonnn"
             android:elevation="4dp"
             android:src="@drawable/ic_plus" />

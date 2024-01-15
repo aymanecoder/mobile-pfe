@@ -86,5 +86,7 @@
     <string name="TeamA">Team A</string>
     <string name="description">Description</string>
     <string name="Team">New Team</string>
+    <string name="matchTitle">Match Title</string>
+    <string name="dsecriptionMatch">Description</string>
 
 </resources>

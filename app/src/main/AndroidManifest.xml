@@ -124,14 +124,16 @@
             android:name=".UI.TeamsFragment"
             android:label="GroupActivity"
             android:exported="false"/>
-         <activity
-            android:name=".matchActivities.ShowMatches"
-            android:label="GroupActivity"
-            android:exported="false"/>
+
 
 
         <activity
             android:name=".TeamActivity.ItemActivity"
+            android:label="TeamActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".TeamActivity.TeamActivity"
             android:label="TeamActivity"
             android:exported="false"/>
         <activity
@@ -151,7 +153,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".TeamActivity.TeamActivity"
+            android:name=".matchActivities.ShowMatches"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
