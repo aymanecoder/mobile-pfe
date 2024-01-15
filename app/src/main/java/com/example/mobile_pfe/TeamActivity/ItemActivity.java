@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -21,11 +22,32 @@ public class ItemActivity extends AppCompatActivity {
     private ActivityListvieweachteamBinding Binding;
     private List<Sportif> membersList;
 
+    private boolean fromChooseTeam;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Binding = ActivityListvieweachteamBinding.inflate(getLayoutInflater());
         setContentView(Binding.getRoot());
+
+        fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
+        Button yourButton = findViewById(R.id.join);
+
+//         Conditionally show/hide the button based on the flag
+        if (fromChooseTeam) {
+            yourButton.setVisibility(View.GONE);
+        } else {
+
+            yourButton.setVisibility(View.VISIBLE);
+        }Button yourButton2 = findViewById(R.id.cancel);
+
+//         Conditionally show/hide the button based on the flag
+        if (fromChooseTeam) {
+            yourButton2.setVisibility(View.GONE);
+        } else {
+
+            yourButton2.setVisibility(View.VISIBLE);
+        }
 
         // Retrieve data from intent extras
         int teamId = getIntent().getIntExtra("teamId", 0);

@@ -37,13 +37,15 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
     private CustomAdapter adapter;
     private List<TeamDetails> originalTeamDetailsList;
 
+    private boolean fromChooseTeam;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lisviewteam);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        boolean fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
+        fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
 
 
 
@@ -158,7 +160,9 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TeamActivity.this, Teamprofilactivity.class);
+                intent.putExtra("fromChooseTeam", fromChooseTeam);
                 startActivity(intent);
+
             }
         });
     }
@@ -197,6 +201,9 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
             // intent.putExtra("members", (Serializable) null);
         }
         System.out.println("ItemActivity Members List: 2" + members);
+
+        intent.putExtra("fromChooseTeam", fromChooseTeam);
+        startActivity(intent);
 
         // Add other details as needed
         startActivity(intent);

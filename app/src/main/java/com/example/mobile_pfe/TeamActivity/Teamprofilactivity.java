@@ -37,6 +37,8 @@ public class Teamprofilactivity extends AppCompatActivity {
      private Bitmap selectedBitmap; // Add this variable to store the selected bitmap
      private static final int PICK_IMAGE_REQUEST = 1;
 
+     private boolean fromChooseTeam;
+
      @Override
      protected void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
@@ -48,7 +50,7 @@ public class Teamprofilactivity extends AppCompatActivity {
           logoImageView = findViewById(R.id.logoImageView);
           descriptionEditText = findViewById(R.id.desEditText);
 
-
+          fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
 
 
 
@@ -87,6 +89,7 @@ public class Teamprofilactivity extends AppCompatActivity {
                               intent.putExtra("teamName", teamName);
                               intent.putExtra("logoImageUrl", logoImageUrl);
                               intent.putExtra("description", description);
+                              intent.putExtra("fromChooseTeam", fromChooseTeam);
                               startActivity(intent);
                          } else {
                               // Team name is too short, display an error message

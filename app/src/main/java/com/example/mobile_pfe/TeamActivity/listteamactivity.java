@@ -38,6 +38,8 @@ public class listteamactivity extends AppCompatActivity {
     private ListAdapter2 listAdapter; // Added field to store the ListAdapter2 instance
     private ArrayList<Sportif> selectedSportifs; // Added field to store selected sportifs
 
+    private boolean fromChooseTeam;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,7 @@ public class listteamactivity extends AppCompatActivity {
         String teamName = intent.getStringExtra("teamName");
         String logoImageUrl = intent.getStringExtra("logoImageUrl");
         String description = intent.getStringExtra("description");
+        fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
 
         // Now you can use these values as needed
         Log.d("TeamInfo", "Team Name: " + teamName);
@@ -136,6 +139,7 @@ public class listteamactivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(listteamactivity.this, "Team details uploaded successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(listteamactivity.this, TeamActivity.class);
+                    intent.putExtra("fromChooseTeam", fromChooseTeam);
                     startActivity(intent);
                 } else {
                     // Handle unsuccessful response
