@@ -47,10 +47,10 @@ public class FindFriends extends AppCompatActivity {
 
 
     private void fillFriendsList(){
-       // usersList.add(new User("Tongkun Lee", R.drawable.user1));
-        //usersList.add(new User("Rehmem Khihal", R.drawable.user2));
-       // usersList.add(new User("Fazur Nalim", R.drawable.user3));
-       // usersList.add(new User("Boa Palegleam", R.drawable.user4));
-       // usersList.add(new User("Gurkir Glorymore", R.drawable.user5));
+        usersList.add(new User("Tongkun Lee", R.drawable.user1));
+        usersList.add(new User("Rehmem Khihal", R.drawable.user2));
+        usersList.add(new User("Fazur Nalim", R.drawable.user3));
+        usersList.add(new User("Boa Palegleam", R.drawable.user4));
+        usersList.add(new User("Gurkir Glorymore", R.drawable.user5));
     }
 }

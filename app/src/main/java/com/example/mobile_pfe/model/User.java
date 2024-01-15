@@ -15,6 +15,11 @@ public class User {
         Password = password;
     }
 
+    public User(String tongkunLee, int user1) {
+        this.name = tongkunLee;
+        this.image = user1;
+    }
+
     public String getName() {
         return name;
     }
