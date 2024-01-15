@@ -100,7 +100,7 @@ public class NutritionFragment extends Fragment {
         ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Program>> call = service.getAll();
+        Call<List<Program>> call = service.getProgramsByTypeProgram("NUTRITION");
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

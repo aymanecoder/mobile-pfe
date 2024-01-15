@@ -36,15 +36,19 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao" />
 
-        <activity android:name=".profileActivities.EditProfil"
+        <activity android:name=".profileActivities.EditProfilActivity"
                  android:exported="false"
             />
 
+
+        <activity android:name=".profileActivities.metricprofil"
+            android:exported="false"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".profileActivities.Profil"
+            android:name=".profileActivities.ProfilActivity"
             android:exported="true" />
         <activity
             android:name=".programActivity.ListVideoActivity"
@@ -118,7 +122,9 @@
         <activity
             android:name=".UI.MainActivity"
             android:label="GroupActivity"
-            android:exported="false"/>
+            android:exported="false">
+
+        </activity>
 
         <activity
             android:name=".UI.FriendsFragment"

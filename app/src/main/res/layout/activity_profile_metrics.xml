@@ -55,7 +55,7 @@
 
     </RelativeLayout>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilePicture"
         android:layout_width="158dp"
         android:layout_height="158dp"
@@ -64,8 +64,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="128dp"
         android:layout_marginEnd="125dp"
-        android:layout_marginBottom="670dp"
-        android:src="@drawable/ellipse_17" />
+        android:layout_marginBottom="600dp"
+        android:layout_centerHorizontal="true" />
+
 
     <Button
         android:id="@+id/icon_gear_"
@@ -79,7 +80,7 @@
 
 
     <TextView
-        android:id="@+id/full_name2"
+        android:id="@+id/back"
         android:layout_width="109dp"
         android:layout_height="49dp"
         android:layout_marginLeft="10dp"
@@ -198,7 +199,7 @@
         android:layout_height="2dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="482dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="6dp"
         android:background="@drawable/vertical_line" />
 
@@ -256,11 +257,10 @@
             android:layout_width="95dp"
             android:layout_height="72dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="223dp"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="223dp"
             android:layout_marginTop="515dp"
-            android:background="@drawable/image_18"
-            />
+            android:background="@drawable/image_18" />
 
         <TextView
             android:id="@+id/loses_3"
@@ -293,22 +293,20 @@
             android:layout_marginLeft="54dp"
             android:layout_marginTop="720dp"
             android:background="@drawable/image_113" />
+
         <TextView
             android:id="@+id/wins_7"
             android:layout_width="354dp"
             android:layout_height="47dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="54dp"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="54dp"
             android:layout_marginTop="760dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="1sp"
             android:text="@string/wins_7"
             android:textAppearance="@style/wins_7"
-            android:lineSpacingExtra="1sp"
-            android:translationY="-0.48sp"
-            android:gravity="center_horizontal|top"
-            />
-
-
+            android:translationY="-0.48sp" />
 
 
     </FrameLayout>

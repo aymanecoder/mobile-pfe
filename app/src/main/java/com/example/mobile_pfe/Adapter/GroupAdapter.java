@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.GroupChatActivity.GroupChatActivity;
+import com.example.mobile_pfe.Model.User;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.User;
 
 import java.util.List;
 public class GroupAdapter extends RecyclerView.Adapter<UserHolder> {

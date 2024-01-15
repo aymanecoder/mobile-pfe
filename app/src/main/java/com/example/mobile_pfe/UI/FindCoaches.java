@@ -4,19 +4,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Adapter.CoachAdapter;
+import com.example.mobile_pfe.Adapter.FriendAdapter;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.model.Coach;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.model.User1.User;
+import com.example.mobile_pfe.sevices.UserService;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FindCoaches extends AppCompatActivity {
-    private ArrayList<Coach> coachesList = new ArrayList<>();
 
     private RecyclerView recyclerView;
     @Override
@@ -24,12 +33,9 @@ public class FindCoaches extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_coaches);
 
-        fillFriendsList();
 
         recyclerView = findViewById(R.id.CoachesList_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        CoachAdapter adapter = new CoachAdapter(coachesList);
-        recyclerView.setAdapter(adapter);
 
         TextView backText = findViewById(R.id.Back);
         backText.setOnClickListener(new View.OnClickListener() {
@@ -39,17 +45,33 @@ public class FindCoaches extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
+        loadCoaches();
 
     }
 
-    private void fillFriendsList(){
-        coachesList.add(new Coach("Will Smith","3","Experience 3 years", R.drawable.coach2));
-        coachesList.add(new Coach("Clarice Starling","5","Experience 4 years", R.drawable.profile2));
-        coachesList.add(new Coach("justin Timberlake","4","Experience 5 years", R.drawable.profile1));
-        coachesList.add(new Coach("Clarice Starling","3","Experience 2 years", R.drawable.profile1));
-        coachesList.add(new Coach("Clarice Starling","3","Experience 1 years", R.drawable.profile1));
+    private void loadCoaches() {
+        RetrofitInstance retrofitInstance = new RetrofitInstance();
+        UserService userService = retrofitInstance.getRetrofitInstance().create(UserService.class);
+        userService.getCoachs()
+                .enqueue(new Callback<List<User>>() {
+                    @Override
+                    public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                        populateListView(response.body());
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<User>> call, Throwable t) {
+                        Toast.makeText(FindCoaches.this, "Failed to load coaches", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
     }
+    private void populateListView(List<User> coachesList) {
+        CoachAdapter adapter = new CoachAdapter(coachesList);
+        recyclerView.setAdapter(adapter);
+    }
+
+
+
 }
