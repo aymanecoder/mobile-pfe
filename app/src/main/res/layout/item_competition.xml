@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/notfound"
-        android:background="#66000000"/>
+        android:src="@drawable/border"
+
+        android:background="@drawable/circular_button_background"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +33,7 @@
         android:layout_marginEnd="4dp"
         android:gravity="center"
         android:text="Post Title"
+        android:textAllCaps="true"
         android:textSize="42sp"
         android:textStyle="bold"
         android:textColor="@color/teal_700"/>
