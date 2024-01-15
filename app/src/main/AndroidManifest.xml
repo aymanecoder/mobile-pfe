@@ -179,6 +179,7 @@
         <activity
             android:name=".GroupActivity.ItemActivity"
             android:exported="false" />
+
         <activity
             android:name=".loginActivities.login"
             android:exported="true">
