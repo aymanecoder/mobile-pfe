@@ -44,7 +44,7 @@ public class ShowMatches extends AppCompatActivity implements GestureDetector.On
 
 
         upcomingButton = findViewById(R.id.button1);
-        completedButton = findViewById(R.id.button2);
+        completedButton = findViewById(R.id.completed);
 
 
         // Set up ViewPager with the adapter
@@ -145,15 +145,9 @@ public class ShowMatches extends AppCompatActivity implements GestureDetector.On
     private void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
-
-        // Skip adding the transaction to the back stack for UpcomingFragment
-        if (!(fragment instanceof UpcomingFragment)) {
-            transaction.addToBackStack(null);
-        }
-
+        transaction.addToBackStack(null);
         transaction.commit();
     }
-
 
     @Override
     public boolean onDown(@NonNull MotionEvent motionEvent) {

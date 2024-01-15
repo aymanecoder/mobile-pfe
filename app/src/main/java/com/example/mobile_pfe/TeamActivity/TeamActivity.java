@@ -205,7 +205,5 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
         intent.putExtra("fromChooseTeam", fromChooseTeam);
         startActivity(intent);
 
-        // Add other details as needed
-        startActivity(intent);
     }
 }

@@ -59,7 +59,7 @@
             style="@style/MyButtonStyle" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/completed"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

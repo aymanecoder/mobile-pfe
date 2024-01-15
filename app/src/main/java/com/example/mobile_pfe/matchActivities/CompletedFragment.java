@@ -13,14 +13,22 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.adapters.MatchCompletedAdapter;
 import com.example.mobile_pfe.adapters.MatchListAdapter;
 import com.example.mobile_pfe.model.MatchItem;
+import com.example.mobile_pfe.model.MatchResponse;
+import com.example.mobile_pfe.sevices.MatchService;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,6 +49,10 @@ public class CompletedFragment extends Fragment {
 
     private TextView matchTextView;
     private LinearLayout buttonsLayout;
+
+    private List<MatchResponse> originalTeamDetailsList;
+
+    private MatchCompletedAdapter adapter;
 
 
     public CompletedFragment() {
@@ -85,43 +97,73 @@ public class CompletedFragment extends Fragment {
         showViews();
         ListView listView = view.findViewById(R.id.listViewCompleted);
         listView.setDivider(null);
+        System.out.println("Im here1");
 
-        // Create a list of matches
-        List<MatchItem> matchList = new ArrayList<>();
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",5, R.drawable.team2_logo, "Team 2",0));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",3, R.drawable.team2_logo, "Team 2",4));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",4, R.drawable.team2_logo, "Team 2",3));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",6, R.drawable.team2_logo, "Team 2",0));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",2, R.drawable.team2_logo, "Team 2",2));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",1, R.drawable.team2_logo, "Team 2",0));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",3, R.drawable.team2_logo, "Team 2",1));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",7, R.drawable.team2_logo, "Team 2",9));
-        matchList.add(new MatchItem(R.drawable.team1_logo, "Team 1",1, R.drawable.team2_logo, "Team 2",0));
+        MatchService matchService = RetrofitInstance.getMatchService();
+        Call<List<MatchResponse>> call = matchService.getMatches();
 
-        // Add more matches as needed...
-
-        // Create and set the adapter
-        MatchCompletedAdapter adapter = new MatchCompletedAdapter(requireContext(), matchList);
-
-        adapter.setOnMoreButtonClickListener(new MatchListAdapter.OnMoreButtonClickListener() {
+        call.enqueue(new Callback<List<MatchResponse>>() {
             @Override
-            public void onMoreButtonClick(MatchItem matchItem) {
-                // Hide the "Match" title and the LinearLayout with buttons
-                hideViews();
+            public void onResponse(Call<List<MatchResponse>> call, Response<List<MatchResponse>> response) {
+                if (response.isSuccessful()) {
+                    System.out.println("Im here2");
+                    List<MatchResponse> matchDetailsList = response.body();
+                    System.out.println("Im here3");
 
-                // Pass team names as parameters to ItemFragment
+                    // Filter matches with type UPCOMING
+                    List<MatchResponse> upcomingMatches = new ArrayList<>();
+                    for (MatchResponse matchDetails : matchDetailsList) {
+                        if ("COMPLETED".equals(matchDetails.getTypeMatch())) {
+                            upcomingMatches.add(matchDetails);
+                        }
+                    }
 
-                // Create a new instance of ItemFragment and set arguments
-                CompletedItemFragment completedItemFragment = new CompletedItemFragment();
+                    // Print filtered matches
+                    for (MatchResponse matchDetails : upcomingMatches) {
+                        System.out.println("Completed Match ID: " + matchDetails.getId());
+                        System.out.println("Completed Match Title: " + matchDetails.getTitle());
+                    }
 
-                // Replace the current fragment with ItemFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, completedItemFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                    originalTeamDetailsList = new ArrayList<>(upcomingMatches);
+                    adapter = new MatchCompletedAdapter(requireContext(), upcomingMatches);
+                    listView.setAdapter(adapter);
+
+                    adapter.setOnMoreButtonClickListener(new MatchCompletedAdapter.OnMoreButtonClickListener() {
+                        @Override
+                        public void onMoreButtonClick(MatchResponse matchItem) {
+                            // Hide the "Match" title and the LinearLayout with buttons
+                            hideViews();
+
+                            // Pass the entire MatchResponse object as a Serializable
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable("matchResponse", matchItem);
+
+                            // Create a new instance of ItemFragment and set arguments
+                            ItemFragment itemFragment = new ItemFragment();
+                            itemFragment.setArguments(bundle);
+
+                            // Replace the current fragment with ItemFragment
+                            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                            transaction.replace(R.id.fragment_container, itemFragment);
+                            transaction.addToBackStack(null);
+                            transaction.commit();
+                        }
+                    });
+
+                    Toast.makeText(getActivity(), "Success to fetch upcoming match details", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Failed to fetch match details", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<MatchResponse>> call, Throwable t) {
+                Toast.makeText(getActivity(), "Failed to connect to the server", Toast.LENGTH_SHORT).show();
             }
         });
-        listView.setAdapter(adapter);
+
+
+
 
         return view;
     }

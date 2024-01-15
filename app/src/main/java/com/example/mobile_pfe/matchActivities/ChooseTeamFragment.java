@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
+import com.example.mobile_pfe.TeamActivity.Teamprofilactivity;
 import com.example.mobile_pfe.TeamActivity.listteamactivity;
 import com.example.mobile_pfe.sevices.MatchRequest;
 import com.example.mobile_pfe.sevices.MatchService;
@@ -86,6 +87,17 @@ public class ChooseTeamFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        Button addNewTeams = view.findViewById(R.id.AddNewTeams);
+        addExistingTeam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //her switch from this fragment to TeamActivity
+                Intent intent = new Intent(getActivity(), Teamprofilactivity.class);
+                intent.putExtra("fromChooseTeam", true);
+                startActivity(intent);
+            }
+        });
+
 
         Button saveAndContinue = view.findViewById(R.id.login3Button);
         saveAndContinue.setOnClickListener(new View.OnClickListener() {

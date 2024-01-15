@@ -160,6 +160,7 @@
                 app:cardCornerRadius="10dp"
                 android:background="@android:color/transparent">
                 <TextView
+                    android:id="@+id/date1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13sp"
@@ -171,6 +172,7 @@
                     android:fontFamily="@font/halant_regular"
                     android:textColor="#A9A9A9" />
                 <TextView
+                    android:id="@+id/hour1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
@@ -218,6 +220,7 @@
                     ></ImageView>
 
                 <TextView
+                    android:id="@+id/city1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
