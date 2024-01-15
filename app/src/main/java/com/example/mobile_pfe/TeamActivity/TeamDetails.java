@@ -2,9 +2,10 @@ package com.example.mobile_pfe.TeamActivity;
 
 import com.example.mobile_pfe.model.Sportif;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class TeamDetails {
+public class TeamDetails implements Serializable {
     private Integer id;
     private String name;
     private Sportif admin;

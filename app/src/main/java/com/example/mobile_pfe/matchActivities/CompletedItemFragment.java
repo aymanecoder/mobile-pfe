@@ -106,6 +106,22 @@ public class CompletedItemFragment extends Fragment implements OnMapReadyCallbac
 
         if (bundle != null) {
             MatchResponse matchResponse = (MatchResponse) bundle.getSerializable("matchResponse");
+
+            System.out.println("matchResponse :"+ matchResponse);
+            if (matchResponse != null && matchResponse.getTeams().size() >= 2) {
+                // Create an instance of Team1Fragment and pass the teamList data
+                Team1Fragment team1Fragment = Team1Fragment.newInstance(matchResponse.getTeams().get(0));
+                // Use FragmentTransaction to add the fragment to the layout
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.completedyourFragment, team1Fragment)
+                        .commit();
+
+                Team1Fragment team2Fragment = Team1Fragment.newInstance(matchResponse.getTeams().get(1));
+                // Use FragmentTransaction to add the fragment to the layout
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.completedyourFragment2, team2Fragment)
+                        .commit();
+            }
             System.out.println("matchResponse :"+ matchResponse);
             // Format and set date and time
             if (matchResponse.getDate() != null) {
@@ -140,7 +156,7 @@ public class CompletedItemFragment extends Fragment implements OnMapReadyCallbac
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                mapView = view.findViewById(R.id.mapView);
+                mapView = view.findViewById(R.id.mapView1);
                 mapView.onCreate(savedInstanceState);
                 mapView.onResume();
                 mapView.getMapAsync(CompletedItemFragment.this);

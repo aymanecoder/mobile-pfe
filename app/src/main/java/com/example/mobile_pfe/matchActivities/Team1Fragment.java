@@ -11,12 +11,18 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.TeamActivity.TeamDetails;
 import com.example.mobile_pfe.adapters.TeamListAdapter;
 import com.example.mobile_pfe.model.TeamItem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +38,10 @@ public class Team1Fragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private static final String ARG_TEAM_LIST = "teamList";
+
+    private TeamDetails teamList;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -44,26 +54,25 @@ public class Team1Fragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+//     * @param param1 Parameter 1.
+//     * @param param2 Parameter 2.
      * @return A new instance of fragment Team1Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Team1Fragment newInstance(String param1, String param2) {
+    public static Team1Fragment newInstance(TeamDetails teamList) {
         Team1Fragment fragment = new Team1Fragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putSerializable(ARG_TEAM_LIST, (Serializable) teamList);
         fragment.setArguments(args);
         return fragment;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            teamList = (TeamDetails) getArguments().getSerializable(ARG_TEAM_LIST);
         }
     }
 
@@ -72,60 +81,60 @@ public class Team1Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_team1, container, false);
+        TextView title= view.findViewById(R.id.teamName);
+        ImageView logo= view.findViewById(R.id.teamLogo);
 
 
         RecyclerView listView = view.findViewById(R.id.listViewTeam);
-
-        // Create a list of matches
-        List<TeamItem> teamList = new ArrayList<>();
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-        teamList.add(new TeamItem(R.drawable.profile, "Laghrissi Mohamed"));
-
-        // Add more matches as needed...
-
-        // Set up the RecyclerView with a LinearLayoutManager
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
-        listView.setLayoutManager(layoutManager);
-
-        // Add dividers between items (optional)
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(listView.getContext(),
-                layoutManager.getOrientation());
-        listView.addItemDecoration(dividerItemDecoration);
-
-        // Create and set the adapter
-        TeamListAdapter adapter = new TeamListAdapter(requireContext(), teamList);
-        listView.setAdapter(adapter);
-
-        // Disable nested scrolling for the RecyclerView
-        listView.setNestedScrollingEnabled(false);
-        listView.setOnTouchListener(new ListView.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int action = event.getAction();
-                switch (action) {
-                    case MotionEvent.ACTION_DOWN:
-                        // Disallow ScrollView to intercept touch events.
-                        v.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        // Allow ScrollView to intercept touch events.
-                        v.getParent().requestDisallowInterceptTouchEvent(false);
-                        break;
-                }
-                // Handle ListView touch events.
-                v.onTouchEvent(event);
-                return true;
+        if (teamList != null) {
+            // Create a list of matches
+            title.setText(teamList.getTeamName());
+            if (teamList.getLogoPath()!=null) {
+                Glide.with(requireContext())
+                        .load(teamList.getLogoPath().replace("localhost", "192.168.0.102"))
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(logo);
+            }else{
+                logo.setImageResource(R.drawable.team);
             }
-        });
 
+            // Add more matches as needed...
+
+            // Set up the RecyclerView with a LinearLayoutManager
+            LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
+            listView.setLayoutManager(layoutManager);
+
+            // Add dividers between items (optional)
+            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(listView.getContext(),
+                    layoutManager.getOrientation());
+            listView.addItemDecoration(dividerItemDecoration);
+
+            // Create and set the adapter
+            TeamListAdapter adapter = new TeamListAdapter(requireContext(), teamList.getMembers());
+            listView.setAdapter(adapter);
+
+            // Disable nested scrolling for the RecyclerView
+            listView.setNestedScrollingEnabled(false);
+            listView.setOnTouchListener(new ListView.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    int action = event.getAction();
+                    switch (action) {
+                        case MotionEvent.ACTION_DOWN:
+                            // Disallow ScrollView to intercept touch events.
+                            v.getParent().requestDisallowInterceptTouchEvent(true);
+                            break;
+                        case MotionEvent.ACTION_UP:
+                            // Allow ScrollView to intercept touch events.
+                            v.getParent().requestDisallowInterceptTouchEvent(false);
+                            break;
+                    }
+                    // Handle ListView touch events.
+                    v.onTouchEvent(event);
+                    return true;
+                }
+            });
+        }
         return view;
     }
 

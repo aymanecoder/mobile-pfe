@@ -82,6 +82,20 @@ public class ItemFragment extends Fragment implements OnMapReadyCallback {
         if (bundle != null) {
             MatchResponse matchResponse = (MatchResponse) bundle.getSerializable("matchResponse");
             System.out.println("matchResponse :"+ matchResponse);
+            if (matchResponse != null && matchResponse.getTeams().size() >= 2) {
+                // Create an instance of Team1Fragment and pass the teamList data
+                Team1Fragment team1Fragment = Team1Fragment.newInstance(matchResponse.getTeams().get(0));
+                // Use FragmentTransaction to add the fragment to the layout
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.yourFragment1, team1Fragment)
+                        .commit();
+
+                Team1Fragment team2Fragment = Team1Fragment.newInstance(matchResponse.getTeams().get(1));
+                // Use FragmentTransaction to add the fragment to the layout
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.yourFragment2, team2Fragment)
+                        .commit();
+            }
             // Format and set date and time
             if (matchResponse.getDate() != null) {
                 String formattedDate = formatDate(matchResponse.getDate());
