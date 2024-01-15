@@ -219,7 +219,8 @@ public class EditProfilActivity extends AppCompatActivity {
 
             // Rest of your upload code remains the same...
         } else {
-            Toast.makeText(EditProfilActivity.this, "Could not access file", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(EditProfilActivity.this, "Could not access file", Toast.LENGTH_SHORT).show();
+            filePart=null;
         }
 
         ProfilService profilService=RetrofitInstance.getRetrofitInstance().create(ProfilService.class);

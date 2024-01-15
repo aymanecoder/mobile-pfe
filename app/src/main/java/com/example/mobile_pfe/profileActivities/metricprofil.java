@@ -57,7 +57,7 @@ public class metricprofil extends AppCompatActivity {
     }
 
     private void redirectToProfile() {
-        // Use Intent to navigate to the profile activity or fragment
+
         Intent intent = new Intent(metricprofil.this, ProfilActivity.class); // Replace with your actual profile activity
         intent.putExtra("profile", receivedProfile);
         startActivity(intent);
