@@ -15,14 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
+import com.example.mobile_pfe.Model.Globals.AppGlobals;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.UI.CoachContent;
 import com.example.mobile_pfe.UI.FindCoaches;
 import com.example.mobile_pfe.Adapter.CompetitionAdapter;
 import com.example.mobile_pfe.model.Competition.Competition;
-import com.example.mobile_pfe.model.Globals.AppGlobals;
-import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.sevices.CompetitionService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -62,7 +61,7 @@ public class ListCompetitionActivity extends AppCompatActivity {
         CompetitionService service = RetrofitInstance.getRetrofitInstance().create(CompetitionService.class);
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Competition>> call = service.getAll();
+        Call<List<Competition>> call = service.getChallengesBySportAndTypeProgram(AppGlobals.getSportId());
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

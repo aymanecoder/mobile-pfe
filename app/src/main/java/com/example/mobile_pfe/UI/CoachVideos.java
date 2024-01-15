@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,6 +62,8 @@ public class CoachVideos extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<Video>> call, Throwable t) {
+                        t.printStackTrace();
+                        Log.d("error video",t.getMessage());
                         Toast.makeText(CoachVideos.this, "Failed to load videos", Toast.LENGTH_SHORT).show();
                     }
                 });
