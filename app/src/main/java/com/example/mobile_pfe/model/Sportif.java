@@ -1,8 +1,9 @@
 package com.example.mobile_pfe.model;
 
-public class Sportif {
+import java.io.Serializable;
 
-    private Integer id;
+public class Sportif implements Serializable {
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -10,25 +11,13 @@ public class Sportif {
     private Integer age;
     private Integer taille;
     private Integer poids;
+    private String picturePath;
 
-    public Sportif(Integer id, String firstName, String lastName, String email, String address, Integer age, Integer taille, Integer poids, String picturePath) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.address = address;
-        this.age = age;
-        this.taille = taille;
-        this.poids = poids;
-        PicturePath = picturePath;
-    }
-
-    private String PicturePath;
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -89,13 +78,11 @@ public class Sportif {
     }
 
     public String getPicturePath() {
-        return PicturePath;
+        return picturePath;
     }
 
     public void setPicturePath(String picturePath) {
-        PicturePath = picturePath;
+        this.picturePath = picturePath;
     }
-
-
-
 }
+

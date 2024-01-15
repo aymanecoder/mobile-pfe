@@ -14,7 +14,7 @@ public class LoginTask {
 
     public void login(String email, String password, final LoginCallback callback) {
         Retrofit retrofit = new retrofit2.Retrofit.Builder()
-                .baseUrl("http://192.168.43.96:9000")
+                .baseUrl("http://192.168.0.102:8080")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -37,7 +37,7 @@ public class LoginTask {
 
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
-                System.out.println("Error Trace");
+                System.out.println("Error Trace" + t.getMessage());
                 t.printStackTrace();
                 callback.onError("Connection error. Please try again.");
             }

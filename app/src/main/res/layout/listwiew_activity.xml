@@ -23,7 +23,7 @@
                 android:layout_height="100dp"
                 android:clipToOutline="true"
                 android:layout_marginStart="3dp"
-                android:src="@drawable/e"
+                android:src="@drawable/default_image"
                 />
 
        <LinearLayout

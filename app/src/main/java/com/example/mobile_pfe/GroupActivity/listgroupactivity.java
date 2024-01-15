@@ -46,7 +46,7 @@ public class listgroupactivity extends AppCompatActivity{
 
     private void fetchSportifNames() {
         SportifService service = RetrofitInstance.getRetrofitInstance().create(SportifService.class);
-        Call<List<Sportif>> call = service.getAllSportifs();
+        Call<List<Sportif>> call = service.getSportifs();
 
         call.enqueue(new Callback<List<Sportif>>() {
             @Override
@@ -105,7 +105,7 @@ public class listgroupactivity extends AppCompatActivity{
         // Prepare list of member IDs as a list of maps
         List<Map<String, Integer>> memberMaps = new ArrayList<>();
         for (Sportif sportif : ChosenGroupMembers) {
-            if (sportif.getId() != null && sportif.getId() instanceof Integer) {
+            if (sportif.getId() != -1 ) {
                 memberMaps.add(Collections.singletonMap("id", sportif.getId()));
             } else {
                 Log.e("GroupCreation", "Invalid ID for sportif: " + sportif.getFirstName());

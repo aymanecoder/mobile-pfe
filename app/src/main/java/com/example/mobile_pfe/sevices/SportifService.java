@@ -9,5 +9,5 @@ import retrofit2.http.GET;
 
 public interface SportifService {
     @GET("api/v1/sportifs")
-    Call<List<Sportif>> getAllSportifs();
+    Call<List<Sportif>> getSportifs();
 }

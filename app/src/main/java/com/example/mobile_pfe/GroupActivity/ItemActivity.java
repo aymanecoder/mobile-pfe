@@ -149,7 +149,7 @@ public class ItemActivity extends AppCompatActivity {
     }
     private void fetchSportifs() {
         SportifService service = RetrofitInstance.getRetrofitInstance().create(SportifService.class);
-        Call<List<Sportif>> call = service.getAllSportifs();
+        Call<List<Sportif>> call = service.getSportifs();
 
         call.enqueue(new Callback<List<Sportif>>() {
             @Override
