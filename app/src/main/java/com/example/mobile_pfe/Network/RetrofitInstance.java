@@ -1,5 +1,7 @@
 package com.example.mobile_pfe.Network;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import com.example.mobile_pfe.model.Globals.AppGlobals;
 
 import okhttp3.OkHttpClient;
@@ -9,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
 
     private static Retrofit retrofit;
-    public static final String BASE_URL = "http://192.168.1.103:8080/";
+    public static final String BASE_URL = "http://192.168.43.96:9000/";
     private static final String AUTH_TOKEN = AppGlobals.getAccessToken();
 
     public static Retrofit getRetrofitInstance() {
@@ -27,5 +29,7 @@ public class RetrofitInstance {
         return retrofit;
     }
 
-
+    public AppCompatDelegate getRetrofit() {
+        return null;
+    }
 }

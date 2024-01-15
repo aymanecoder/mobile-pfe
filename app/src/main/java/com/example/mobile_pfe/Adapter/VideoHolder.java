@@ -17,7 +17,6 @@ public class VideoHolder extends RecyclerView.ViewHolder{
     TextView videoDuration;
     TextView videoViews;
     TextView videoLevel;
-
     ImageView image;
 
 

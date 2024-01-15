@@ -4,20 +4,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.Adapter.UserAdapterTwo;
-import com.example.mobile_pfe.model.User;
+import com.example.mobile_pfe.Adapter.FriendAdapter;
+import com.example.mobile_pfe.model.User1.User;
+import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.sevices.UserService;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FindFriends extends AppCompatActivity {
 
-    private ArrayList<User> usersList = new ArrayList<>();
 
     private RecyclerView recyclerView;
     @Override
@@ -25,13 +32,10 @@ public class FindFriends extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_friends);
 
-        fillFriendsList();
+
 
         recyclerView = findViewById(R.id.UsersList_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        UserAdapterTwo adapter = new UserAdapterTwo(usersList);
-        recyclerView.setAdapter(adapter);
-
 
         TextView backText = findViewById(R.id.Back);
         backText.setOnClickListener(new View.OnClickListener() {
@@ -41,16 +45,32 @@ public class FindFriends extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        loadUsers();
 
     }
 
+    private void loadUsers() {
+        RetrofitInstance retrofitInstance = new RetrofitInstance();
+        UserService userService = retrofitInstance.getRetrofitInstance().create(UserService.class);
+        userService.getSportifs()
+                .enqueue(new Callback<List<User>>() {
+                    @Override
+                    public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                        populateListView(response.body());
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<User>> call, Throwable t) {
+                        Toast.makeText(FindFriends.this, "Failed to load users", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
 
-    private void fillFriendsList(){
-        usersList.add(new User("Tongkun Lee", R.drawable.user1));
-        usersList.add(new User("Rehmem Khihal", R.drawable.user2));
-        usersList.add(new User("Fazur Nalim", R.drawable.user3));
-        usersList.add(new User("Boa Palegleam", R.drawable.user4));
-        usersList.add(new User("Gurkir Glorymore", R.drawable.user5));
     }
+    private void populateListView(List<User> usersList) {
+        FriendAdapter adapter = new FriendAdapter(usersList);
+        recyclerView.setAdapter(adapter);
+    }
+
+
 }

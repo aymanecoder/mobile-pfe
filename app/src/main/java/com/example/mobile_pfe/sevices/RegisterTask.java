@@ -21,7 +21,7 @@ public class RegisterTask {
 
     public void Register(String email, String password, String Role, String firstName, String lastName, final RegisterCallback callback) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.177:8080") // Adjust the base URL accordingly
+                .baseUrl("http://192.168.43.96:9000") // Adjust the base URL accordingly
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

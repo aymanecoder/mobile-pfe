@@ -35,17 +35,19 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoHolder>{
     public void onBindViewHolder(@NonNull VideoHolder holder, int position) {
         Video video = videosList.get(position);
 
-        holder.videoTitle.setText(video.getTitle());
-        holder.videoDuration.setText(video.getDuration());
-        holder.videoViews.setText(video.getViews());
-        holder.videoLevel.setText(video.getLevel());
-        holder.image.setImageResource(video.getImage());
+        holder.videoTitle.setText(video.getTitre());
+        holder.videoDuration.setText(video.getNumberOfTeam());
+        holder.videoViews.setText("300");
+        holder.videoLevel.setText(video.getDescription());
+        holder.image.setImageResource(R.drawable.img);
+        int id = video.getId();
 
         Button playButton = holder.itemView.findViewById(R.id.play_button);
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), VideoActivity.class);
+                intent.putExtra("VideoId", id);
                 v.getContext().startActivity(intent);
             }
         });

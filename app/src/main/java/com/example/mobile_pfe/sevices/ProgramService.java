@@ -1,6 +1,9 @@
 package com.example.mobile_pfe.sevices;
 
+import com.example.mobile_pfe.model.Login.AuthResponse;
+import com.example.mobile_pfe.model.Login.LoginRequest;
 import com.example.mobile_pfe.model.Program.Program;
+import com.example.mobile_pfe.model.Program.ProgramList;
 
 import java.util.List;
 

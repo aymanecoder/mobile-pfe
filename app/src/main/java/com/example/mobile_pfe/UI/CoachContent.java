@@ -70,7 +70,7 @@ public class CoachContent extends AppCompatActivity {
         });
 
         ImageView challenges = findViewById(R.id.challenge_image);
-        videos.setOnClickListener(new View.OnClickListener() {
+        challenges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CoachContent.this, ListCompetitionActivity.class);
