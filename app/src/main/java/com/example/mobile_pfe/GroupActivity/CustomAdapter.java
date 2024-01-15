@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,10 +21,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     private final Context context;
 
-    private final int[] teamImages;
-    private final ArrayList<String> teamNames;
-    private final ArrayList<String> teamNamesList;
+    private int[] teamImages;
+    private ArrayList<String> teamNames;
+    private ArrayList<String> teamNamesList;
     private OnItemClickListener listener;
+    private int[] teamNumbers;
 
 
     public interface OnItemClickListener {
@@ -34,9 +36,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         this.listener = listener;
     }
 
-    public CustomAdapter(Context context, String[] teamNames, int[] teamImages) {
+    public CustomAdapter(Context context, String[] teamNames, int[] teamImages,int[] teamNumbers) {
         this.context = context;
         this.teamImages = teamImages;
+        this.teamNumbers = teamNumbers;
         this.teamNames = new ArrayList<>(Arrays.asList(teamNames));
         this.teamNamesList = new ArrayList<>(Arrays.asList(teamNames));
     }
@@ -45,7 +48,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String teamName = teamNames.get(position);
         int teamImageRes = teamImages[position];
-        holder.bindData(teamName, teamImageRes);
+        int teamNumber = teamNumbers[position];
+        holder.bindData(teamName, teamImageRes, teamNumber);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 int clickedPosition = holder.getAdapterPosition();
                 if (listener != null && clickedPosition != RecyclerView.NO_POSITION) {
                     listener.onItemClick(clickedPosition);
+                    //Toast.makeText(context, "clickedPosition: " + clickedPosition, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -61,7 +66,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listviewteam_activi, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listviewteam_activi1, parent, false);
         return new ViewHolder(view);
     }
 
@@ -89,17 +94,28 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView teamNameTextView;
         private final ImageView teamImageView;
-
+        private final TextView teammembersNumber;
         public ViewHolder(View itemView) {
             super(itemView);
             teamNameTextView = itemView.findViewById(R.id.team_a);
             teamImageView = itemView.findViewById(R.id.profile_pic1);
+            teammembersNumber = itemView.findViewById(R.id.members);
         }
 
-        public void bindData(String teamName, int teamImageRes) {
+        public void bindData(String teamName, int teamImageRes,int teamNumber) {
             teamNameTextView.setText(teamName);
+            //transforme the teamNumber to string
+            teammembersNumber.setText(String.valueOf(teamNumber));
             teamImageView.setImageResource(teamImageRes);
         }
+    }
+
+    public void updateData(String[] newTeamNames, int[] newTeamImages , int[] newTeamNumbers) {
+        teamNames.clear();
+        teamNames.addAll(Arrays.asList(newTeamNames));
+        teamImages = newTeamImages;
+        teamNumbers = newTeamNumbers;
+        notifyDataSetChanged();
     }
 }
 

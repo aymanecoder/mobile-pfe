@@ -14,7 +14,7 @@ public class LoginTask {
 
     public void login(String email, String password, final LoginCallback callback) {
         Retrofit retrofit = new retrofit2.Retrofit.Builder()
-                .baseUrl("http://192.168.1.103:8080")
+                .baseUrl("http://192.168.1.177:8080")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -28,6 +28,7 @@ public class LoginTask {
                     AuthResponse authResponse = response.body();
                     String accessToken = authResponse.getAccessToken();
                     AppGlobals.setAccessToken(accessToken);
+                    AppGlobals.setEmail(email);
                     callback.onSuccess();
                 } else {
                     callback.onError("Invalid credentials. Please try again.");

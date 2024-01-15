@@ -1,5 +1,6 @@
 package com.example.mobile_pfe.GroupActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -110,10 +111,11 @@ public class listgroupactivity extends AppCompatActivity{
                 Log.e("GroupCreation", "Invalid ID for sportif: " + sportif.getFirstName());
             }
         }
+        String groupName = RandomGroupNameGenerator.generateGroupName();
 
 
         // Create a Group object with the name "DefaultGroup" and the list of member maps
-        Group group = new Group("DefaultGroup", memberMaps);
+        Group group = new Group(groupName, memberMaps);
 
         // Send the POST request to create the group
         Call<Group> call = groupService.createGroup(group);
@@ -135,9 +137,11 @@ public class listgroupactivity extends AppCompatActivity{
             public void onFailure(Call<Group> call, Throwable t) {
                 // Network error or exception during the call
                 Log.e("GroupCreation", "Network error or exception: " + t.getMessage());
-                Toast.makeText(listgroupactivity.this, "Networksssssss error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(listgroupactivity.this, "Networksssssss error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+        Intent intent = new Intent(listgroupactivity.this, GroupActivity.class);
+        startActivity(intent);
     }
 
 

@@ -10,14 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_pic1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="20dp"
-            android:clipToOutline="true"
-            android:src="@drawable/teama" />
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/profile_pic1"-->
+<!--            android:layout_width="90dp"-->
+<!--            android:layout_height="90dp"-->
+<!--            android:layout_marginStart="140dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:clipToOutline="true"-->
+<!--            android:src="@drawable/teama" />-->
 
 
         <TextView
@@ -27,8 +27,8 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="146dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="110dp"
-            android:text="@string/group_a"
+            android:layout_marginTop="50dp"
+            android:text="@string/group"
             android:textAppearance="@style/team_a"
 
             />
@@ -39,7 +39,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="130dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="90dp"
             android:text="@string/members"
             android:textAppearance="@style/members"
             android:gravity="top"
