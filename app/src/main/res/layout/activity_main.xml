@@ -365,7 +365,7 @@
                     android:layout_centerHorizontal="true"
                     android:ellipsize="none"
                     android:gravity="center"
-                    android:text="Challenges"
+                    android:text="Competitions"
                     android:textColor="@color/green"
                     android:textSize="30dp"
                     android:textStyle="bold" />
