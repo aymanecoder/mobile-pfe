@@ -244,7 +244,7 @@ public class EditProfilActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(EditProfilActivity.this, "Profile details uploaded successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(EditProfilActivity.this, ProfilActivity.class);
-                    intent.putExtra("profile",profile);
+                    intent.putExtra("profile",(Profile) response.body());
                     startActivity(intent);
                 } else {
                     // Handle unsuccessful response

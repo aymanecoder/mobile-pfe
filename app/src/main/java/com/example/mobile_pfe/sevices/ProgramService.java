@@ -15,7 +15,7 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface ProgramService {
-    @GET("/byTypeProgram/{typeProgram}")
+    @GET("/api/v1/programmes/byTypeProgram/{typeProgram}")
     Call<List<Program>> getProgramsByTypeProgram(@Path("typeProgram") String typeProgram);
 
     @GET("/api/v1/programmes/{id}")
