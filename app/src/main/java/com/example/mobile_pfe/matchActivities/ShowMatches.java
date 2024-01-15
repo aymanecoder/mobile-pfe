@@ -44,7 +44,7 @@ public class ShowMatches extends AppCompatActivity implements GestureDetector.On
 
 
         upcomingButton = findViewById(R.id.button1);
-        completedButton = findViewById(R.id.button2);
+        completedButton = findViewById(R.id.completed);
 
 
         // Set up ViewPager with the adapter

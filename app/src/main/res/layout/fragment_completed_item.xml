@@ -146,7 +146,7 @@
             app:cardCornerRadius="40dp">
 
             <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
+                android:id="@+id/mapView1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
@@ -160,6 +160,7 @@
                 app:cardCornerRadius="10dp"
                 android:background="@android:color/transparent">
                 <TextView
+                    android:id="@+id/date1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13sp"
@@ -171,6 +172,7 @@
                     android:fontFamily="@font/halant_regular"
                     android:textColor="#A9A9A9" />
                 <TextView
+                    android:id="@+id/hour1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
@@ -218,6 +220,7 @@
                     ></ImageView>
 
                 <TextView
+                    android:id="@+id/city1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
@@ -234,7 +237,7 @@
 
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/yourFragment"
+            android:id="@+id/completedyourFragment"
             android:name="com.example.mobile_pfe.matchActivities.Team1Fragment"
             android:layout_width="match_parent"
             android:layout_margin="15dp"
@@ -243,7 +246,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp" />
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/yourFragment2"
+            android:id="@+id/completedyourFragment2"
             android:name="com.example.mobile_pfe.matchActivities.Team1Fragment"
             android:layout_width="match_parent"
             android:nestedScrollingEnabled="false"

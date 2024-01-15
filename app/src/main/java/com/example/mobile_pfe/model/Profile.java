@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.Model;
+package com.example.mobile_pfe.model;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
 

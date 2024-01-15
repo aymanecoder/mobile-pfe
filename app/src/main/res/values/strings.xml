@@ -76,14 +76,18 @@
     <string name="upload">Upload</string>
     <string name="equipes">Equipes</string>
     <string name="team_a">Team A</string>
-    <string name="membersCount">20 members </string>
-    <string name="members"> members</string>
+    <string name="members">Members %1$d</string>
     <string name="select_team">Select Team members\n</string>
     <string name="Teams">Teams</string>
     <string name="fullname3">Full Name</string>
     <string name="fullname">Group Name</string>
     <string name="fullname2">Group Members</string>
     <string name="tongkun_lee">Tongkun Lee</string>
+    <string name="TeamA">Team A</string>
+    <string name="description">Description</string>
+    <string name="Team">New Team</string>
+    <string name="matchTitle">Match Title</string>
+    <string name="dsecriptionMatch">Description</string>
     <string name="selection_option_entrainement">ENTRAINEMENT</string>
     <string name="selection_option_nutrition">NUTRITION</string>
     <string name="selection_prompt">Select Option</string>
@@ -138,6 +142,8 @@
     <string name="group_a">Group A</string>
     <string name="select_group_members">Select Group Members</string>
     <string name="group">Group</string>
+    <string name="membersCount">20</string>
+    <string name="members_text">Members</string>
 
 
 </resources>

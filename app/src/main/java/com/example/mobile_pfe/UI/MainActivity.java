@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.GroupActivity.GroupActivity;
-import com.example.mobile_pfe.Model.Profile;
+import com.example.mobile_pfe.model.Profile;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;

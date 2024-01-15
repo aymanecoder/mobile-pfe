@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.Model.User;
+import com.example.mobile_pfe.model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.List;
@@ -37,7 +37,6 @@ public class UserAdapterTwo extends RecyclerView.Adapter<UserHolder> {
     }
 
     @Override
-    public int getItemCount() {
-        return usersList.size();
+    public int getItemCount() { return usersList.size();
     }
 }

@@ -1,78 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="240dp"
-
-    >
-        <View
-            android:id="@+id/rectangle_4"
-            android:layout_width="180dp"
-            android:layout_height="200dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="-8dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rectangle_4"
-            />
-
-            <!-- Auto layout, variables, and unit scale are not yet supported -->
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_pic1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="-200dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
-        android:clipToOutline="true"
-        android:src="@drawable/teama" />
-
-
-                <TextView
-                    android:id="@+id/team_a"
-                    android:layout_width="87dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="34dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="-10dp"
-                    android:text="@string/team_a"
-                    android:textAppearance="@style/team_a"
-
-                    />
-    <LinearLayout
-        android:orientation="horizontal"
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp">
 
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/members"
-            android:layout_width="wrap_content"
+        <GridLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:rowCount="2"
+            android:columnCount="2"
+            android:useDefaultMargins="true">
 
-            android:layout_marginLeft="12dp"
+            <!-- Include your grid item layout here -->
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilepic1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:clipToOutline="true"
+                android:src="@drawable/teama" />
 
-            android:text="@string/membersCount"
-            android:textAppearance="@style/members" />
+            <TextView
+                android:id="@+id/teama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/team_a"
+                android:textAppearance="@style/team_a" />
 
-        <TextView
-            android:id="@+id/members_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:text="@string/members"
-            android:textAppearance="@style/members" />
-    </LinearLayout>
-</LinearLayout>
+            <TextView
+                android:id="@+id/members"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="49dp"
+                android:layout_marginEnd="16dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:gravity="center"
+                android:text="@string/members"
+                android:textAppearance="@style/members" />
 
+            <!-- Move CheckBox to top-right corner -->
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="end" />
 
+        </GridLayout>
 
-
-
-
-
-
-
+    </androidx.cardview.widget.CardView>

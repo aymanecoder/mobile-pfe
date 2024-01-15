@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.mobile_pfe.GroupActivity.ListAdapter;
-import com.example.mobile_pfe.GroupActivity.User;
+
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityListvieweachgroupBinding;
@@ -29,8 +29,9 @@ import retrofit2.Response;
 public class ItemActivity extends AppCompatActivity {
     ActivityListvieweachgroupBinding Binding;
     List<GroupDTO> groups;
-    GroupDTO UpdateGroupDTO;
+    GroupDTO UpdateGroupDTO ; // Initialize the object
     String[] name;
+    int userId;
     int selectedGroupID;
     private static final String TAG = "ItemActivity";
     private List<Sportif> sportifs;
@@ -104,10 +105,12 @@ public class ItemActivity extends AppCompatActivity {
         Binding.lisvieww.setAdapter(listAdapter);
         Binding.lisvieww.setClickable(true);
         Button joinButton = findViewById(R.id.button2);
+        fetchSportifs();
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateGroup(selectedGroupID);
+
+                joinGroup();
                 finish();
             }
         });
@@ -120,18 +123,17 @@ public class ItemActivity extends AppCompatActivity {
         });
     }
 
-    private void updateGroup(int selectedGroupID) {
+    private void joinGroup() {
         GroupService groupService = RetrofitInstance.getRetrofitInstance().create(GroupService.class);
-        fetchSportifs();
 
-        Call<GroupDTO> call = groupService.updateGroup((long) selectedGroupID,UpdateGroupDTO);
 
-        call.enqueue(new Callback<GroupDTO>() {
+        Call<Sportif> call = groupService.joinGroup(userId,(long) selectedGroupID);
+
+        call.enqueue(new Callback<Sportif>() {
             @Override
-            public void onResponse(Call<GroupDTO> call, Response<GroupDTO> response) {
+            public void onResponse(@NonNull Call<Sportif> call, @NonNull Response<Sportif> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    GroupDTO group = response.body();
-                    Log.d("Group", "Group updated successfully: " + group.getName());
+                    Log.d("Group", "Group updated successfully: ");
                     Toast.makeText(ItemActivity.this, "Group updated successfully", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(ItemActivity.this, "Failed to update group", Toast.LENGTH_SHORT).show();
@@ -139,15 +141,15 @@ public class ItemActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<GroupDTO> call, Throwable t) {
+            public void onFailure(@NonNull Call<Sportif> call, @NonNull Throwable t) {
                 Log.e("Error", "onFailure Network error: " + t.getMessage());
-                Toast.makeText(ItemActivity.this, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ItemActivity.this, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
     private void fetchSportifs() {
         SportifService service = RetrofitInstance.getRetrofitInstance().create(SportifService.class);
-        Call<List<Sportif>> call = service.getAllSportifs();
+        Call<List<Sportif>> call = service.getSportifs();
 
         call.enqueue(new Callback<List<Sportif>>() {
             @Override
@@ -168,32 +170,13 @@ public class ItemActivity extends AppCompatActivity {
     private void findSportifbyEmail(List<Sportif> sportifs) {
         this.sportifs = sportifs; // Store the sportifs for later use
         email = AppGlobals.getEmail();
-
-        //using the selectedGroupID on groups get the selected group
-        for (GroupDTO group : groups) {
-            if (group.getId().intValue() == selectedGroupID) {
-                UpdateGroupDTO = group;
-                //get all the members and add to them sportif
-                List<Members> membersList = group.getMembers();
-                for (Sportif sportif : sportifs) {
-                    if (sportif.getEmail().equals(email)) {
-                        Members member = new Members();
-                        member.setFirstName(sportif.getFirstName());
-                        member.setLastName(sportif.getLastName());
-                        member.setEmail(sportif.getEmail());
-                        member.setId(sportif.getId());
-                        member.setAddress(sportif.getAddress());
-                        member.setAge(sportif.getAge());
-                        member.setPoids(sportif.getPoids());
-                        member.setTaille(sportif.getTaille());
-                        member.setPicturePath(sportif.getPicturePath());
-                        membersList.add(member);
-                    }
-                }
-                //now insert the new memberslist to the group
-                UpdateGroupDTO.setMembers(membersList);
+        for (Sportif sportif : sportifs) {
+            if (sportif.getEmail().equals(email)) {
+                userId = sportif.getId();   // Store the user ID for later use
+                Log.d("Sportif", "ID: " + sportif.getId() + ", Name: " + sportif.getFirstName());
             }
         }
+
 
 
 

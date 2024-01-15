@@ -1,6 +1,6 @@
 package com.example.mobile_pfe.sevices;
 
-import com.example.mobile_pfe.Model.Profile;
+import com.example.mobile_pfe.model.Profile;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
