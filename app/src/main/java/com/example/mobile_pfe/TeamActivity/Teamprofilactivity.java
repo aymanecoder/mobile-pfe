@@ -1,22 +1,5 @@
 package com.example.mobile_pfe.TeamActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.TeamActivity.ApiService;
-import com.example.mobile_pfe.TeamActivity.TeamResponse;
-import com.example.mobile_pfe.TeamActivity.User;
-import java.util.ArrayList;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import com.example.mobile_pfe.TeamActivity.TeamDetails;
 
 public class Teamprofilactivity extends AppCompatActivity {
 /**

@@ -23,6 +23,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".programActivity.CompetitionActivity"
+            android:exported="false" />
+        <activity
             android:name=".SportActivities.ListSportActivity"
             android:exported="false" />
         <activity
@@ -33,12 +36,20 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao" />
 
+        <activity android:name=".profileActivities.EditProfilActivity"
+                 android:exported="false"
+            />
+
+
+        <activity android:name=".profileActivities.metricprofil"
+            android:exported="false"
+            />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
-            android:name=".programActivity.ListMatchActivity"
-            android:exported="false" />
+            android:name=".profileActivities.ProfilActivity"
+            android:exported="true" />
         <activity
             android:name=".programActivity.ListVideoActivity"
             android:exported="false" />
@@ -97,6 +108,10 @@
             android:label="notification"
             android:exported="false"/>
         <activity
+            android:name=".TeamActivity.TeamActivity"
+            android:label=""
+            android:exported="false"/>
+        <activity
             android:name=".TeamActivity.Teamprofilactivity"
             android:label=""
             android:exported="false"/>
@@ -132,10 +147,7 @@
             android:name=".UI.TeamsFragment"
             android:label="GroupActivity"
             android:exported="false"/>
-         <activity
-            android:name=".TeamActivity.TeamActivity"
-            android:label="GroupActivity"
-            android:exported="false"/>
+
 
 
         <activity
@@ -151,13 +163,22 @@
         <activity
             android:name=".GroupChatActivity.StarredMessagesActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.mobile_pfe.GroupChatActivity.MediaMessagesActivity"
             android:exported="false" />
         <activity
             android:name=".registerActivities.register1_choosePorfile"
             android:exported="false" />
-
+        <activity
+            android:name=".GroupActivity.GroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupActivity.listgroupactivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupActivity.ItemActivity"
+            android:exported="false" />
         <activity
             android:name=".loginActivities.login"
             android:exported="true">

@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mobile_pfe.Adapter.GroupAdapter;
-import com.example.mobile_pfe.model.User;
+import com.example.mobile_pfe.Model.User;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;
@@ -28,12 +28,8 @@ public class GroupsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    private void fillGroupsList(){
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
-        groupsList.add(new User("Group A", R.drawable.group_b));
+   private void fillGroupsList(){
+        //
     }
 
 

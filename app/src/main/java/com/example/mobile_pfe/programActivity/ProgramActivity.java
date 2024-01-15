@@ -15,9 +15,8 @@ import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.sevices.ProgramService;
-
+import com.example.mobile_pfe.model.Program.Program;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class ProgramActivity extends AppCompatActivity {
         setContentView(R.layout.activity_program);
 
         if (getIntent().hasExtra("programId")) {
-            int programId = getIntent().getIntExtra("programId", 1);
+            Long programId = getIntent().getLongExtra("programId", 1L);
             Toast.makeText(this, "Received program ID: " + programId, Toast.LENGTH_SHORT).show();
             // Use the program ID as needed
 
@@ -41,7 +40,7 @@ public class ProgramActivity extends AppCompatActivity {
             ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
 
             /*Call the method with parameter in the interface to get the employee data*/
-            Call<Program> call = service.getById(programId);
+            Call<Program> call = service.getById(Math.toIntExact(programId));
 
             /*Log the URL called*/
             Log.wtf("URL Called", call.request().url() + "");

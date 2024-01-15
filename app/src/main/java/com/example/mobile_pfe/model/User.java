@@ -1,12 +1,18 @@
-package com.example.mobile_pfe.model;
+package com.example.mobile_pfe.Model;
 
 public class User {
     String name;
     int image ;
 
-    public User(String name, int image) {
+    String email;
+
+    String Password;
+
+    public User(String name, int image, String email, String password) {
         this.name = name;
         this.image = image;
+        this.email = email;
+        Password = password;
     }
 
     public String getName() {
@@ -23,5 +29,21 @@ public class User {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 }

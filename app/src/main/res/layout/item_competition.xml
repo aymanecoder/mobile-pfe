@@ -1,0 +1,86 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Post Image -->
+    <ImageView
+        android:id="@+id/post_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/border"
+
+        android:background="@drawable/circular_button_background"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:background="@color/gray"
+        >
+
+
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:text="Post Title"
+        android:textAllCaps="true"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:textColor="@color/teal_700"/>
+
+    <!-- Text Overlay Container -->
+
+        <!-- Post Title -->
+
+
+        <!-- Number of Teams -->
+        <TextView
+            android:id="@+id/teams_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:text="5 Teams"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="italic" />
+
+        <!-- Post Date -->
+
+        <!-- Join Challenge Button -->
+        <TextView
+            android:id="@+id/post_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/join_challenge_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:text="Join Challenge"
+            android:padding="10sp"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+</RelativeLayout>

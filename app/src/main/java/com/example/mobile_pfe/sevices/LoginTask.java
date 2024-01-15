@@ -28,6 +28,7 @@ public class LoginTask {
                     AuthResponse authResponse = response.body();
                     String accessToken = authResponse.getAccessToken();
                     AppGlobals.setAccessToken(accessToken);
+                    AppGlobals.setEmail(email);
                     callback.onSuccess();
                 } else {
                     callback.onError("Invalid credentials. Please try again.");

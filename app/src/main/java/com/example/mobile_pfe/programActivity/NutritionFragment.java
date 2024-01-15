@@ -21,13 +21,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.adapters.MatchListAdapter;
-import com.example.mobile_pfe.matchActivities.AddMatchFragment;
-import com.example.mobile_pfe.matchActivities.ItemFragment;
-import com.example.mobile_pfe.model.MatchItem;
-import com.example.mobile_pfe.model.Program.Program;
 import com.example.mobile_pfe.sevices.ProgramService;
-
+import com.example.mobile_pfe.model.Program.Program;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,7 +100,7 @@ public class NutritionFragment extends Fragment {
         ProgramService service = RetrofitInstance.getRetrofitInstance().create(ProgramService.class);
 
         /*Call the method with parameter in the interface to get the employee data*/
-        Call<List<Program>> call = service.getAll();
+        Call<List<Program>> call = service.getProgramsByTypeProgram("NUTRITION");
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");

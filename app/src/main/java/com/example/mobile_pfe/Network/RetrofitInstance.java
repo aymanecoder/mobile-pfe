@@ -22,7 +22,7 @@ public class RetrofitInstance {
 
             retrofit = new retrofit2.Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory((GsonConverterFactory.create()))
                     .client(httpClient.build())
                     .build();
         }

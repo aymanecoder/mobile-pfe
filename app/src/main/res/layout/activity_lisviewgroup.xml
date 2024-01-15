@@ -1,0 +1,76 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <TextView
+            android:id="@+id/select_Team"
+            android:layout_width="264dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="56dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="35dp"
+            android:text="@string/groups"
+            android:textAppearance="@style/Teams"
+            android:gravity="center"
+
+            />
+        <EditText
+            android:id="@+id/frame_11"
+            android:layout_width="327dp"
+            android:layout_height="52dp"
+            android:background="@drawable/frame_1"
+            android:clipToOutline="true"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="40dp"
+            android:hint="Search..."
+            android:drawableLeft="@drawable/ic_search" />
+
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="38dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/back"
+                android:textAppearance="@style/back" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="380dp"
+                android:layout_height="590dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="120dp"
+                android:background="#F7FEFA"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/listviewgroup_activi" />
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/ellipse_1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="640dp"
+            android:background="@drawable/buttonnn"
+            android:elevation="4dp"
+            android:src="@drawable/ic_plus" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
