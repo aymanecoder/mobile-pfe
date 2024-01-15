@@ -120,7 +120,7 @@ public class listgroupactivity extends AppCompatActivity{
         call.enqueue(new Callback<Group>() {
             @Override
             public void onResponse(Call<Group> call, Response<Group> response) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful() && response.body() != null) {
                     // Group creation successful
                     Log.d("GroupCreation", "Group created successfully: " + response.body());
                     Toast.makeText(listgroupactivity.this, "Group created successfully", Toast.LENGTH_SHORT).show();
@@ -135,7 +135,7 @@ public class listgroupactivity extends AppCompatActivity{
             public void onFailure(Call<Group> call, Throwable t) {
                 // Network error or exception during the call
                 Log.e("GroupCreation", "Network error or exception: " + t.getMessage());
-                Toast.makeText(listgroupactivity.this, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(listgroupactivity.this, "Networksssssss error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

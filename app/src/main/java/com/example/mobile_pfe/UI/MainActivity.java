@@ -8,25 +8,81 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.GroupActivity.GroupActivity;
+import com.example.mobile_pfe.Model.Profile;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
+import com.example.mobile_pfe.profileActivities.metricprofil;
 import com.example.mobile_pfe.programActivity.ListCompetitionActivity;
 import com.example.mobile_pfe.programActivity.ListProgramActivity;
 import com.example.mobile_pfe.sevices.ProfilService;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
+    private Profile profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        ProfilService service = RetrofitInstance.getRetrofitInstance().create(ProfilService.class);
+
+        /*Call the method with parameter in the interface to get the employee data*/
+        Call<Profile> call = service.getUserProfile();
+
+        /*Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<Profile>() {
+            @Override
+            public void onResponse(Call<Profile> call, Response<Profile> response) {
+                profile =(Profile) response.body();
+                Log.wtf("Response", " "+profile);
+                if (profile != null) {
+
+                    generateProfileData(profile);
+                } else {
+                    Log.e("Response", "Profile data is null");
+                    // Handle the case where the Profile data is null
+                    Toast.makeText(MainActivity.this, "Profile data is null", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Profile> call, Throwable t) {
+                System.out.println("get all errors");
+                t.printStackTrace();
+                Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        CircleImageView userImage = findViewById(R.id.user_image);
+
+        userImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle the click event, for example, navigate to another activity
+                Intent intent = new Intent(MainActivity.this, metricprofil.class);
+
+                intent.putExtra("profile", profile);
+                startActivity(intent);
+            }
+        });
 
         TextView myFriends = findViewById(R.id.my_friends);
         myFriends.setOnClickListener(new View.OnClickListener() {
@@ -214,41 +270,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        TextView UserName =findViewById(R.id.user_name);
+
 //        CiruserImage =findViewById(R.id.user_image);
 
 
-        ProfilService service = RetrofitInstance.getRetrofitInstance().create(ProfilService.class);
-
-        /*Call the method with parameter in the interface to get the employee data*/
-        Call<> call = service.getUserProfile();
-
-        /*Log the URL called*/
-        Log.wtf("URL Called", call.request().url() + "");
-
-        call.enqueue(new Callback<Competition>() {
-            @Override
-            public void onResponse(Call<Competition> call, Response<Competition> response) {
-                Competition competitionData =(Competition) response.body();
-                Log.wtf("Response", " "+competitionData);
-                if (competitionData != null) {
-
-                    generateCompetitionData(competitionData);
-                } else {
-                    Log.e("Response", "Competition data is null");
-                    // Handle the case where the Competition data is null
-                    Toast.makeText(CompetitionActivity.this, "Competition data is null", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Competition> call, Throwable t) {
-                System.out.println("get all errors");
-                t.printStackTrace();
-                Toast.makeText(CompetitionActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
     }
+
+    private void generateProfileData(Profile profile) {
+        TextView userName = findViewById(R.id.user_name);
+        CircleImageView userImage = findViewById(R.id.user_image);
+
+        // Set user name
+        userName.setText(profile.getFirstName()+" "+profile.getLastName());
+
+        // Load user image with Glide
+        Glide.with(this)
+                .load(profile.getPicturePath()) // Replace with the actual URL or resource of the user image
+                .placeholder(R.drawable.notfound) // Placeholder image while loading
+                .error(R.drawable.notfound) // Image to display in case of loading error
+                .into(userImage);
+    }
+
 }

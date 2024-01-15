@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model;
+package com.example.mobile_pfe.Model;
 
 public class User {
     String name;

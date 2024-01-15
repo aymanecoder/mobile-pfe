@@ -1,222 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="ExtraText">
+    tools:context=".profileActivities.ProfilActivity">
 
-    <!-- Navigation Bar -->
+
     <RelativeLayout
-        android:id="@+id/navigation_"
-        android:layout_width="468dp"
-        android:layout_height="96dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="-2dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp">
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- Navigation Bar -->
+        <RelativeLayout
+            android:id="@+id/navigation_"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <View
-            android:id="@+id/ellipse_17"
-            android:layout_width="28dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="349dp"
-            android:layout_marginBottom="47dp"
-            android:background="@drawable/back"
-            android:backgroundTint="@android:color/darker_gray" />
+            <View
+                android:id="@+id/ellipse_17"
+                android:layout_width="28dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="47dp"
+                android:background="@drawable/back"
+                android:backgroundTint="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/settings"
+                style="@style/BoldText"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/settings"
+                android:textAppearance="@style/settings"/>
+        </RelativeLayout>
+
+        <!-- User Information Section -->
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageprofil"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="56dp"
+            android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageprofil">
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/imageprofil"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+        <!-- Full Name -->
+        <TextView
+            android:id="@+id/first_last_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageprofil"
+            android:layout_marginTop="16dp"
+            android:text="First Name:"
+            android:textAppearance="@style/Label" />
 
         <TextView
-            android:id="@+id/settings"
-            android:layout_width="98dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="165dp"
-            android:layout_marginTop="54dp"
-            android:layout_marginEnd="164dp"
-            android:gravity="top"
-            android:lineSpacingExtra="1sp"
-            android:text="@string/settings"
-            android:textAppearance="@style/settings"
-            style="@style/BoldText"
-            android:translationY="-0.48sp" />
-    </RelativeLayout>
-
-    <!-- User Information Section -->
-    <View
-        android:id="@+id/imageprofil"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="126dp"
-        android:background="@drawable/ellipse_17"
-        tools:ignore="DuplicateIds" />
-
-    <TextView
-        android:id="@+id/full_name"
-        android:layout_width="174dp"
-        android:layout_height="51dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="119dp"
-        android:layout_marginTop="261dp"
-        android:gravity="center_horizontal|top"
-        android:text="@string/full_name"
-        android:textAppearance="@style/full_name" />
-
-    <!-- Lines -->
-    <View
-        android:id="@+id/line"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="43dp"
-        android:layout_marginBottom="523dp"
-        android:alpha="0.2"
-        android:background="@android:color/darker_gray" />
-
-
-
-
-
-
-
-    <TextView
-        android:id="@+id/Name"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/line"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:text=""
-        android:textAppearance="@style/joseph_mart"
-        android:translationY="-1sp" />
-
-    <TextView
-        android:id="@+id/joseph_mart3"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/line"
-        android:layout_alignEnd="@+id/line4"
-        android:layout_marginTop="162dp"
-        android:layout_marginEnd="73dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:textAppearance="@style/joseph_mart"
-        android:translationY="-1sp" />
-    <View
-        android:id="@+id/line4"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="369dp"
-        android:alpha="0.2"
-        android:background="@android:color/darker_gray" />
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/line"
-        android:layout_alignEnd="@+id/line2"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="75dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:text=""
-        android:textAppearance="@style/joseph_mart"
-        android:translationY="-1sp" />
-
-    <!-- More Lines -->
-    <View
-        android:id="@+id/line2"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="447dp"
-        android:alpha="0.2"
-        android:background="@android:color/darker_gray" />
-
-
-
-    <!-- Logout Button -->
-    <RelativeLayout
-        android:id="@+id/button"
-        android:layout_width="131dp"
-        android:layout_height="63dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="700dp"
-        android:background="@drawable/rounded_button_back">
-
-        <TextView
-            android:id="@+id/log_out"
-            android:layout_width="77dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="17dp"
-            android:layout_marginEnd="31dp"
-            android:layout_marginBottom="16dp"
+            android:id="@+id/first_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/first_last_name_label"
+            android:layout_centerHorizontal="true"
             android:gravity="center_horizontal|top"
-            android:text="@string/log_out"
-            android:textAppearance="@style/log_out" />
-    </RelativeLayout>
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/joseph_mart" />
 
-    <!-- Edit Button -->
+        <!-- Lines -->
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/first_name"
+            android:layout_marginTop="16dp"
+            android:alpha="0.2"
+            android:background="@android:color/darker_gray" />
 
+        <!-- Name -->
+        <TextView
+            android:id="@+id/last_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_marginTop="16dp"
+            android:text="Last Name:"
+            android:textAppearance="@style/Label" />
+
+        <TextView
+            android:id="@+id/LastName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/last_name_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/joseph_mart" />
+
+
+
+        <!-- Line2 -->
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/LastName"
+            android:layout_marginTop="16dp"
+            android:alpha="0.2"
+            android:background="@android:color/darker_gray" />
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/email_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line2"
+            android:layout_marginTop="16dp"
+            android:text="Email:"
+            android:textAppearance="@style/Label" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/email_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/joseph_mart" />
+
+        <!-- Additional Labels and TextViews for other properties -->
+        <TextView
+            android:id="@+id/address_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:layout_marginTop="16dp"
+            android:text="Address:"
+            android:textAppearance="@style/Label" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/address_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/joseph_mart" />
+
+
+        <TextView
+            android:id="@+id/age_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address"
+            android:layout_marginTop="16dp"
+            android:text="Age:"
+            android:textAppearance="@style/Label" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/age_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/joseph_mart" />
+
+        <TextView
+            android:id="@+id/taille_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:layout_marginTop="16dp"
+            android:text="Taille:"
+            android:textAppearance="@style/Label" />
+
+        <TextView
+            android:id="@+id/taille"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/taille_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/joseph_mart" />
+
+        <TextView
+            android:id="@+id/poids_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/taille"
+            android:layout_marginTop="16dp"
+            android:text="Poids :"
+            android:textAppearance="@style/Label" />
+
+        <TextView
+            android:id="@+id/poids"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/poids_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text=""
+            android:textAppearance="@style/joseph_mart" />
+        <!-- Repeat similar sections for 'age', 'taille', 'poids' with respective labels -->
+
+        <!-- Logout Button -->
+        <LinearLayout
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poids"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="80dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/log_out"
+                android:layout_width="131dp"
+                android:layout_height="63dp"
+                android:layout_below="@+id/email"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="Log Out"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button_back" />
+
+        <!-- Edit Button -->
         <Button
-        android:id="@+id/button_edit"
-        android:layout_width="131dp"
-        android:layout_height="63dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="700dp"
+            android:id="@+id/button_edit"
+            android:layout_width="131dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="120dp"
+            android:layout_below="@+id/email"
+            android:layout_marginTop="20dp"
             android:text="Update"
             android:textColor="@color/white"
-        android:background="@drawable/rounded_button_background"/>
-
-        <TextView
-            android:id="@+id/edit"
-            android:layout_width="77dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="17dp"
-            android:layout_marginEnd="31dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_horizontal|top"
-            android:text="Update"
-            android:textAppearance="@style/log_out" />
+            android:background="@drawable/rounded_button_background"/>
+        </LinearLayout>
 
 
-</RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
