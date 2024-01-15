@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.mobile_pfe.Model.Profile;
+import com.example.mobile_pfe.model.Profile;
 import com.example.mobile_pfe.R;
 
 public class metricprofil extends AppCompatActivity {
