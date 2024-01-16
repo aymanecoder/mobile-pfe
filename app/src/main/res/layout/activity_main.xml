@@ -60,95 +60,95 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
+<!--    <HorizontalScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scrollbars="none">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_gravity="top|start"
-            android:layout_marginTop="15dp">
-
-
-            <TextView
-                android:id="@+id/my_friends"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="My friends"
-                android:textColor="@color/green"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/myCoaches"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="My coaches"
-                android:textColor="@color/green"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/myPrograms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="My Programs"
-                android:textColor="@color/green"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/myTeams"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="My teams"
-                android:textColor="@color/green"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/myGroups"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="My groups"
-                android:textColor="@color/green"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/myMatches"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:text="My matches"
-                android:textColor="@color/green"
-                android:textSize="16dp" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_gravity="top|start"-->
+<!--            android:layout_marginTop="15dp">-->
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical">
+<!--            <TextView-->
+<!--                android:id="@+id/my_friends"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="My friends"-->
+<!--                android:textColor="@color/green"-->
+<!--                android:textSize="16dp" />-->
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
-            android:name="com.example.mobile_pfe.UI.FriendsFragment"
-            android:layout_width="match_parent"
-            android:background="#F9F9F9"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/myCoaches"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="My coaches"-->
+<!--                android:textColor="@color/green"-->
+<!--                android:textSize="16dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/myPrograms"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="My Programs"-->
+<!--                android:textColor="@color/green"-->
+<!--                android:textSize="16dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/myTeams"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="My teams"-->
+<!--                android:textColor="@color/green"-->
+<!--                android:textSize="16dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/myGroups"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="My groups"-->
+<!--                android:textColor="@color/green"-->
+<!--                android:textSize="16dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/myMatches"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="My matches"-->
+<!--                android:textColor="@color/green"-->
+<!--                android:textSize="16dp" />-->
+
+<!--        </LinearLayout>-->
+<!--    </HorizontalScrollView>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/fragmentContainerView"-->
+<!--            android:name="com.example.mobile_pfe.UI.FriendsFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:background="#F9F9F9"-->
+<!--            android:layout_height="match_parent" />-->
+<!--    </LinearLayout>-->
 
 
     <ScrollView

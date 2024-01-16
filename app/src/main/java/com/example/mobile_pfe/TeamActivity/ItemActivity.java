@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,8 +21,15 @@ import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityListvieweachteamBinding;
 import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.sevices.GroupService;
+import com.example.mobile_pfe.sevices.TeamService;
 
 import java.util.List;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ItemActivity extends AppCompatActivity {
 
@@ -29,6 +38,7 @@ public class ItemActivity extends AppCompatActivity {
 
     private boolean fromChooseTeam;
     private ColorStateList originalTextColor;
+    private int teamId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +67,8 @@ public class ItemActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //implement her join methode
+                joinGroup();
+                finish();
             }
         });
 
@@ -103,7 +114,7 @@ public class ItemActivity extends AppCompatActivity {
         }
 
         // Retrieve data from intent extras
-        int teamId = getIntent().getIntExtra("teamId", 0);
+        teamId = getIntent().getIntExtra("teamId", 0);
         String teamName = getIntent().getStringExtra("teamName");
         String pictureUrl = getIntent().getStringExtra("picture");
         membersList = (List<Sportif>) getIntent().getSerializableExtra("members");
@@ -138,5 +149,29 @@ public class ItemActivity extends AppCompatActivity {
             Toast.makeText(ItemActivity.this, "ItemActivity Members List is null or empty", Toast.LENGTH_SHORT).show();
 
         }
+    }
+    private void joinGroup() {
+        TeamService groupService = RetrofitInstance.getRetrofitInstance().create(TeamService.class);
+
+
+        Call<ResponseBody> call = groupService.joinTeam(teamId);
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    Log.d("Group", "Group updated successfully: ");
+                    Toast.makeText(ItemActivity.this, "Group updated successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ItemActivity.this, "Failed to update group", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                Log.e("Error", "onFailure Network error: " + t.getMessage());
+                //Toast.makeText(ItemActivity.this, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

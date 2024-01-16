@@ -1,15 +1,21 @@
 package com.example.mobile_pfe.TeamActivity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +25,7 @@ import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.matchActivities.MatchRepository;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
 import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.sevices.GroupService;
 import com.example.mobile_pfe.sevices.MatchRequest;
 import com.example.mobile_pfe.sevices.MatchService;
 import com.example.mobile_pfe.sevices.TeamService;
@@ -39,6 +46,7 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
 
     private boolean fromChooseTeam;
 
+    private ColorStateList originalTextColor;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +99,35 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
         } else {
             yourButton.setVisibility(View.GONE);
         }
+        // Move the backButton code here
+        TextView backButton = findViewById(R.id.backlist);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        originalTextColor = backButton.getTextColors();
+        yourButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Pressed state: Set text color to white
+                        backButton.setTextColor(Color.WHITE);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // Released or canceled state: Restore the original text color
+                        backButton.setTextColor(originalTextColor);
+                        break;
+                }
+                return false;
+            }
+        });
+
 
         yourButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,4 +243,5 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
         startActivity(intent);
 
     }
+
 }
