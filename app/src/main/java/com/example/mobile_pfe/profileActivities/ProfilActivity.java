@@ -2,6 +2,7 @@ package com.example.mobile_pfe.profileActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,6 +26,7 @@ import retrofit2.Response;
 public class ProfilActivity extends AppCompatActivity{
 
     private TextView first_name, LastName,email,address,age,taille,poids;
+    private View back;
 private Button updateButton,LogOutButton;
     private Profile receivedProfile;
     @Override
@@ -46,6 +48,7 @@ private Button updateButton,LogOutButton;
         // Initialize the buttons
         updateButton = findViewById(R.id.button_edit);
         LogOutButton = findViewById(R.id.log_out);
+        back=findViewById(R.id.back);
 
         if (receivedProfile != null) {
             first_name.setText(receivedProfile.getFirstName());
@@ -64,6 +67,14 @@ private Button updateButton,LogOutButton;
                     .into(profileImageView);
         }
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfilActivity.this, MainActivity.class);
+                intent.putExtra("profile", receivedProfile);
+                startActivity(intent);
+            }
+        });
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

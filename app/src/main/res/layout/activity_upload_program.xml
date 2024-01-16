@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/content"
+            android:text="Program"
             android:textAppearance="@style/content" />
 
         <!-- Filter -->
@@ -44,40 +44,6 @@
 
     </RelativeLayout>
 
-    <!-- Segment buttons -->
-    <LinearLayout
-        android:id="@+id/segmented_c"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/page_header"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:background="@drawable/rounded_background">
-
-        <!-- Entrainement button -->
-        <TextView
-            android:id="@+id/entrainement"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="onEntrainementClicked"
-            android:text="@string/entrainement"
-            android:textAppearance="@style/entrainement" />
-
-        <!-- Nutrition button -->
-        <TextView
-            android:id="@+id/nutrition"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="onNutritionClicked"
-            android:text="@string/nutritionne"
-            android:textAppearance="@style/nutritionne"
-            />
-
-    </LinearLayout>
 
 
     <!-- Title Input -->
@@ -85,9 +51,9 @@
         android:id="@+id/title_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/segmented_c"
+        android:layout_below="@id/page_header"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:text="Title"
         android:textSize="20sp"
         android:textColor="#000000" />

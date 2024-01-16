@@ -25,9 +25,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.example.mobile_pfe.UI.MainActivity;
 import com.example.mobile_pfe.model.Profile;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
+import com.example.mobile_pfe.programActivity.ListCompetitionActivity;
 import com.example.mobile_pfe.programActivity.ListProgramActivity;
 import com.example.mobile_pfe.programActivity.UploadProgramActivity;
 import com.example.mobile_pfe.sevices.ProfilService;
@@ -75,11 +77,16 @@ public class EditProfilActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_CANCEL:
                         // Released or canceled state: Restore the original text color
                         back.setTextColor(originalTextColor);
+
+                        // Trigger onBackPressed() when the button is released
+                        Intent intent = new Intent(EditProfilActivity.this, ProfilActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 return false;
             }
         });
+
         // Initialize your EditText fields
         firstNameEditText = findViewById(R.id.FirstNameEditText);
         lastNameEditText = findViewById(R.id.LastNameEditText);

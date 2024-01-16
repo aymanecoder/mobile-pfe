@@ -18,13 +18,12 @@
             android:layout_height="match_parent">
 
             <View
-                android:id="@+id/ellipse_17"
+                android:id="@+id/back"
                 android:layout_width="28dp"
                 android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="47dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+
                 android:background="@drawable/back"
                 android:backgroundTint="@android:color/darker_gray" />
 
@@ -243,6 +242,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="80dp"
+            android:padding="10dp"
             android:orientation="horizontal">
 
             <Button

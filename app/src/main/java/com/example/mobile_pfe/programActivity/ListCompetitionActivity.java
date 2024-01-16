@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
+import com.example.mobile_pfe.UI.MainActivity;
 import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
@@ -78,6 +79,8 @@ public class ListCompetitionActivity extends AppCompatActivity {
             }
         });
 
+
+
         back.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -91,11 +94,16 @@ public class ListCompetitionActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_CANCEL:
                         // Released or canceled state: Restore the original text color
                         back.setTextColor(originalTextColor);
+
+                        // Trigger onBackPressed() when the button is released
+                        Intent intent = new Intent(ListCompetitionActivity.this, MainActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 return false;
             }
         });
+
         Log.d("AccessToken", "Value: " + AppGlobals.getAccessToken());
 // Now you can call extractUserRole
         List<String> userRoles = AppGlobals.extractUserRoles();

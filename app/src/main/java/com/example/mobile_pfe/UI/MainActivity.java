@@ -39,37 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        ProfilService service = RetrofitInstance.getRetrofitInstance().create(ProfilService.class);
-
-        /*Call the method with parameter in the interface to get the employee data*/
-        Call<Profile> call = service.getUserProfile();
-
-        /*Log the URL called*/
-        Log.wtf("URL Called", call.request().url() + "");
-
-        call.enqueue(new Callback<Profile>() {
-            @Override
-            public void onResponse(Call<Profile> call, Response<Profile> response) {
-                profile =(Profile) response.body();
-                Log.wtf("Response", " "+profile);
-                if (profile != null) {
-
-                    generateProfileData(profile);
-                } else {
-                    Log.e("Response", "Profile data is null");
-                    // Handle the case where the Profile data is null
-                    Toast.makeText(MainActivity.this, "Profile data is null", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Profile> call, Throwable t) {
-                System.out.println("get all errors");
-                t.printStackTrace();
-                Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+      getUserProfile();
 
         CircleImageView userImage = findViewById(R.id.user_image);
 
@@ -270,12 +240,44 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-//        CiruserImage =findViewById(R.id.user_image);
-
+    }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        // API call when the activity is resumed (e.g., when you navigate back to it)
+        getUserProfile();
+    }
+
+    private void getUserProfile() {
+        ProfilService service = RetrofitInstance.getRetrofitInstance().create(ProfilService.class);
+
+        Call<Profile> call = service.getUserProfile();
+
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<Profile>() {
+            @Override
+            public void onResponse(Call<Profile> call, Response<Profile> response) {
+                profile = response.body();
+                Log.wtf("Response", " " + profile);
+                if (profile != null) {
+                    generateProfileData(profile);
+                } else {
+                    Log.e("Response", "Profile data is null");
+                    Toast.makeText(MainActivity.this, "Profile data is null", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Profile> call, Throwable t) {
+                System.out.println("get all errors");
+                t.printStackTrace();
+                Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void generateProfileData(Profile profile) {
