@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.SportActivities.ListSportActivity;
 import com.example.mobile_pfe.UI.MainActivity;
-import com.example.mobile_pfe.Model.Globals.AppGlobals;
+import com.example.mobile_pfe.model.Globals.AppGlobals;
 import com.example.mobile_pfe.registerActivities.RegisterActivity;
 import com.example.mobile_pfe.sevices.LoginTask;
 
