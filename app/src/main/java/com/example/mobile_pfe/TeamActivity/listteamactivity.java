@@ -1,10 +1,14 @@
 package com.example.mobile_pfe.TeamActivity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +44,8 @@ public class listteamactivity extends AppCompatActivity {
 
     private boolean fromChooseTeam;
 
+    private ColorStateList originalTextColor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +58,38 @@ public class listteamactivity extends AppCompatActivity {
         String description = intent.getStringExtra("description");
         fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
 
-        // Now you can use these values as needed
+        // Move the backButton code here
+        TextView backButton = findViewById(R.id.back1);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        originalTextColor = backButton.getTextColors();
+        backButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Pressed state: Set text color to white
+                        backButton.setTextColor(Color.WHITE);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // Released or canceled state: Restore the original text color
+                        backButton.setTextColor(originalTextColor);
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+
+    // Now you can use these values as needed
         Log.d("TeamInfo", "Team Name: " + teamName);
         Log.d("TeamInfo", "Logo Image URL: " + logoImageUrl);
         Log.d("TeamInfo", "Description: " + description);

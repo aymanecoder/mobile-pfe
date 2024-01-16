@@ -1,9 +1,13 @@
 package com.example.mobile_pfe.TeamActivity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +28,7 @@ public class ItemActivity extends AppCompatActivity {
     private List<Sportif> membersList;
 
     private boolean fromChooseTeam;
+    private ColorStateList originalTextColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +36,54 @@ public class ItemActivity extends AppCompatActivity {
         Binding = ActivityListvieweachteamBinding.inflate(getLayoutInflater());
         setContentView(Binding.getRoot());
 
-        fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
+        // Move the backButton code here
+        TextView backButton = findViewById(R.id.back2);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        Button cancel = findViewById(R.id.cancel);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        Button join = findViewById(R.id.join);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //implement her join methode
+            }
+        });
+
+        originalTextColor = backButton.getTextColors();
+        backButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Pressed state: Set text color to white
+                        backButton.setTextColor(Color.WHITE);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // Released or canceled state: Restore the original text color
+                        backButton.setTextColor(originalTextColor);
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+
+    fromChooseTeam = getIntent().getBooleanExtra("fromChooseTeam", false);
         Button yourButton = findViewById(R.id.join);
 
 //         Conditionally show/hide the button based on the flag
