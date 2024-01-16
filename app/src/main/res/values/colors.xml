@@ -16,4 +16,6 @@
     <color name="gray">#31747679</color>
     <color name="light_green">#f0fff1</color>
     <color name="light_black">#80000000</color>
+    <color name="notification_background_color">#FF4081</color>
+    <color name="notification_border_color">#FFFFFF</color>
 </resources>
