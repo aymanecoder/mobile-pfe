@@ -37,6 +37,7 @@ public class ListAdapter extends BaseAdapter {
         return position;
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
@@ -48,12 +49,19 @@ public class ListAdapter extends BaseAdapter {
         ImageView imageView = convertView.findViewById(R.id.profile_pic);
         TextView username = convertView.findViewById(R.id.personName);
 
-        imageView.setImageResource(user.getImageId());
-        username.setText(user.getFirstName());
+        // Check if imageView is not null and user.getImageId() is a valid resource
+        if (imageView != null && user != null && user.getImageId() != 0) {
+            imageView.setImageResource(user.getImageId());
+        }
 
+        // Check if username is not null and user.getFirstName() is not null
+        if (username != null && user != null && user.getFirstName() != null) {
+            username.setText(user.getFirstName());
+        }
 
         // Implement the click listener for the "More" button here
 
         return convertView;
     }
+
 }
