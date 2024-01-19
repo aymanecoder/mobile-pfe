@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.GroupActivity.GroupActivity;
-import com.example.mobile_pfe.model.Profile;
+import com.example.mobile_pfe.Model.Profile;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
@@ -54,90 +54,90 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView myFriends = findViewById(R.id.my_friends);
-        myFriends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView , FriendsFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name")
-                        .commit();
-
-            }
-        });
-
-
-        TextView myCoaches = findViewById(R.id.myCoaches);
-        myCoaches.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView , CoachesFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name")
-                        .commit();
-
-            }
-        });
-
-        TextView myPrograms = findViewById(R.id.myPrograms);
-        myPrograms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView , ProgramsFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name")
-                        .commit();
-
-            }
-        });
-
-        TextView myTeams = findViewById(R.id.myTeams);
-        myTeams.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView , TeamsFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name")
-                        .commit();
-
-            }
-        });
-
-        TextView myGroups = findViewById(R.id.myGroups);
-        myGroups.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView , GroupsFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name")
-                        .commit();
-
-            }
-        });
-
-        TextView myMatches = findViewById(R.id.myMatches);
-        myMatches.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView , MatchesFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name")
-                        .commit();
-
-            }
-        });
+//        TextView myFriends = findViewById(R.id.my_friends);
+//        myFriends.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragmentContainerView , FriendsFragment.class, null)
+//                        .setReorderingAllowed(true)
+//                        .addToBackStack("name")
+//                        .commit();
+//
+//            }
+//        });
+//
+//
+//        TextView myCoaches = findViewById(R.id.myCoaches);
+//        myCoaches.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragmentContainerView , CoachesFragment.class, null)
+//                        .setReorderingAllowed(true)
+//                        .addToBackStack("name")
+//                        .commit();
+//
+//            }
+//        });
+//
+//        TextView myPrograms = findViewById(R.id.myPrograms);
+//        myPrograms.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragmentContainerView , ProgramsFragment.class, null)
+//                        .setReorderingAllowed(true)
+//                        .addToBackStack("name")
+//                        .commit();
+//
+//            }
+//        });
+//
+//        TextView myTeams = findViewById(R.id.myTeams);
+//        myTeams.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragmentContainerView , TeamsFragment.class, null)
+//                        .setReorderingAllowed(true)
+//                        .addToBackStack("name")
+//                        .commit();
+//
+//            }
+//        });
+//
+//        TextView myGroups = findViewById(R.id.myGroups);
+//        myGroups.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragmentContainerView , GroupsFragment.class, null)
+//                        .setReorderingAllowed(true)
+//                        .addToBackStack("name")
+//                        .commit();
+//
+//            }
+//        });
+//
+//        TextView myMatches = findViewById(R.id.myMatches);
+//        myMatches.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragmentContainerView , MatchesFragment.class, null)
+//                        .setReorderingAllowed(true)
+//                        .addToBackStack("name")
+//                        .commit();
+//
+//            }
+//        });
 
         RelativeLayout friendsRelativeLayout = findViewById(R.id.friends);
         friendsRelativeLayout.setOnClickListener(new View.OnClickListener() {

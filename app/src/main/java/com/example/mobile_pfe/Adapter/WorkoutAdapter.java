@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.model.Workout;
+import com.example.mobile_pfe.Model.Workout;
 import com.example.mobile_pfe.R;
 
 import java.util.List;

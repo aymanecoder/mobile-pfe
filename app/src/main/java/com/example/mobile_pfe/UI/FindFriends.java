@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_pfe.Adapter.FriendAdapter;
-import com.example.mobile_pfe.model.User1.User;
+import com.example.mobile_pfe.Model.User1.User;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.sevices.UserService;

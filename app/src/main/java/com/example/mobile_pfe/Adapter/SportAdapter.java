@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Sport.Sport;
+import com.example.mobile_pfe.Model.Sport.Sport;
 
 import java.util.ArrayList;
 

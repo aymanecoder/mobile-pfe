@@ -8,7 +8,7 @@
 //import androidx.recyclerview.widget.RecyclerView;
 //
 //import com.example.mobile_pfe.R;
-//import com.example.mobile_pfe.model.Equipe.Equipe;
+//import com.example.mobile_pfe.Model.Equipe.Equipe;
 //
 //import java.util.ArrayList;
 //

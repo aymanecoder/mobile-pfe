@@ -1,6 +1,6 @@
 package com.example.mobile_pfe.sevices;
 
-import com.example.mobile_pfe.model.Sport.Sport;
+import com.example.mobile_pfe.Model.Sport.Sport;
 
 import java.util.List;
 

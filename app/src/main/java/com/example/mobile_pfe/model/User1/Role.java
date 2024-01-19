@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model.User1;
+package com.example.mobile_pfe.Model.User1;
 
 public enum Role {
     USER,

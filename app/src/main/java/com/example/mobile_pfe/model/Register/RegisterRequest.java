@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model.Register;
+package com.example.mobile_pfe.Model.Register;
 
 public class RegisterRequest {
     private String email;

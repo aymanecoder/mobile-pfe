@@ -11,8 +11,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Competition.Competition;
-import com.example.mobile_pfe.model.Program.Program;
+import com.example.mobile_pfe.Model.Competition.Competition;
+import com.example.mobile_pfe.Model.Program.Program;
 import com.example.mobile_pfe.sevices.CompetitionService;
 import com.example.mobile_pfe.sevices.CompetitionService;
 

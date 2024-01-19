@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model.Sport;
+package com.example.mobile_pfe.Model.Sport;
 
 import com.google.gson.annotations.SerializedName;
 

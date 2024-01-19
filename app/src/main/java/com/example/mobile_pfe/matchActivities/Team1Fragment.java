@@ -21,7 +21,7 @@ import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamDetails;
 import com.example.mobile_pfe.adapters.TeamListAdapter;
-import com.example.mobile_pfe.model.TeamItem;
+import com.example.mobile_pfe.Model.TeamItem;
 
 import java.io.Serializable;
 import java.util.ArrayList;

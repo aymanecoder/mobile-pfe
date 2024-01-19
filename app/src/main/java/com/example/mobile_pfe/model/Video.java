@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model;
+package com.example.mobile_pfe.Model;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
 
@@ -72,7 +72,7 @@ public class Video {
 
     public String getUrlVideo() {
         if (urlVideo != null) {
-            return urlVideo.replace("http://localhost:9000/", RetrofitInstance.BASE_URL);
+            return urlVideo.replace("http://localhost:8080/", RetrofitInstance.BASE_URL);
         } else {
             return null;
         }

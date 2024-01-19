@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Sportif;
 
 import java.util.List;
 public class ListAdapter extends BaseAdapter {

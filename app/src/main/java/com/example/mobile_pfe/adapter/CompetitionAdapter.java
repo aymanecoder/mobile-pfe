@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.Competition.Competition;
+import com.example.mobile_pfe.Model.Competition.Competition;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

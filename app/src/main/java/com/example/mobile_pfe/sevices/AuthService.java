@@ -1,9 +1,9 @@
 package com.example.mobile_pfe.sevices;
 
-import com.example.mobile_pfe.model.Login.AuthResponse;
-import com.example.mobile_pfe.model.Register.RegisterResponse;
-import com.example.mobile_pfe.model.Login.LoginRequest;
-import com.example.mobile_pfe.model.Register.RegisterRequest;
+import com.example.mobile_pfe.Model.Login.AuthResponse;
+import com.example.mobile_pfe.Model.Register.RegisterResponse;
+import com.example.mobile_pfe.Model.Login.LoginRequest;
+import com.example.mobile_pfe.Model.Register.RegisterRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

@@ -16,13 +16,13 @@ import android.widget.Toast;
 
 import com.example.mobile_pfe.Adapter.ProgramAdapter;
 import com.example.mobile_pfe.UI.MainActivity;
-import com.example.mobile_pfe.model.Globals.AppGlobals;
+import com.example.mobile_pfe.Model.Globals.AppGlobals;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.UI.CoachContent;
 import com.example.mobile_pfe.UI.FindCoaches;
 import com.example.mobile_pfe.Adapter.CompetitionAdapter;
-import com.example.mobile_pfe.model.Competition.Competition;
+import com.example.mobile_pfe.Model.Competition.Competition;
 import com.example.mobile_pfe.sevices.CompetitionService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

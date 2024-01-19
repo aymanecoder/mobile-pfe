@@ -13,8 +13,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.MatchItem;
-import com.example.mobile_pfe.model.MatchResponse;
+import com.example.mobile_pfe.Model.MatchItem;
+import com.example.mobile_pfe.Model.MatchResponse;
 
 import java.util.List;
 

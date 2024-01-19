@@ -2,9 +2,9 @@ package com.example.mobile_pfe.sevices;
 
 
 import com.example.mobile_pfe.GroupActivity.User;
-import com.example.mobile_pfe.model.Group;
-import com.example.mobile_pfe.model.GroupDTO;
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Group;
+import com.example.mobile_pfe.Model.GroupDTO;
+import com.example.mobile_pfe.Model.Sportif;
 
 import java.util.List;
 

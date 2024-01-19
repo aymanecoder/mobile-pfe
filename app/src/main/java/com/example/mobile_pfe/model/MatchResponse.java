@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model;
+package com.example.mobile_pfe.Model;
 
 import com.example.mobile_pfe.TeamActivity.Sport;
 import com.example.mobile_pfe.TeamActivity.TeamDetails;

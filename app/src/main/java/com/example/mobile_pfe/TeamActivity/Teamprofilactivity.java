@@ -19,7 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.mobile_pfe.R;
-import com.example.mobile_pfe.model.TeamItem;
+import com.example.mobile_pfe.Model.TeamItem;
 
 import java.io.File;
 import java.io.FileOutputStream;

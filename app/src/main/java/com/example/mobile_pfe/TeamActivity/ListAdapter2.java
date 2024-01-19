@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.User;
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Sportif;
 
 import java.util.ArrayList;
 import java.util.List;

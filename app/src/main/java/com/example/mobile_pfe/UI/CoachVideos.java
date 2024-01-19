@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mobile_pfe.model.Video;
+import com.example.mobile_pfe.Model.Video;
 import com.example.mobile_pfe.Adapter.VideoAdapter;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;

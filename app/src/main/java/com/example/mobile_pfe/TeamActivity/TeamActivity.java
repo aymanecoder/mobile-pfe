@@ -24,7 +24,7 @@ import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.matchActivities.MatchRepository;
 import com.example.mobile_pfe.matchActivities.ShowMatches;
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Sportif;
 import com.example.mobile_pfe.sevices.GroupService;
 import com.example.mobile_pfe.sevices.MatchRequest;
 import com.example.mobile_pfe.sevices.MatchService;
@@ -205,6 +205,11 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
     }
 
     private void filterTeams(String query) {
+        if (originalTeamDetailsList == null) {
+            // Handle the case where the originalTeamDetailsList is not initialized
+            return;
+        }
+
         List<TeamDetails> filteredList = new ArrayList<>();
 
         for (TeamDetails teamDetails : originalTeamDetailsList) {
@@ -215,6 +220,7 @@ public class TeamActivity extends AppCompatActivity implements CustomAdapter.OnI
 
         adapter.filterList(filteredList);
     }
+
 
     // Handle item click
     @Override

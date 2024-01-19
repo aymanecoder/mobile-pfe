@@ -2,7 +2,7 @@ package com.example.mobile_pfe.sevices;
 
 import android.view.PixelCopy;
 
-import com.example.mobile_pfe.model.MatchResponse;
+import com.example.mobile_pfe.Model.MatchResponse;
 
 import java.util.List;
 

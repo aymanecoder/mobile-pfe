@@ -9,7 +9,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_pfe.model.Video;
+import com.example.mobile_pfe.Model.Video;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.UI.VideoActivity;
 
@@ -36,7 +36,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoHolder>{
         Video video = videosList.get(position);
 
         holder.videoTitle.setText(video.getTitre());
-        holder.videoDuration.setText(video.getNumberOfTeam());
+        holder.videoDuration.setText(String.valueOf(video.getNumberOfTeam()));
         holder.videoViews.setText("300");
         holder.videoLevel.setText(video.getDescription());
         holder.image.setImageResource(R.drawable.img);
@@ -47,7 +47,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoHolder>{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), VideoActivity.class);
-                intent.putExtra("VideoId", id);
+                intent.putExtra("VideoId", (int) video.getId());
                 v.getContext().startActivity(intent);
             }
         });

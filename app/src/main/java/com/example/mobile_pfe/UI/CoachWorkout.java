@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.mobile_pfe.Adapter.WorkoutAdapter;
-import com.example.mobile_pfe.model.Workout;
+import com.example.mobile_pfe.Model.Workout;
 import com.example.mobile_pfe.R;
 
 import java.util.ArrayList;

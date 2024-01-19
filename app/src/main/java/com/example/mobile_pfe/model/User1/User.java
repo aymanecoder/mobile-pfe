@@ -1,10 +1,7 @@
-package com.example.mobile_pfe.model.User1;
+package com.example.mobile_pfe.Model.User1;
 
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 public class User {
 
     private Integer id;
@@ -109,7 +106,7 @@ public class User {
 
     public String getPicturePath() {
         if (picturePath != null) {
-            return picturePath.replace("http://localhost:9000/", RetrofitInstance.BASE_URL);
+            return picturePath.replace("http://localhost:8080/", RetrofitInstance.BASE_URL);
         } else {
             return null;
         }

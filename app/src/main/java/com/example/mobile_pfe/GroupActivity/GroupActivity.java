@@ -23,8 +23,8 @@ import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityLisviewgroupBinding;
 import com.example.mobile_pfe.databinding.ActivityLisviewteamBinding;
-import com.example.mobile_pfe.model.Group;
-import com.example.mobile_pfe.model.GroupDTO;
+import com.example.mobile_pfe.Model.Group;
+import com.example.mobile_pfe.Model.GroupDTO;
 import com.example.mobile_pfe.sevices.GroupService;
 
 import java.io.Serializable;

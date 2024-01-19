@@ -1,4 +1,6 @@
-package com.example.mobile_pfe.model;
+package com.example.mobile_pfe.Model;
+
+import com.example.mobile_pfe.Model.Members;
 
 import java.io.Serializable;
 import java.util.List;

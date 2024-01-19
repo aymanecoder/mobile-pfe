@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model.Login;
+package com.example.mobile_pfe.Model.Login;
 
 public class AuthResponse {
     private String access_token;

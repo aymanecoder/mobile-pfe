@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.mobile_pfe.model.Profile;
+import com.example.mobile_pfe.Model.Profile;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.UI.MainActivity;

@@ -20,7 +20,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.databinding.ActivityListvieweachteamBinding;
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Sportif;
 import com.example.mobile_pfe.sevices.GroupService;
 import com.example.mobile_pfe.sevices.TeamService;
 
@@ -56,7 +56,7 @@ public class ItemActivity extends AppCompatActivity {
         });
 
         Button cancel = findViewById(R.id.cancel);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -64,7 +64,7 @@ public class ItemActivity extends AppCompatActivity {
         });
 
         Button join = findViewById(R.id.join);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 joinGroup();
@@ -114,7 +114,7 @@ public class ItemActivity extends AppCompatActivity {
         }
 
         // Retrieve data from intent extras
-        teamId = getIntent().getIntExtra("teamId", 0);
+        teamId = getIntent().getIntExtra("teamId", 1);
         String teamName = getIntent().getStringExtra("teamName");
         String pictureUrl = getIntent().getStringExtra("picture");
         membersList = (List<Sportif>) getIntent().getSerializableExtra("members");
@@ -159,7 +159,7 @@ public class ItemActivity extends AppCompatActivity {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                if (response.isSuccessful() && response.body() != null) {
+                    if (response.isSuccessful()) {
                     Log.d("Group", "Group updated successfully: ");
                     Toast.makeText(ItemActivity.this, "Group updated successfully", Toast.LENGTH_SHORT).show();
                 } else {

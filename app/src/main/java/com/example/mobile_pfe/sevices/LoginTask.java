@@ -1,9 +1,9 @@
 package com.example.mobile_pfe.sevices;
 
 import com.example.mobile_pfe.Network.RetrofitInstance;
-import com.example.mobile_pfe.model.Globals.AppGlobals;
-import com.example.mobile_pfe.model.Login.AuthResponse;
-import com.example.mobile_pfe.model.Login.LoginRequest;
+import com.example.mobile_pfe.Model.Globals.AppGlobals;
+import com.example.mobile_pfe.Model.Login.AuthResponse;
+import com.example.mobile_pfe.Model.Login.LoginRequest;
 
 import retrofit2.Call;
 import retrofit2.Callback;

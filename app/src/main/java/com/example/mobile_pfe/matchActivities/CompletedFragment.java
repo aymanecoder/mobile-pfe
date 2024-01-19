@@ -19,8 +19,8 @@ import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.adapters.MatchCompletedAdapter;
 import com.example.mobile_pfe.adapters.MatchListAdapter;
-import com.example.mobile_pfe.model.MatchItem;
-import com.example.mobile_pfe.model.MatchResponse;
+import com.example.mobile_pfe.Model.MatchItem;
+import com.example.mobile_pfe.Model.MatchResponse;
 import com.example.mobile_pfe.sevices.MatchService;
 
 import java.util.ArrayList;

@@ -17,7 +17,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.example.mobile_pfe.model.User1.User;
+import com.example.mobile_pfe.Model.User1.User;
 import com.example.mobile_pfe.R;
 
 import java.util.List;
@@ -51,13 +51,13 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
                     .load(picturePath)
                     .listener(new RequestListener<Drawable>() {
                         @Override
-                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        public boolean onLoadFailed(@Nullable GlideException e, Object Model, Target<Drawable> target, boolean isFirstResource) {
                             Log.e("Glide", "Image load failed: " + e);
                             return false;
                         }
 
                         @Override
-                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        public boolean onResourceReady(Drawable resource, Object Model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
                             Log.d("Glide", "Image loaded successfully");
                             return false;
                         }

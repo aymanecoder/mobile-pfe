@@ -17,9 +17,9 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.mobile_pfe.Network.RetrofitInstance;
 import com.example.mobile_pfe.R;
 import com.example.mobile_pfe.TeamActivity.TeamDetails;
-import com.example.mobile_pfe.model.MatchItem;
-import com.example.mobile_pfe.model.Sportif;
-import com.example.mobile_pfe.model.TeamItem;
+import com.example.mobile_pfe.Model.MatchItem;
+import com.example.mobile_pfe.Model.Sportif;
+import com.example.mobile_pfe.Model.TeamItem;
 
 import java.util.List;
 

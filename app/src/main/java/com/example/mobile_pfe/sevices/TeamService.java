@@ -1,8 +1,8 @@
 package com.example.mobile_pfe.sevices;
 
 import com.example.mobile_pfe.TeamActivity.TeamDetails;
-import com.example.mobile_pfe.model.Equipe.TeamRequestBody;
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Equipe.TeamRequestBody;
+import com.example.mobile_pfe.Model.Sportif;
 
 import java.util.List;
 import java.util.Map;
@@ -34,8 +34,8 @@ public interface TeamService {
     @GET("/api/v1/teams")
     Call<List<TeamDetails>> getTeams();
 
-    @POST("/api/vl/teams/{teamld}/join")
-    Call<ResponseBody> joinTeam(@Path("teamId") int teamId);
+    @POST("/api/v1/teams/{teamld}/join")
+    Call<ResponseBody> joinTeam(@Path("teamld") int teamId);
 
 
     // Add other necessary API endpoints here

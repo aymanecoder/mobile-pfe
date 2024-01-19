@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.mobile_pfe.model.Profile;
+import com.example.mobile_pfe.Model.Profile;
 import com.example.mobile_pfe.R;
 
 public class metricprofil extends AppCompatActivity {
@@ -32,10 +32,10 @@ public class metricprofil extends AppCompatActivity {
             String picturePath = receivedProfile.getPicturePath();
 
             ImageView profileImageView = findViewById(R.id.profilePicture);
-
-            // Set values to TextViews
+            TextView fullNameTextView = findViewById(R.id.full_name);
+//            // Set values to TextViews
 //            firstNameTextView.setText(firstName);
-//            lastNameTextView.setText(lastName);
+            fullNameTextView.setText(firstName+" "+lastName);
 
             // Load user image with Glide into the ImageView
             Glide.with(this)

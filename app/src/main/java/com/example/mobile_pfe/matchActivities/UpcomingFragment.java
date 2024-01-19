@@ -23,8 +23,8 @@ import com.example.mobile_pfe.TeamActivity.CustomAdapter;
 import com.example.mobile_pfe.TeamActivity.TeamActivity;
 import com.example.mobile_pfe.TeamActivity.TeamDetails;
 import com.example.mobile_pfe.adapters.MatchListAdapter;
-import com.example.mobile_pfe.model.MatchItem;
-import com.example.mobile_pfe.model.MatchResponse;
+import com.example.mobile_pfe.Model.MatchItem;
+import com.example.mobile_pfe.Model.MatchResponse;
 import com.example.mobile_pfe.sevices.MatchService;
 import com.example.mobile_pfe.sevices.TeamService;
 

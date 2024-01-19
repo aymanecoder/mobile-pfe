@@ -1,6 +1,6 @@
 package com.example.mobile_pfe.TeamActivity;
 
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Sportif;
 
 import java.io.Serializable;
 import java.util.List;

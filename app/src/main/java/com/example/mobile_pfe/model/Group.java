@@ -1,4 +1,4 @@
-package com.example.mobile_pfe.model;
+package com.example.mobile_pfe.Model;
 
 import java.util.List;
 import java.util.Map;

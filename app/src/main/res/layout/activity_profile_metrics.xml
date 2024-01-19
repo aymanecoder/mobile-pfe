@@ -26,15 +26,6 @@
         android:layout_marginTop="506dp"
         android:background="@drawable/rectangle_6" />
 
-    <View
-        android:id="@+id/ellipse_4"
-        android:layout_width="56dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="465dp"
-        android:background="@drawable/profile_picf" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -154,55 +145,6 @@
 
     <!-- styles.xml -->
 
-    <View
-        android:id="@+id/ellipse_3"
-        android:layout_width="56dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="333dp"
-        android:layout_marginBottom="462dp"
-        android:background="@drawable/profile_picf" />
-
-    <View
-        android:id="@+id/ellipse_5"
-        android:layout_width="56dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-13dp"
-        android:layout_marginBottom="465dp"
-        android:background="@drawable/profile_picf" />
-
-    <View
-        android:id="@+id/ellipse_"
-        android:layout_width="56dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="248dp"
-        android:layout_marginBottom="462dp"
-        android:background="@drawable/profile_picf" />
-
-    <View
-        android:id="@+id/ellipse_2"
-        android:layout_width="56dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="154dp"
-        android:layout_marginBottom="462dp"
-        android:background="@drawable/profile_picf" />
-
-    <View
-        android:id="@+id/line_1"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="6dp"
-        android:background="@drawable/vertical_line" />
 
     <!--
     Font family: Inter

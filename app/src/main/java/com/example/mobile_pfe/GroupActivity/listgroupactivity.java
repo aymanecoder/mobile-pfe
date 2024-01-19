@@ -16,8 +16,8 @@ import com.example.mobile_pfe.databinding.ActivityListviewgroupBinding;
 
 import java.util.ArrayList;
 import com.example.mobile_pfe.Network.RetrofitInstance;
-import com.example.mobile_pfe.model.Group;
-import com.example.mobile_pfe.model.Sportif;
+import com.example.mobile_pfe.Model.Group;
+import com.example.mobile_pfe.Model.Sportif;
 import com.example.mobile_pfe.sevices.GroupService;
 import com.example.mobile_pfe.sevices.SportifService;
 
